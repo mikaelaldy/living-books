@@ -1,0 +1,162 @@
+{
+ "pages": [
+  {
+   "page": 1,
+   "passed": false,
+   "issues": [
+    "councillor and boy overlap by 87%",
+    "councillor and mother overlap by 61%",
+    "boy and mother overlap by 48%",
+    "man and child overlap by 55%",
+    "man and master overlap by 44%",
+    "child and master overlap by 68%",
+    "councillor is 5% outside the frame, bbox 14,294,100,534",
+    "master is 5% outside the frame, bbox 278,296,370,534"
+   ],
+   "turns": 18,
+   "out": 38725
+  },
+  {
+   "page": 2,
+   "passed": true,
+   "issues": [],
+   "turns": 8,
+   "out": 21563
+  },
+  {
+   "page": 3,
+   "passed": false,
+   "issues": [
+    "prince and swallow overlap by 37%"
+   ],
+   "turns": 18,
+   "out": 34317
+  },
+  {
+   "page": 4,
+   "passed": true,
+   "issues": [],
+   "turns": 17,
+   "out": 21806
+  },
+  {
+   "page": 5,
+   "passed": true,
+   "issues": [],
+   "turns": 17,
+   "out": 26124
+  },
+  {
+   "page": 6,
+   "passed": true,
+   "issues": [],
+   "turns": 9,
+   "out": 24653
+  },
+  {
+   "page": 7,
+   "passed": true,
+   "issues": [],
+   "turns": 15,
+   "out": 36853
+  },
+  {
+   "page": 8,
+   "passed": true,
+   "issues": [],
+   "turns": 10,
+   "out": 13806
+  },
+  {
+   "page": 9,
+   "passed": true,
+   "issues": [],
+   "turns": 11,
+   "out": 22679
+  },
+  {
+   "page": 10,
+   "passed": true,
+   "issues": [],
+   "turns": 7,
+   "out": 23611
+  },
+  {
+   "page": 11,
+   "passed": true,
+   "issues": [],
+   "turns": 8,
+   "out": 25222
+  },
+  {
+   "page": 12,
+   "passed": false,
+   "issues": [
+    "happy_prince and swallow overlap by 82%",
+    "happy_prince and match_girl overlap by 40%"
+   ],
+   "turns": 18,
+   "out": 38177
+  },
+  {
+   "page": 13,
+   "passed": true,
+   "issues": [],
+   "turns": 6,
+   "out": 16408
+  },
+  {
+   "page": 14,
+   "passed": true,
+   "issues": [],
+   "turns": 8,
+   "out": 17974
+  },
+  {
+   "page": 15,
+   "passed": true,
+   "issues": [],
+   "turns": 15,
+   "out": 35970
+  },
+  {
+   "page": 16,
+   "passed": true,
+   "issues": [],
+   "turns": 7,
+   "out": 18525
+  },
+  {
+   "page": 17,
+   "passed": true,
+   "issues": [],
+   "turns": 6,
+   "out": 15336
+  },
+  {
+   "page": 18,
+   "passed": false,
+   "issues": [
+    "council1 is 43% outside the frame, bbox -24,214,26,422",
+    "mayor and council2 overlap by 53%"
+   ],
+   "turns": 18,
+   "out": 53030
+  },
+  {
+   "page": 19,
+   "passed": true,
+   "issues": [],
+   "turns": 6,
+   "out": 13502
+  }
+ ],
+ "totals": {
+  "prompt": 6343619,
+  "cached": 4786688,
+  "completion": 498281,
+  "reasoning": 283140,
+  "seconds": 2931.653255224228,
+  "calls": 222
+ }
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%233b5f8a%27/%3E%3Cpath d=%27M7 8h8a3 3 0 013 3v13a3 3 0 00-3-3H7zM25 8h-8a3 3 0 00-3 3v13a3 3 0 013-3h8z%27 fill=%27%23f4eadb%27/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Living Books: classic stories, reflected by Beam</title>
+<meta name="description" content="Whole classic books as living paper pop-ups. Beam reads each book, then designs, paints and animates every page through tools.">
+<meta name="theme-color" content="#f4eadb">
+<meta property="og:title" content="Living Books: classic stories, reflected by Beam">
+<meta property="og:description" content="Whole classic books as living paper pop-ups, read, designed and animated by Beam.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/hero.jpg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; padding:26px 0 8px }
+  .hero p.lead { font-size:clamp(18px,2.4vw,22px); color:var(--soft); max-width:34ch; margin:18px 0 26px }
+  .hero .cta { display:flex; gap:12px; flex-wrap:wrap }
+  .frame { aspect-ratio:3/4; border-radius:14px; overflow:hidden; box-shadow:0 14px 36px rgba(70,45,20,.26); background:#e7d7bf url(assets/hero.jpg) center/cover }
+  .frame video { display:block; width:100%; height:100%; object-fit:cover }
+  .hero .frame { max-width:390px; width:100%; justify-self:center }
+  section { margin-top:72px }
+  .howlead { color:var(--soft); font-size:18px; max-width:62ch; margin:10px 0 22px }
+  .howclip { aspect-ratio:16/9; border-radius:14px; overflow:hidden; box-shadow:0 14px 36px rgba(70,45,20,.22); background:#f4eadb url(assets/how.jpg) center/cover; margin-bottom:26px }
+  .howclip video { display:block; width:100%; height:100% }
+  .method { list-style:none; padding:0; margin:34px 0 0; display:grid; gap:44px }
+  .method li { display:grid; grid-template-columns:1.25fr 1fr; gap:36px; align-items:center }
+  .method li:nth-child(even) img { order:2 }
+  .method img { width:100%; height:auto; border-radius:14px; box-shadow:0 10px 28px rgba(70,45,20,.18); display:block; background:#f4eadb }
+  .method .n { display:inline-flex; width:38px; height:38px; border-radius:50%; background:var(--warm); color:#fff; align-items:center; justify-content:center; font:600 18px system-ui,sans-serif; margin-bottom:10px }
+  .method h3 { font-size:26px; margin:0 0 8px } .method p { margin:0; color:var(--soft); font-size:17.5px; line-height:1.55; max-width:40ch }
+  @media (max-width:760px) { .method li { grid-template-columns:1fr; gap:14px } .method li:nth-child(even) img { order:0 } .method { gap:36px } }
+  .books { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px }
+  .book { display:grid; grid-template-columns:120px 1fr; gap:20px; padding:18px; align-items:center; text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease }
+  .book:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(70,45,20,.2) }
+  .book img { width:120px; aspect-ratio:3/4; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(70,45,20,.22); display:block; background:#e7d7bf }
+  .book h3 { font-size:23px } .book p { margin:6px 0 12px; color:var(--soft); font-size:15.5px }
+  .book .go { color:var(--accent); font-size:15.5px }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; counter-reset:s }
+  .step { padding:20px 20px 22px } .step::before { counter-increment:s; content:counter(s); display:block; font-size:34px; color:var(--warm); margin-bottom:4px }
+  .step h3 { font-size:21px; margin-bottom:6px } .step p { margin:0; color:var(--soft); font-size:15.5px }
+  .stats { display:flex; flex-wrap:wrap; gap:10px 34px; margin-top:24px } .stats div b { display:block; font-size:30px; color:var(--ink); font-variant-numeric:tabular-nums } .stats div span { font-size:13.5px; color:var(--soft) }
+  @media (max-width:760px) { .hero { grid-template-columns:1fr; gap:24px; padding-top:8px } .hero .frame { order:-1; max-width:320px } .book { grid-template-columns:96px 1fr } .book img { width:96px } }
+  @media (prefers-reduced-motion: reduce) { .book { transition:none } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"><b>Living Books</b><nav><a href="#books">Books</a><a href="#how">How it's made</a><a href="watch.html?book=peter-rabbit">Watch Beam read</a></nav></div>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Classic stories, reflected by Beam</div>
+      <h1>The story wakes up.</h1>
+      <p class="lead">Read a whole classic, page by page, with every scene alive as a little paper pop-up. For families to read together, and for anyone who misses finishing a book.</p>
+      <div class="cta"><a class="btn primary" href="read.html?book=peter-rabbit">Open Peter Rabbit</a><a class="btn" href="read.html?book=happy-prince">Open The Happy Prince</a></div>
+    </div>
+    <div class="frame"><video id="hero" src="assets/hero.mp4" poster="assets/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Scenes from The Tale of Peter Rabbit and The Happy Prince, moving in paper pop-up depth"></video></div>
+  </div>
+
+  <section id="books">
+    <h2>Two books, finished</h2>
+    <div class="books">
+      <a class="card book" href="read.html?book=peter-rabbit"><img src="assets/cover-peter-rabbit.webp" width="300" height="400" alt="" loading="lazy" decoding="async"><div><h3>The Tale of Peter Rabbit</h3><p>Beatrix Potter, 1902. Fourteen pages for reading together, and a little game at the end.</p><span class="go">Read the book</span></div></a>
+      <a class="card book" href="read.html?book=happy-prince"><img src="assets/cover-happy-prince.webp" width="300" height="400" alt="" loading="lazy" decoding="async"><div><h3>The Happy Prince</h3><p>Oscar Wilde, 1888. Nineteen pages. A longer, tender story for older children and adults.</p><span class="go">Read the book</span></div></a>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How Beam makes a page</h2>
+    <p class="howlead">Every page is made the same way. Here is Beam's real record of page 5 of <i>Peter Rabbit</i>, in 20 seconds, then step by step.</p>
+    <div class="howclip"><video id="howVid" src="assets/how.mp4" poster="assets/how.jpg" muted loop playsinline preload="none" aria-label="Beam reads the book, paints the page in layers, stages the puppets, fixes two issues the checker reports, and the page becomes a pop-up"></video></div>
+    <ol class="method">
+      <li><img src="assets/step1.webp" width="1200" height="840" alt="The opening of the book on the left, Beam's story plan on the right: world, palette swatches, cast and page feelings" loading="lazy" decoding="async"><div><span class="n">1</span><h3>Read the whole book</h3><p>Beam takes in the complete text in one call and writes a story plan: the world, a palette, the cast, and a feeling for every page.</p></div></li>
+      <li><img src="assets/step2.webp" width="1200" height="840" alt="Peter Rabbit in five of his poses: run, cry, walk, idle and walk" loading="lazy" decoding="async"><div><span class="n">2</span><h3>Design the characters</h3><p>Each character is a jointed paper puppet: bones, drawing code and named poses, all written by Beam. The tool measures joints and outlines so Beam can check them.</p></div></li>
+      <li><img src="assets/step3.webp" width="1200" height="660" alt="The same garden scene with 1, 3, 5 and 7 of its 7 layers painted" loading="lazy" decoding="async"><div><span class="n">3</span><h3>Paint the page in layers</h3><p>Beam paints each page as layers of code, back to front. The tool answers with numbers: how flat or busy each band of the picture is.</p></div></li>
+      <li><img src="assets/step4.webp" width="1200" height="840" alt="The finished scene, the letter map Beam reads instead of the picture, and the real check report: two issues, a repaint, a restage, then clean" loading="lazy" decoding="async"><div><span class="n">4</span><h3>Check and fix, without eyes</h3><p>Beam cannot see images. A checker turns each frame into a map of colour letters and a list of problems. Beam fixes them in code until the page is clean.</p></div></li>
+      <li><img src="assets/step5.webp" width="1200" height="840" alt="The page as a pop-up, and a chart of each layer's depth from back to front" loading="lazy" decoding="async"><div><span class="n">5</span><h3>Stand it up as a pop-up</h3><p>Every layer has a depth, so the reader stands the page up like a paper theatre, with the puppets acting between the layers. Tilt a phone to look in.</p></div></li>
+    </ol>
+    <div class="stats" id="stats"></div>
+    <p style="margin-top:18px"><a href="watch.html?book=peter-rabbit">See what Beam actually did, call by call</a>. Beam cannot see images, so it works from the measurements. For the visual side, a third-party multimodal model looked at frames of every page and sent notes back; any model with image input can do this. Beam made every fix.</p>
+  </section>
+
+  <footer>
+    <p><b>Unofficial.</b> Built with Beam by Reflection AI for the Build with Beam hackathon. This is not a product of Reflection AI or Hugging Face.</p>
+    <p>Texts are public domain, from Project Gutenberg. Beam wrote the story plans, characters, scenes, animation and the game; a coding agent wrote the reader and the puppet engine around them. Reading mode keeps no accounts, cookies or analytics.</p>
+  </footer>
+</div>
+<script>
+(async () => {
+  const v = document.getElementById('hero');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) { v.removeAttribute('autoplay'); v.pause(); }
+  // The how-it-works clip loads only when scrolled near, so it never slows the first view.
+  const h = document.getElementById("howVid");
+  if (!still && 'IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) h.play().catch(() => {}); else h.pause(); }), { rootMargin: '200px' }).observe(h);
+  else h.controls = true;
+  try {
+    const all = await Promise.all(['peter-rabbit', 'happy-prince'].map(b => fetch(`data/${b}/scorecard.json`).then(r => r.json())));
+    const sum = k => all.reduce((a, s) => a + s[k], 0);
+    document.getElementById('stats').innerHTML = [[sum('pages'), 'pages made'], [sum('beam_calls').toLocaleString(), 'Beam calls'], [Math.round(sum('output_tokens') / 1000).toLocaleString() + 'K', 'tokens Beam wrote'], [sum('fix_rounds_after_first_check'), 'fix rounds after a check']].map(([a, b]) => `<div><b>${a}</b><span>${b}</span></div>`).join('');
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

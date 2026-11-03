@@ -1,0 +1,701 @@
+{
+ "page": 14,
+ "text": "But Flopsy, Mopsy, and Cotton-tail had bread and milk and blackberries for supper. THE END",
+ "feeling": "warm",
+ "title": "Page 14 - Supper for the Good Bunnies",
+ "director_note": "The final tableau holds on the three good sisters gathered peacefully at supper, letting their calm eating and small smiles answer Peter's earlier chaos. Ending with a quiet rest and \"THE END\" gives the page a warm, earned sense of home and reward.",
+ "gate": {
+  "passed": true,
+  "issues": []
+ },
+ "turns": 7,
+ "usage": {
+  "prompt": 137796,
+  "cached": 95424,
+  "completion": 21589,
+  "reasoning": 13777,
+  "seconds": 112.1580274105072,
+  "calls": 7,
+  "route": "reflection"
+ },
+ "scene": {
+  "chars": {
+   "sisters": {
+    "id": "sisters",
+    "poses": {
+     "idle": {},
+     "walk1": {
+      "armL": -25,
+      "forearmL": 15,
+      "armR": 25,
+      "forearmR": -15,
+      "legL": 24,
+      "shinL": -12,
+      "footL": -10,
+      "legR": -24,
+      "shinR": 12,
+      "footR": 10,
+      "tail": 4
+     },
+     "walk2": {
+      "armL": 25,
+      "forearmL": -15,
+      "armR": -25,
+      "forearmR": 15,
+      "legL": -24,
+      "shinL": 12,
+      "footL": 10,
+      "legR": 24,
+      "shinR": -12,
+      "footR": -10,
+      "tail": -4
+     },
+     "gather": {
+      "body": 0,
+      "head": -10,
+      "armL": -10,
+      "forearmL": 5,
+      "armR": -100,
+      "forearmR": -10,
+      "legL": 15,
+      "shinL": -10,
+      "footL": 20,
+      "legR": 15,
+      "shinR": -10,
+      "footR": 20,
+      "_y": 1
+     },
+     "eat": {
+      "body": 10,
+      "head": 5,
+      "armL": -20,
+      "forearmL": 40,
+      "armR": 20,
+      "forearmR": -40,
+      "legL": 60,
+      "shinL": -60,
+      "footL": -5,
+      "legR": 60,
+      "shinR": -60,
+      "footR": -5,
+      "_y": -1
+     },
+     "rest": {},
+     "sit": {
+      "body": 0,
+      "head": 0,
+      "armL": -10,
+      "forearmL": 5,
+      "armR": 10,
+      "forearmR": -5,
+      "legL": 75,
+      "shinL": -70,
+      "footL": -5,
+      "legR": 75,
+      "shinR": -70,
+      "footR": -5,
+      "_y": 1
+     },
+     "hop1": {
+      "body": -10,
+      "head": -5,
+      "armL": -40,
+      "forearmL": 20,
+      "armR": 40,
+      "forearmR": -20,
+      "legL": 50,
+      "shinL": -30,
+      "footL": -10,
+      "legR": -30,
+      "shinR": 30,
+      "footR": 10,
+      "_y": -1
+     },
+     "hop2": {
+      "body": -10,
+      "head": -5,
+      "armL": 40,
+      "forearmL": -20,
+      "armR": -40,
+      "forearmR": 20,
+      "legL": -30,
+      "shinL": 30,
+      "footL": 10,
+      "legR": 50,
+      "shinR": -30,
+      "footR": -10,
+      "_y": -1
+     }
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": ""
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -50
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "let v=f.variant||0;\nlet cloak=['#D96B5A','#C94F4A','#E07A6A'][v];\nlet shade=['#a84b3f','#983a34','#b85a4f'][v];\nctx.fillStyle=cloak; ctx.beginPath(); ctx.moveTo(-18,-40); ctx.quadraticCurveTo(-24,0,-18,50); ctx.lineTo(18,50); ctx.quadraticCurveTo(24,0,18,-40); ctx.closePath(); ctx.fill();\nctx.fillStyle=shade; ctx.beginPath(); ctx.moveTo(6,-36); ctx.quadraticCurveTo(14,0,10,50); ctx.lineTo(18,50); ctx.quadraticCurveTo(24,0,18,-40); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.10)'; ctx.beginPath(); ctx.moveTo(-18,-40); ctx.quadraticCurveTo(-10,-10,-12,50); ctx.lineTo(-6,50); ctx.quadraticCurveTo(-4,-10,-10,-40); ctx.closePath(); ctx.fill();\n// hood trim bottom\nctx.fillStyle='#F2EFE7'; ctx.fillRect(-18,46,36,4);"
+     },
+     {
+      "name": "hood",
+      "parent": "body",
+      "pivot": [
+       0,
+       -42
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "let v=f.variant||0;\nlet cloak=['#D96B5A','#C94F4A','#E07A6A'][v];\nlet shade=['#a84b3f','#983a34','#b85a4f'][v];\nctx.fillStyle=cloak; ctx.beginPath(); ctx.arc(0,0,17,Math.PI,2*Math.PI,false); ctx.lineTo(17,0); ctx.lineTo(-17,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=shade; ctx.beginPath(); ctx.arc(4,2,10,Math.PI,2*Math.PI,false); ctx.lineTo(14,2); ctx.lineTo(-6,2); ctx.closePath(); ctx.fill();\n// trim\nctx.fillStyle='#F2EFE7'; ctx.beginPath(); ctx.arc(0,0,17,Math.PI-0.4,Math.PI+0.4,true); ctx.fill();\n// variant details\nlet d=f.variant||0;\nif(d===0){ctx.fillStyle='#F2EFE7'; ctx.beginPath(); ctx.arc(0,-8,3,0,Math.PI*2); ctx.fill();}\nif(d===1){ctx.fillStyle='#8FAE6B'; ctx.beginPath(); ctx.arc(10,-5,3,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2EFE7'; ctx.beginPath(); ctx.arc(10,-5,1.5,0,Math.PI*2); ctx.fill();}\nif(d===2){ctx.fillStyle='#E8D7B6'; ctx.fillRect(-8,-10,16,3);}"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       0,
+       -42
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.arc(0,0,15,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.arc(5,4,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#E8D7B6'; ctx.beginPath(); ctx.ellipse(5,5,8,7,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#D97A3A'; ctx.beginPath(); ctx.arc(12,3,2.8,0,Math.PI*2); ctx.fill();\nlet blink=f.blink||0; let look=f.look||0;\nctx.fillStyle='#2F2F2F';\nif(blink>0.5){ ctx.fillRect(-5,-4,10,2.5); }\nelse { ctx.beginPath(); ctx.arc(-3+look*1.5,-3,3,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(-2+look*1.5,-4,1,0,Math.PI*2); ctx.fill(); }\nctx.fillStyle='#3a2a1a'; ctx.save(); ctx.translate(-5,-7); ctx.rotate((f.brow||0)*0.2); ctx.fillRect(-4,-1,8,2); ctx.restore();\nlet m=f.mouth||'flat';\nctx.fillStyle='#3a2a1a';\nif(m==='open'){ctx.beginPath();ctx.ellipse(6,8,3.5,4,0,0,Math.PI*2);ctx.fill();}\nelse if(m==='smile'){ctx.beginPath();ctx.ellipse(6,7,4,2,0,0,Math.PI*2);ctx.fill();}\nelse if(m==='frown'){ctx.beginPath();ctx.ellipse(6,9,4,2,0,0,Math.PI*2);ctx.fill();}\nelse{ctx.fillRect(3,8,7,2);}"
+     },
+     {
+      "name": "earL",
+      "parent": "head",
+      "pivot": [
+       -10,
+       -12
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(-2,-16,6,20,-0.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#F2C7C0'; ctx.beginPath(); ctx.ellipse(-2,-16,3.5,14,-0.2,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "earR",
+      "parent": "head",
+      "pivot": [
+       10,
+       -12
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(2,-16,6,20,0.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#F2C7C0'; ctx.beginPath(); ctx.ellipse(2,-16,3.5,14,0.2,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armL",
+      "parent": "body",
+      "pivot": [
+       -14,
+       -30
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let v=f.variant||0;\nlet cloak=['#D96B5A','#C94F4A','#E07A6A'][v];\nctx.fillStyle=cloak; ctx.beginPath(); ctx.moveTo(-4,0); ctx.lineTo(-3,22); ctx.arc(0,22,3,Math.PI,2*Math.PI,false); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmL",
+      "parent": "armL",
+      "pivot": [
+       0,
+       20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-3,0); ctx.lineTo(-2.5,18); ctx.arc(0,18,2.5,Math.PI,2*Math.PI,false); ctx.lineTo(3,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handL",
+      "parent": "forearmL",
+      "pivot": [
+       0,
+       16
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(0,3,4.5,4,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armR",
+      "parent": "body",
+      "pivot": [
+       14,
+       -30
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let v=f.variant||0;\nlet cloak=['#D96B5A','#C94F4A','#E07A6A'][v];\nctx.fillStyle=cloak; ctx.beginPath(); ctx.moveTo(-4,0); ctx.lineTo(-3,22); ctx.arc(0,22,3,Math.PI,2*Math.PI,false); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmR",
+      "parent": "armR",
+      "pivot": [
+       0,
+       20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-3,0); ctx.lineTo(-2.5,18); ctx.arc(0,18,2.5,Math.PI,2*Math.PI,false); ctx.lineTo(3,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handR",
+      "parent": "forearmR",
+      "pivot": [
+       0,
+       16
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(0,3,4.5,4,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -8,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4,24); ctx.arc(0,24,4,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       20
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-4,0); ctx.lineTo(-3.5,22); ctx.arc(0,22,3.5,Math.PI,2*Math.PI,false); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footL",
+      "parent": "shinL",
+      "pivot": [
+       0,
+       20
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.ellipse(5,2.5,9,4,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       8,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4,24); ctx.arc(0,24,4,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       20
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-4,0); ctx.lineTo(-3.5,22); ctx.arc(0,22,3.5,Math.PI,2*Math.PI,false); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footR",
+      "parent": "shinR",
+      "pivot": [
+       0,
+       20
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.ellipse(5,2.5,9,4,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       0,
+       -2
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#F2EFE7'; ctx.beginPath(); ctx.arc(0,0,5,0,Math.PI*2); ctx.fill();"
+     }
+    ]
+   }
+  },
+  "layers": [
+   {
+    "name": "far_earth",
+    "depth": 0,
+    "code": "const g=ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,'#F2C7A8'); g.addColorStop(0.42,'#E8A86A'); g.addColorStop(1,'#D97A3A'); ctx.fillStyle=g; ctx.fillRect(-30,0,450,H); for(let i=0;i<95;i++){ const y=28+i*4.8+Math.sin(i*0.65)*9; ctx.beginPath(); ctx.moveTo(-30,y); for(let x=-30;x<=420;x+=18){ ctx.lineTo(x,y+Math.sin((x+i)*0.045)*7); } ctx.strokeStyle='rgba(123,90,58,'+(0.06+(i%4)*0.025)+')'; ctx.lineWidth=1.6; ctx.stroke(); } for(let i=0;i<170;i++){ const x=-24+rand()*444; const y=18+rand()*492; const r=1.4+rand()*4.8; ctx.beginPath(); ctx.ellipse(x,y,r,r*(0.55+rand()*0.35),rand()*Math.PI,0,Math.PI*2); ctx.fillStyle=i%2?'rgba(123,90,58,0.20)':'rgba(244,231,197,0.16)'; ctx.fill(); } for(let i=0;i<52;i++){ const x=-30+rand()*450; ctx.beginPath(); ctx.moveTo(x,0); ctx.quadraticCurveTo(x+(rand()-0.5)*70,70+rand()*130,x+(rand()-0.5)*100,170+rand()*220); ctx.strokeStyle='rgba(123,90,58,0.24)'; ctx.lineWidth=1.1; ctx.stroke(); }"
+   },
+   {
+    "name": "root_arch",
+    "depth": 0.12,
+    "code": "ctx.beginPath(); ctx.moveTo(-30,0); ctx.quadraticCurveTo(55,95,195,145); ctx.quadraticCurveTo(335,95,420,0); ctx.lineTo(420,78); ctx.quadraticCurveTo(330,165,195,215); ctx.quadraticCurveTo(60,165,-30,78); ctx.closePath(); ctx.fillStyle='#7B5A3A'; ctx.fill(); for(let i=0;i<26;i++){ const x=10+i*16; ctx.beginPath(); ctx.moveTo(x,10); ctx.quadraticCurveTo(x+(i%2?18:-18),70+rand()*60,x+(i%2?30:-30),130+rand()*70); ctx.strokeStyle='rgba(244,231,197,0.13)'; ctx.lineWidth=2; ctx.stroke(); } for(let i=0;i<42;i++){ const x=-10+rand()*440; const top=115+rand()*55; ctx.beginPath(); ctx.moveTo(x,top); ctx.quadraticCurveTo(x+(rand()-0.5)*28,top+45+rand()*80,x+(rand()-0.5)*45,top+95+rand()*130); ctx.strokeStyle='rgba(123,90,58,0.42)'; ctx.lineWidth=1+rand()*1.4; ctx.stroke(); } for(let i=0;i<18;i++){ const x=40+i*21; ctx.beginPath(); ctx.ellipse(x,95+rand()*40,10+rand()*8,4+rand()*3,rand()*0.8,0,Math.PI*2); ctx.fillStyle='rgba(63,45,28,0.25)'; ctx.fill(); }"
+   },
+   {
+    "name": "back_alcove",
+    "depth": 0.22,
+    "code": "ctx.beginPath(); ctx.moveTo(62,205); ctx.quadraticCurveTo(195,128,328,205); ctx.lineTo(328,388); ctx.quadraticCurveTo(195,420,62,388); ctx.closePath(); const g=ctx.createLinearGradient(195,130,195,420); g.addColorStop(0,'#F4E7C5'); g.addColorStop(1,'#F2C7A8'); ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(123,90,58,0.28)'; ctx.lineWidth=3; ctx.stroke(); for(let y of [242,302,362]){ ctx.fillStyle='#7B5A3A'; ctx.fillRect(82,y,226,9); ctx.fillStyle='rgba(63,45,28,0.22)'; ctx.fillRect(82,y+9,226,4); } ctx.beginPath(); ctx.ellipse(138,292,30,17,0,0,Math.PI*2); ctx.fillStyle='#E8A86A'; ctx.fill(); ctx.beginPath(); ctx.ellipse(138,288,24,12,0,0,Math.PI*2); ctx.fillStyle='#F2C7A8'; ctx.fill(); ctx.fillStyle='#D97A3A'; ctx.fillRect(262,276,20,26); ctx.beginPath(); ctx.ellipse(272,276,13,7,0,0,Math.PI*2); ctx.fillStyle='#F4E7C5'; ctx.fill(); ctx.beginPath(); ctx.ellipse(215,298,24,14,0,0,Math.PI*2); ctx.fillStyle='#F4E7C5'; ctx.fill(); for(let i=0;i<14;i++){ const a=i*0.45; ctx.beginPath(); ctx.arc(205+Math.cos(a)*15,296+Math.sin(a)*8,3.2,0,Math.PI*2); ctx.fillStyle=i%3?'#3B5F8A':'#2F4B72'; ctx.fill(); } for(let i=0;i<16;i++){ const x=95+i*13; ctx.beginPath(); ctx.moveTo(x,205); ctx.quadraticCurveTo(x+4,235,x-2,265); ctx.strokeStyle='rgba(79,111,58,0.45)'; ctx.lineWidth=1.3; ctx.stroke(); ctx.beginPath(); ctx.ellipse(x-2,268,7,4,0.4,0,Math.PI*2); ctx.fillStyle='#8FAE6B'; ctx.fill(); } for(let i=0;i<80;i++){ const x=70+rand()*250; const y=150+rand()*245; const r=1.2+rand()*3.8; ctx.beginPath(); ctx.ellipse(x,y,r,r*0.7,rand()*Math.PI,0,Math.PI*2); ctx.fillStyle=rand()>0.5?'rgba(123,90,58,0.16)':'rgba(244,231,197,0.14)'; ctx.fill(); }"
+   },
+   {
+    "name": "left_wall",
+    "depth": 0.32,
+    "code": "ctx.beginPath(); ctx.moveTo(-30,0); ctx.lineTo(92,0); for(let y=0;y<=H;y+=12){ ctx.lineTo(88+Math.sin(y*0.05)*15,y); } ctx.lineTo(-30,H); ctx.closePath(); const g=ctx.createLinearGradient(0,0,80,0); g.addColorStop(0,'#D97A3A'); g.addColorStop(1,'#E8A86A'); ctx.fillStyle=g; ctx.fill(); for(let i=0;i<95;i++){ const x=-20+rand()*95; const y=20+rand()*490; const r=1.5+rand()*4.5; ctx.beginPath(); ctx.ellipse(x,y,r,r*0.65,rand()*Math.PI,0,Math.PI*2); ctx.fillStyle=rand()>0.5?'rgba(123,90,58,0.22)':'rgba(244,231,197,0.13)'; ctx.fill(); } ctx.fillStyle='#7B5A3A'; ctx.fillRect(-18,255,95,8); for(let i=0;i<6;i++){ const x=-10+i*15; ctx.beginPath(); ctx.ellipse(x,245,8,11,0,0,Math.PI*2); ctx.fillStyle='#F2C7A8'; ctx.fill(); ctx.beginPath(); ctx.ellipse(x,245,5,7,0,0,Math.PI*2); ctx.fillStyle='#D96B5A'; ctx.fill(); }"
+   },
+   {
+    "name": "right_wall",
+    "depth": 0.38,
+    "code": "ctx.beginPath(); ctx.moveTo(420,0); ctx.lineTo(300,0); for(let y=0;y<=H;y+=12){ ctx.lineTo(304+Math.sin(y*0.06+1)*16,y); } ctx.lineTo(420,H); ctx.closePath(); const g=ctx.createLinearGradient(420,0,300,0); g.addColorStop(0,'#D97A3A'); g.addColorStop(1,'#E8A86A'); ctx.fillStyle=g; ctx.fill(); for(let i=0;i<95;i++){ const x=305+rand()*100; const y=20+rand()*490; const r=1.5+rand()*4.5; ctx.beginPath(); ctx.ellipse(x,y,r,r*0.65,rand()*Math.PI,0,Math.PI*2); ctx.fillStyle=rand()>0.5?'rgba(123,90,58,0.22)':'rgba(244,231,197,0.13)'; ctx.fill(); } for(let i=0;i<14;i++){ const x=318+i*6; ctx.beginPath(); ctx.moveTo(x,0); ctx.quadraticCurveTo(x+8,90,x-4,180); ctx.strokeStyle='rgba(79,111,58,0.40)'; ctx.lineWidth=1.2; ctx.stroke(); ctx.beginPath(); ctx.ellipse(x-4,184,6,9,0.3,0,Math.PI*2); ctx.fillStyle='#8FAE6B'; ctx.fill(); }"
+   },
+   {
+    "name": "floor_sand",
+    "depth": 0.5,
+    "code": "ctx.beginPath(); ctx.moveTo(-30,428); for(let x=-30;x<=420;x+=24){ ctx.lineTo(x,428+Math.sin(x*0.07)*6); } ctx.lineTo(420,520); ctx.lineTo(-30,520); ctx.closePath(); const g=ctx.createLinearGradient(0,420,0,520); g.addColorStop(0,'#F4E7C5'); g.addColorStop(1,'#E8A86A'); ctx.fillStyle=g; ctx.fill(); for(let i=0;i<110;i++){ const x=-20+rand()*440; const y=432+rand()*82; ctx.beginPath(); ctx.arc(x,y,1.2+rand()*2.2,0,Math.PI*2); ctx.strokeStyle='rgba(123,90,58,0.18)'; ctx.lineWidth=1; ctx.stroke(); } for(let i=0;i<70;i++){ const x=-20+rand()*440; const y=435+rand()*78; const r=1.4+rand()*3.4; ctx.beginPath(); ctx.ellipse(x,y,r,r*0.6,rand()*Math.PI,0,Math.PI*2); ctx.fillStyle=rand()>0.5?'rgba(123,90,58,0.16)':'rgba(244,231,197,0.15)'; ctx.fill(); } ctx.beginPath(); ctx.ellipse(195,472,105,38,0,0,Math.PI*2); ctx.fillStyle='rgba(242,199,168,0.45)'; ctx.fill(); ctx.strokeStyle='rgba(123,90,58,0.22)'; ctx.lineWidth=2; ctx.stroke(); for(let i=0;i<12;i++){ const y=448+i*4.2; ctx.beginPath(); ctx.moveTo(100,y); ctx.lineTo(290,y+Math.sin(i)*2); ctx.strokeStyle='rgba(123,90,58,0.12)'; ctx.lineWidth=1; ctx.stroke(); }"
+   },
+   {
+    "name": "foreground_left_ferns",
+    "depth": 0.78,
+    "front": true,
+    "code": "for(let i=0;i<16;i++){ const x=-18+i*2.5; const y=230+i*17; ctx.beginPath(); ctx.moveTo(x,y); ctx.quadraticCurveTo(x-10,y+65,x+4,y+155); ctx.strokeStyle='#4F6F3A'; ctx.lineWidth=2.2; ctx.stroke(); for(let j=0;j<8;j++){ const t=j/7; const px=x-3+t*7; const py=y+18+j*17; ctx.beginPath(); ctx.ellipse(px,py,12,6, -0.7+j*0.08,0,Math.PI*2); ctx.fillStyle=j%2?'#8FAE6B':'#4F6F3A'; ctx.fill(); } } for(let i=0;i<8;i++){ const x=8+rand()*16; const y=310+rand()*170; ctx.beginPath(); ctx.ellipse(x,y,10,5,rand()*1.1,0,Math.PI*2); ctx.fillStyle='#8FAE6B'; ctx.fill(); }"
+   },
+   {
+    "name": "foreground_right_ivy",
+    "depth": 0.82,
+    "front": true,
+    "code": "for(let i=0;i<18;i++){ const x=318+i*4.5; const y=180+i*12; ctx.beginPath(); ctx.moveTo(x,y); ctx.quadraticCurveTo(x+16,y+55,x-6,y+125); ctx.strokeStyle='#4F6F3A'; ctx.lineWidth=2.2; ctx.stroke(); for(let j=0;j<8;j++){ const px=x+(j%2?8:-8); const py=y+16+j*14; ctx.beginPath(); ctx.ellipse(px,py,10,5,0.8-j*0.07,0,Math.PI*2); ctx.fillStyle=j%2?'#8FAE6B':'#4F6F3A'; ctx.fill(); } } for(let i=0;i<10;i++){ const x=360+rand()*18; const y=285+rand()*195; ctx.beginPath(); ctx.ellipse(x,y,12,6,rand()*1.2,0,Math.PI*2); ctx.fillStyle='#8FAE6B'; ctx.fill(); }"
+   },
+   {
+    "name": "animated_glow",
+    "depth": 0.55,
+    "animated": true,
+    "code": "const a=0.11+0.045*Math.sin(t*1.5); const g=ctx.createRadialGradient(195,285,18,195,285,205); g.addColorStop(0,'rgba(244,231,197,'+a+')'); g.addColorStop(1,'rgba(244,231,197,0)'); ctx.fillStyle=g; ctx.fillRect(0,0,W,H); for(let i=0;i<34;i++){ const x=(i*47+t*13)%450-30; const y=150+(i*73+t*8)%280; ctx.beginPath(); ctx.arc(x,y,1+rand()*1.8,0,Math.PI*2); ctx.fillStyle='rgba(244,231,197,0.24)'; ctx.fill(); }"
+   }
+  ],
+  "ground": [
+   [
+    -30,
+    432
+   ],
+   [
+    30,
+    429
+   ],
+   [
+    90,
+    434
+   ],
+   [
+    150,
+    430
+   ],
+   [
+    210,
+    433
+   ],
+   [
+    270,
+    429
+   ],
+   [
+    330,
+    434
+   ],
+   [
+    390,
+    430
+   ],
+   [
+    420,
+    432
+   ]
+  ],
+  "anchors": {
+   "supper_nook": {
+    "x": 195,
+    "y": 300,
+    "rx": 75,
+    "ry": 30
+   },
+   "hearth": {
+    "x": 70,
+    "y": 390,
+    "rx": 30,
+    "ry": 20
+   }
+  },
+  "stage": {
+   "duration": 9,
+   "start": {
+    "cottontail": {
+     "char": "sisters",
+     "x": 35,
+     "pose": "hop1",
+     "facing": 1,
+     "scale": 0.95,
+     "z": 30,
+     "opacity": 0,
+     "face": {
+      "mouth": "smile",
+      "look": -0.2,
+      "brow": 0.1
+     },
+     "exiting": true
+    },
+    "mopsy": {
+     "char": "sisters",
+     "x": 45,
+     "pose": "hop1",
+     "facing": 1,
+     "scale": 0.95,
+     "z": 20,
+     "opacity": 0,
+     "face": {
+      "mouth": "smile",
+      "look": 0,
+      "brow": 0.1
+     },
+     "exiting": true
+    },
+    "flopsy": {
+     "char": "sisters",
+     "x": 55,
+     "pose": "hop1",
+     "facing": 1,
+     "scale": 0.95,
+     "z": 10,
+     "opacity": 0,
+     "face": {
+      "mouth": "smile",
+      "look": 0.2,
+      "brow": 0.1
+     },
+     "exiting": true
+    }
+   },
+   "beats": [
+    {
+     "actor": "cottontail",
+     "at": 0,
+     "dur": 1.7,
+     "ease": "out",
+     "phrase": "and blackberries for supper.",
+     "move_to": 285,
+     "opacity_to": 1,
+     "cycle": [
+      "hop1",
+      "hop2"
+     ],
+     "hz": 2.4,
+     "face": {
+      "mouth": "smile",
+      "look": -0.2,
+      "brow": 0.1
+     },
+     "exiting": false
+    },
+    {
+     "actor": "mopsy",
+     "at": 1.8,
+     "dur": 1.7,
+     "ease": "out",
+     "phrase": "had bread and milk",
+     "move_to": 195,
+     "opacity_to": 1,
+     "cycle": [
+      "hop1",
+      "hop2"
+     ],
+     "hz": 2.3,
+     "face": {
+      "mouth": "smile",
+      "look": 0,
+      "brow": 0.1
+     },
+     "exiting": false
+    },
+    {
+     "actor": "flopsy",
+     "at": 3.6,
+     "dur": 1.7,
+     "ease": "out",
+     "phrase": "But Flopsy, Mopsy, and Cotton-tail",
+     "move_to": 95,
+     "opacity_to": 1,
+     "cycle": [
+      "hop1",
+      "hop2"
+     ],
+     "hz": 2.2,
+     "face": {
+      "mouth": "smile",
+      "look": 0.2,
+      "brow": 0.1
+     },
+     "exiting": false
+    },
+    {
+     "actor": "cottontail",
+     "at": 5.5,
+     "dur": 0.7,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "gather",
+     "face": {
+      "mouth": "smile",
+      "look": -0.2,
+      "brow": 0.2
+     },
+     "exiting": false
+    },
+    {
+     "actor": "mopsy",
+     "at": 5.6,
+     "dur": 0.7,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "gather",
+     "face": {
+      "mouth": "smile",
+      "look": 0,
+      "brow": 0.2
+     },
+     "exiting": false
+    },
+    {
+     "actor": "flopsy",
+     "at": 5.7,
+     "dur": 0.7,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "gather",
+     "face": {
+      "mouth": "smile",
+      "look": 0.2,
+      "brow": 0.2
+     },
+     "exiting": false
+    },
+    {
+     "actor": "cottontail",
+     "at": 6.5,
+     "dur": 1.3,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "eat",
+     "bob": 2,
+     "face": {
+      "mouth": "open",
+      "look": -0.2,
+      "brow": 0
+     },
+     "exiting": false
+    },
+    {
+     "actor": "mopsy",
+     "at": 6.6,
+     "dur": 1.3,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "eat",
+     "bob": 2,
+     "face": {
+      "mouth": "open",
+      "look": 0,
+      "brow": 0
+     },
+     "exiting": false
+    },
+    {
+     "actor": "flopsy",
+     "at": 6.7,
+     "dur": 1.3,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "eat",
+     "bob": 2,
+     "face": {
+      "mouth": "open",
+      "look": 0.2,
+      "brow": 0
+     },
+     "exiting": false
+    },
+    {
+     "actor": "cottontail",
+     "at": 8,
+     "dur": 0.5,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "rest",
+     "face": {
+      "mouth": "smile",
+      "look": -0.2,
+      "brow": 0.3
+     },
+     "exiting": false
+    },
+    {
+     "actor": "mopsy",
+     "at": 8.05,
+     "dur": 0.5,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "rest",
+     "face": {
+      "mouth": "smile",
+      "look": 0,
+      "brow": 0.3
+     },
+     "exiting": false
+    },
+    {
+     "actor": "flopsy",
+     "at": 8.1,
+     "dur": 0.5,
+     "ease": "inOut",
+     "phrase": "had bread and milk and blackberries for supper.",
+     "pose": "rest",
+     "face": {
+      "mouth": "smile",
+      "look": 0.2,
+      "brow": 0.3
+     },
+     "exiting": false
+    },
+    {
+     "actor": "flopsy",
+     "at": 8.4,
+     "dur": 0.6,
+     "ease": "in",
+     "phrase": "THE END",
+     "pose": "rest",
+     "face": {
+      "mouth": "smile",
+      "look": 0,
+      "brow": 0.4
+     },
+     "exiting": false
+    }
+   ]
+  }
+ }
+}

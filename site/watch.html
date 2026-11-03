@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%233b5f8a%27/%3E%3Cpath d=%27M7 8h8a3 3 0 013 3v13a3 3 0 00-3-3H7zM25 8h-8a3 3 0 00-3 3v13a3 3 0 013-3h8z%27 fill=%27%23f4eadb%27/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Watch Beam read: Living Books</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  h2 { margin-top:56px } .sub { color:var(--soft); max-width:62ch; margin:0 0 18px }
+  .think { font-style:italic; color:var(--soft); border-left:3px solid var(--edge); padding:2px 0 2px 12px; margin:8px 0; font-size:15px }
+  .say { background:var(--paper2); border-radius:10px; padding:14px 16px; margin:8px 0; font-size:15.5px }
+  .tabs { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 20px } .tabs button { min-width:44px; min-height:44px; border-radius:10px; border:1px solid var(--edge); background:transparent; font:inherit; cursor:pointer; color:var(--accent) } .tabs button[aria-pressed=true] { background:var(--accent); color:#fff; border-color:var(--accent) }
+  .cols { display:grid; grid-template-columns:minmax(0,300px) 1fr; gap:30px; align-items:start } @media (max-width:760px) { .cols { grid-template-columns:1fr } .cols .scene { max-width:300px } }
+  .run { margin:0 0 26px } .run h4 { font-size:17px; margin:0 0 6px; font-weight:normal }
+  .note { background:#f7e3c8; border-left:4px solid var(--warm); padding:10px 14px; border-radius:6px; margin:8px 0 12px; font-size:15px }
+  .tool { display:flex; gap:10px; margin:6px 0; font-size:15px; align-items:baseline } .tool code { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; background:var(--paper2); padding:2px 8px; border-radius:6px; white-space:nowrap; flex:none }
+  .tool.bad code { background:#f2cdbd } .tool.good code { background:#d4e6c8 } .tool small { color:var(--soft); display:block }
+  .cast { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px } .cast .card { padding:12px 14px; font-size:14.5px } .cast b { display:block; font-size:16px }
+  .pal span { display:inline-block; width:34px; height:34px; border-radius:8px; margin:0 6px 6px 0; border:1px solid rgba(0,0,0,.15) }
+  .totals { display:flex; gap:10px 30px; flex-wrap:wrap; margin:12px 0 4px } .totals b { display:block; font-size:26px } .totals span { font-size:13px; color:var(--soft) }
+  details { margin:6px 0 } summary { cursor:pointer; padding:6px 0; color:var(--accent) }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"><b><a href="./" style="color:inherit;text-decoration:none">Living Books</a></b><nav><a id="readlink" href="read.html">Read this book</a></nav></div>
+  <p class="eyebrow">Watch Beam read</p>
+  <h1 id="h">Loading…</h1>
+  <p class="sub">Everything on this page comes from the recorded calls Beam made while producing this book: its plan, its tool calls, what the measurement tools told it, and the fixes it made. Shortened excerpts of its thinking are marked in italics. Beam cannot see images, so it works from text reports.</p>
+  <div class="totals" id="totals"></div>
+
+  <h2>1. It reads the whole book</h2>
+  <p class="sub">One request with the entire text. Beam wrote a plan before drawing anything.</p>
+  <div class="think" id="readthink"></div>
+  <div class="say"><b>World:</b> <span id="world"></span></div>
+  <div class="pal" id="pal" style="margin:10px 0"></div>
+  <div id="arc"></div>
+
+  <h2>2. It designs the cast</h2>
+  <p class="sub" id="castsub"></p>
+  <div class="cast" id="cast"></div>
+
+  <h2>3. It makes each page</h2>
+  <p class="sub">Pick a page to see its plan, then every tool call Beam made, in order.</p>
+  <div class="tabs" id="tabs" role="group" aria-label="Pages"></div>
+  <div class="cols"><div><div class="scene" id="scene"></div><p id="feel" class="sub" style="margin-top:10px"></p></div><div id="runs"></div></div>
+
+  <footer><p><b>Unofficial.</b> Built with Beam by Reflection AI for the Build with Beam hackathon. Review notes in the page timelines were written by a third-party multimodal model that looked at frames of each page; any model with image input can fill this role. Beam made every fix.</p></footer>
+</div>
+<script src="engine.js"></script>
+<script>
+const q = new URLSearchParams(location.search), BOOK = q.get('book') || 'peter-rabbit', $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+let R, raf = 0;
+async function showPage(n) {
+  document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.n === n));
+  history.replaceState(null, '', `?book=${BOOK}&page=${n}`);
+  const plan = R.bible.pages.find(p => p.page === n) || {}, pg = R.pages[n];
+  $('#feel').innerHTML = `<b>${esc(plan.feeling)}.</b> ${esc(plan.scene)}<br><i>Why this moment: ${esc(plan.why)}</i>`;
+  $('#runs').innerHTML = !pg ? '<p>No record for this page.</p>' : pg.runs.map((r, i) => `<div class="run"><h4>${i ? 'After the art review' : 'First pass'} · ${r.calls} calls · ${r.seconds} s · ${r.out.toLocaleString()} tokens written</h4>${r.note ? `<div class="note"><b>Review note sent to Beam:</b> ${esc(r.note)}</div>` : ''}${r.steps.map(s => s.think ? `<div class="think">${esc(s.think)}</div>` : `<div class="tool ${/refused|issues found/.test(s.what) && !/^0 /.test(s.what) ? 'bad' : /accepted|^0 issues/.test(s.what) ? 'good' : ''}"><code>${esc(s.tool)}</code><span>${esc(s.what)}<small>${esc(s.detail)}</small></span></div>`).join('')}</div>`).join('');
+  cancelAnimationFrame(raf);
+  try {
+    const r = await fetch(`data/${BOOK}/pages/${String(n).padStart(2, '0')}.json`).then(r => r.json()); LB.reset(); LB.load(r.scene);
+    const box = $('#scene'); box.innerHTML = '<canvas width="780" height="1040"></canvas>'; const x = box.firstChild.getContext('2d'), t0 = performance.now();
+    (function f(now) { LB.render(x, ((now - t0) / 1000) % LB.duration()); raf = requestAnimationFrame(f); })(t0);
+  } catch (e) {}
+}
+(async () => {
+  R = await fetch(`data/${BOOK}/replay.json`).then(r => r.json()); const sc = await fetch(`data/${BOOK}/scorecard.json`).then(r => r.json());
+  $('#h').textContent = R.title; document.title = `Watch Beam read ${R.title}`; $('#readlink').href = `read.html?book=${BOOK}`;
+  $('#totals').innerHTML = [[sc.pages, 'pages'], [sc.pages_passed_gate + ' of ' + sc.pages, 'passed the scene checks'], [sc.beam_calls.toLocaleString(), 'Beam calls'], [Math.round(sc.output_tokens / 1000) + 'K', 'tokens written'], [sc.fix_rounds_after_first_check, 'fix rounds after a check']].map(([a, b]) => `<div><b>${a}</b><span>${b}</span></div>`).join('');
+  $('#readthink').textContent = R.read.think ? `Beam's own thinking while reading, shortened: ${R.read.think}` : '';
+  $('#world').textContent = R.bible.world; $('#pal').innerHTML = R.bible.palette.map(c => `<span style="background:${esc(c)}" title="${esc(c)}"></span>`).join('');
+  $('#arc').innerHTML = '<b>Where the story turns:</b><ol>' + (R.bible.arc || []).map(a => `<li>${esc(a)}</li>`).join('') + '</ol>';
+  const cr = R.cast_runs || []; $('#castsub').textContent = `${R.bible.cast.length} characters. ${cr.reduce((a, r) => a + r.calls, 0)} calls across ${cr.length} rounds of design and review. Each character is a tree of bones with Beam-written drawing code, so heads cannot come off bodies.`;
+  $('#cast').innerHTML = R.bible.cast.map(c => `<div class="card"><b>${esc(c.name)}</b>${esc(c.look)}<br><i style="color:var(--soft)">Moves: ${esc(c.personality_in_motion)}</i></div>`).join('');
+  $('#tabs').innerHTML = Object.keys(R.pages).map(n => `<button data-n="${n}" aria-pressed="false" aria-label="Page ${n}">${n}</button>`).join('');
+  $('#tabs').onclick = e => { const b = e.target.closest('button'); if (b) showPage(+b.dataset.n); };
+  showPage(+q.get('page') || +Object.keys(R.pages)[0]);
+})();
+</script>
+</body>
+</html>

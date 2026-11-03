@@ -1,0 +1,498 @@
+{
+ "page": 14,
+ "text": "So the Swallow flew over the great city, and saw the rich making merry in their beautiful houses, while the beggars were sitting at the gates. He flew into dark lanes, and saw the white faces of starving children looking out listlessly at the black streets. Under the archway of a bridge two little boys were lying in one another’s arms to try and keep themselves warm. “How hungry we are!” they said. “You must not lie here,” shouted the Watchman, and they wandered out into the rain.",
+ "feeling": "Injustice",
+ "title": "The Swallow Sees the City's Misery",
+ "director_note": "I staged the swallow as the only moving actor, carrying the viewer's eye from merry windows to beggars, starving children, and huddled boys so the scene reads as a performed journey rather than a panorama. Keeping the bird in flight and the suffering figures painted into the city makes the injustice feel witnessed and inescapable.",
+ "gate": {
+  "passed": true,
+  "issues": []
+ },
+ "turns": 8,
+ "usage": {
+  "prompt": 154798,
+  "cached": 108288,
+  "completion": 17974,
+  "reasoning": 10618,
+  "seconds": 119.32484078407288,
+  "calls": 8,
+  "route": "reflection"
+ },
+ "scene": {
+  "chars": {
+   "swallow": {
+    "id": "swallow",
+    "poses": {
+     "dead": {
+      "_y": 12,
+      "body": 180,
+      "wingL": -40,
+      "wingtipL": -10,
+      "wingR": 40,
+      "wingtipR": 10,
+      "legL": 180,
+      "legR": 180,
+      "tail": 0
+     },
+     "droop": {
+      "head": 28,
+      "wingL": 50,
+      "wingtipL": 40,
+      "wingR": -50,
+      "wingtipR": -40,
+      "tail": 20
+     },
+     "fly1": {
+      "wingL": -35,
+      "wingtipL": -10,
+      "wingR": -35,
+      "wingtipR": -10
+     },
+     "fly2": {
+      "wingL": 25,
+      "wingtipL": 10,
+      "wingR": 25,
+      "wingtipR": 10
+     },
+     "peck": {
+      "head": 20
+     },
+     "perch": {
+      "wingL": 65,
+      "wingtipL": 20,
+      "wingR": -65,
+      "wingtipR": -20
+     },
+     "shiver": {
+      "wingL": 70,
+      "wingtipL": 25,
+      "wingR": -70,
+      "wingtipR": -25
+     },
+     "sleep": {
+      "head": 25,
+      "wingL": 75,
+      "wingtipL": 25,
+      "wingR": -75,
+      "wingtipR": -25
+     },
+     "rest": {}
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.18)'; ctx.beginPath(); ctx.ellipse(0,3,18,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -30
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.ellipse(0,0,15,12,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.ellipse(-3,-2,9,7,0,0,Math.PI*2); ctx.fill();\n// rust throat\nctx.fillStyle='#D97745'; ctx.beginPath(); ctx.ellipse(9,-2,8,7,-0.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.ellipse(11,-1,4,3,-0.2,0,Math.PI*2); ctx.fill();\n// belly\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.ellipse(2,4,9,6,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       18,
+       -10
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.arc(0,0,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.arc(-2,-2,5,0,Math.PI*2); ctx.fill();\n// eye\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(3,-2,3.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#1a1a1a'; ctx.beginPath(); ctx.arc(4,-2,1.8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(3.4,-2.8,0.7,0,Math.PI*2); ctx.fill();\n// cheek\nctx.fillStyle='rgba(217,119,69,0.25)'; ctx.beginPath(); ctx.arc(4,2,3,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "beak",
+      "parent": "head",
+      "pivot": [
+       8,
+       0
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(10,0); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a2a2a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(9,0.5); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nlet c=f.carry;\nif(c==='ruby'||c==='sapphire'){\n let col=c==='ruby'?'#A62C2C':'#1F4E79';\n ctx.fillStyle=col; ctx.beginPath(); ctx.arc(5,-1,4,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(255,255,255,0.45)'; ctx.beginPath(); ctx.arc(4,-2,1.3,0,Math.PI*2); ctx.fill();\n}"
+     },
+     {
+      "name": "wingL",
+      "parent": "body",
+      "pivot": [
+       -4,
+       -2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(-30,-8); ctx.lineTo(-26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-2); ctx.lineTo(-24,-4); ctx.lineTo(-22,8); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipL",
+      "parent": "wingL",
+      "pivot": [
+       -26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(-18,-6); ctx.lineTo(-16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-1,-1); ctx.lineTo(-14,-3); ctx.lineTo(-13,5); ctx.lineTo(-1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingR",
+      "parent": "body",
+      "pivot": [
+       -4,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(30,-8); ctx.lineTo(26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(2,-2); ctx.lineTo(24,-4); ctx.lineTo(22,8); ctx.lineTo(2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipR",
+      "parent": "wingR",
+      "pivot": [
+       26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(18,-6); ctx.lineTo(16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(1,-1); ctx.lineTo(14,-3); ctx.lineTo(13,5); ctx.lineTo(1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       -12,
+       6
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-4); ctx.lineTo(-18,-10); ctx.lineTo(-22,0); ctx.lineTo(-12,2); ctx.lineTo(-22,8); ctx.lineTo(-16,12); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-3); ctx.lineTo(-14,-7); ctx.lineTo(-16,-1); ctx.lineTo(-10,1); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -6,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       4,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     }
+    ]
+   }
+  },
+  "layers": [
+   {
+    "name": "sky",
+    "depth": 0.02,
+    "code": "const g=ctx.createLinearGradient(0,0,0,H);\ng.addColorStop(0,'#1B2340');\ng.addColorStop(0.42,'#1F4E79');\ng.addColorStop(1,'#1B2340');\nctx.fillStyle=g; ctx.fillRect(-30,0,450,H);\nctx.fillStyle='rgba(244,231,208,0.16)'; ctx.beginPath(); ctx.arc(302,92,82,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(296,86,46,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(125,132,145,0.42)';\nfor(let i=0;i<6;i++){ctx.beginPath(); ctx.arc(282+i*6,78+i*4,5+i,0,Math.PI*2); ctx.fill();}\nctx.fillStyle='rgba(244,231,208,0.92)';\nfor(let i=0;i<80;i++){\n let x=-20+rand()*430, y=8+rand()*175;\n ctx.save(); ctx.translate(x,y); ctx.rotate(rand()*Math.PI);\n ctx.fillRect(-1.4,-1.4,2.8,2.8); ctx.restore();\n}\nctx.fillStyle='rgba(212,175,55,0.12)';\nfor(let i=0;i<12;i++){ctx.beginPath(); ctx.arc(rand()*450-30, rand()*120, 1+rand()*2,0,Math.PI*2); ctx.fill();}"
+   },
+   {
+    "name": "far_city",
+    "depth": 0.12,
+    "code": "ctx.fillStyle='#1B2340';\nfor(let x=-30;x<420;x+=15){\n let h=70+rand()*85;\n ctx.fillRect(x,235-h,13,h);\n}\nctx.fillStyle='#1F4E79';\nfor(let x=-30;x<420;x+=15){\n let h=70+rand()*85;\n ctx.beginPath(); ctx.moveTo(x,235-h); ctx.lineTo(x+6.5,235-h-10-rand()*16); ctx.lineTo(x+13,235-h); ctx.closePath(); ctx.fill();\n}\nctx.fillStyle='rgba(125,132,145,0.55)';\nfor(let i=0;i<40;i++){ctx.fillRect(-30+rand()*450,150+rand()*70,2,8+rand()*12);}\nctx.fillStyle='rgba(212,175,55,0.32)';\nfor(let i=0;i<55;i++){ctx.fillRect(-20+rand()*440,165+rand()*55,2,2);}\nctx.fillStyle='rgba(212,175,55,0.55)';\nctx.fillRect(326,150,7,92);\nctx.beginPath(); ctx.arc(329.5,144,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(244,231,208,0.2)';\nctx.beginPath(); ctx.arc(329.5,144,16,0,Math.PI*2); ctx.fill();"
+   },
+   {
+    "name": "houses",
+    "depth": 0.28,
+    "code": "function brick(x,y,w,h,base,br){\n ctx.fillStyle=base; ctx.fillRect(x,y,w,h);\n ctx.fillStyle=br;\n for(let yy=y;yy<y+h;yy+=11){\n  let off=(Math.floor((yy-y)/11)%2)*6;\n  for(let xx=x+off;xx<x+w;xx+=11){\n   if(xx+8>x+w) continue;\n   ctx.fillRect(xx+1,yy+1,7,6);\n  }\n }\n}\nbrick(18,118,156,282,'#F4E7D0','rgba(125,132,145,0.16)');\nctx.fillStyle='#D4AF37'; ctx.fillRect(12,108,168,13);\nctx.fillStyle='rgba(27,35,64,0.12)';\nfor(let i=0;i<35;i++){ctx.fillRect(22+rand()*148,122+rand()*270,3,3);}\nconst wins=[[42,150],[102,150],[42,220],[102,220],[42,290],[102,290]];\nfor(const w of wins){\n let gx=w[0]+18, gy=w[1]+22;\n let gg=ctx.createRadialGradient(gx,gy,2,gx,gy,46); gg.addColorStop(0,'rgba(217,119,69,0.34)'); gg.addColorStop(1,'rgba(217,119,69,0)'); ctx.fillStyle=gg; ctx.fillRect(w[0]-10,w[1]-10,56,60);\n ctx.fillStyle='#D97745'; ctx.fillRect(w[0],w[1],36,44);\n ctx.fillStyle='#D4AF37'; ctx.fillRect(w[0]+17,w[1],2,44); ctx.fillRect(w[0],w[1]+21,36,2);\n ctx.fillStyle='rgba(27,35,64,0.58)';\n ctx.beginPath(); ctx.arc(w[0]+10,w[1]+28,7,0,Math.PI*2); ctx.fill();\n ctx.fillRect(w[0]+8,w[1]+34,4,11);\n ctx.beginPath(); ctx.arc(w[0]+26,w[1]+26,6,0,Math.PI*2); ctx.fill();\n ctx.fillRect(w[0]+24,w[1]+32,3,10);\n}\nctx.fillStyle='#A62C2C'; ctx.fillRect(76,332,46,68);\nctx.fillStyle='#D4AF37'; ctx.fillRect(74,326,50,9);\nctx.fillStyle='rgba(27,35,64,0.35)'; ctx.fillRect(84,342,12,18); ctx.fillRect(104,342,12,18);\nctx.fillStyle='#7D8491'; ctx.fillRect(150,148,92,252);\nctx.fillStyle='rgba(125,132,145,0.25)';\nfor(let i=0;i<30;i++){ctx.fillRect(154+rand()*84,152+rand()*240,3,3);}\nctx.fillStyle='#1B2340';\nctx.beginPath(); ctx.moveTo(166,400); ctx.lineTo(166,262); ctx.quadraticCurveTo(196,212,226,262); ctx.lineTo(226,400); ctx.closePath(); ctx.fill();\nctx.strokeStyle='#D4AF37'; ctx.lineWidth=2;\nfor(let i=0;i<5;i++){ctx.beginPath(); ctx.moveTo(174+i*12,400); ctx.lineTo(174+i*12,270); ctx.stroke();}\nctx.fillStyle='#D4AF37'; ctx.fillRect(150,142,92,10);\nctx.fillStyle='#1B2340'; ctx.fillRect(226,118,74,282);\nctx.fillStyle='#7D8491'; ctx.fillRect(300,138,58,262);\nctx.fillStyle='rgba(125,132,145,0.22)';\nfor(let i=0;i<28;i++){ctx.fillRect(228+rand()*68,122+rand()*270,3,3); ctx.fillRect(302+rand()*52,142+rand()*250,3,3);}\nctx.fillStyle='#1B2340'; ctx.fillRect(238,178,50,62);\nctx.fillStyle='#1B2340'; ctx.fillRect(312,188,34,48);\nctx.fillStyle='#7D8491';\nctx.beginPath(); ctx.moveTo(278,420); ctx.lineTo(278,302); ctx.quadraticCurveTo(336,232,392,302); ctx.lineTo(392,420); ctx.closePath(); ctx.fill();\nctx.fillStyle='#1B2340';\nctx.beginPath(); ctx.moveTo(292,420); ctx.lineTo(292,312); ctx.quadraticCurveTo(336,252,380,312); ctx.lineTo(380,420); ctx.closePath(); ctx.fill();\nctx.fillStyle='#D4AF37'; ctx.fillRect(272,296,126,9);"
+   },
+   {
+    "name": "street",
+    "depth": 0.45,
+    "code": "ctx.fillStyle='#5E6470'; ctx.fillRect(-30,398,450,122);\nctx.fillStyle='rgba(27,35,64,0.18)';\nfor(let i=0;i<12;i++){ctx.fillRect(-30+i*38,398,18,122);}\nctx.fillStyle='#7D8491';\nfor(let i=0;i<300;i++){\n let x=-25+rand()*445, y=405+rand()*95;\n let rx=3+rand()*6, ry=2+rand()*4;\n ctx.beginPath(); ctx.ellipse(x,y,rx,ry,rand()*Math.PI,0,Math.PI*2); ctx.fill();\n}\nctx.fillStyle='#9AA0AA';\nfor(let i=0;i<120;i++){\n let x=-25+rand()*445, y=405+rand()*95;\n ctx.beginPath(); ctx.ellipse(x,y,2+rand()*4,1.5+rand()*3,rand()*Math.PI,0,Math.PI*2); ctx.fill();\n}\nctx.fillStyle='rgba(27,35,64,0.45)';\nctx.fillRect(-30,395,450,6);\nctx.fillStyle='rgba(244,231,208,0.12)';\nfor(let i=0;i<8;i++){let x=40+rand()*300, y=410+rand()*60; ctx.beginPath(); ctx.ellipse(x,y,18+rand()*24,6+rand()*10,0,0,Math.PI*2); ctx.fill();}\nctx.strokeStyle='rgba(27,35,64,0.35)'; ctx.lineWidth=2;\nctx.beginPath(); ctx.moveTo(-30,402); ctx.lineTo(420,402); ctx.stroke();\nctx.fillStyle='rgba(27,35,64,0.25)'; ctx.fillRect(160,400,70,20);\nctx.fillRect(285,400,95,20);"
+   },
+   {
+    "name": "figures",
+    "depth": 0.55,
+    "code": "ctx.fillStyle='#7D8491';\nfor(let i=0;i<2;i++){\n let x=168+i*38, y=394;\n ctx.beginPath(); ctx.ellipse(x,y,24,13,0,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(27,35,64,0.25)';\n for(let j=0;j<4;j++){ctx.fillRect(x-16+j*8,y-4,6,8);}\n ctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(x,y-16,9,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='#A62C2C'; ctx.fillRect(x-3,y-14,6,2);\n ctx.fillStyle='#7D8491';\n}\nctx.fillStyle='#1B2340'; ctx.fillRect(236,176,54,66);\nctx.fillStyle='#F4E7D0';\nfor(let i=0;i<3;i++){\n let x=248+i*17, y=205;\n ctx.beginPath(); ctx.arc(x,y,7,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='#7D8491'; ctx.fillRect(x-4,y+2,8,2);\n ctx.fillStyle='#A62C2C'; ctx.fillRect(x-2,y+1,4,1);\n ctx.fillStyle='#F4E7D0';\n}\nctx.fillStyle='rgba(27,35,64,0.5)'; ctx.fillRect(238,178,54,4);\nctx.fillStyle='#7D8491';\nctx.beginPath(); ctx.ellipse(322,404,20,13,0,0,Math.PI*2); ctx.fill();\nctx.beginPath(); ctx.ellipse(348,400,18,12,-0.4,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#F4E7D0';\nctx.beginPath(); ctx.arc(316,390,8,0,Math.PI*2); ctx.fill();\nctx.beginPath(); ctx.arc(344,386,8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(27,35,64,0.45)'; ctx.fillRect(312,392,8,2); ctx.fillRect(340,388,8,2);\nctx.fillStyle='#1F4E79'; ctx.fillRect(348,360,14,46);\nctx.fillStyle='#7D8491'; ctx.fillRect(344,356,22,10);\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(355,348,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#D4AF37'; ctx.beginPath(); ctx.arc(365,372,8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(217,119,69,0.45)'; ctx.beginPath(); ctx.arc(365,372,16,0,Math.PI*2); ctx.fill();\nctx.strokeStyle='#7D8491'; ctx.lineWidth=3;\nctx.beginPath(); ctx.moveTo(360,360); ctx.lineTo(360,420); ctx.stroke();"
+   },
+   {
+    "name": "foreground_plants",
+    "depth": 0.9,
+    "front": true,
+    "code": "ctx.strokeStyle='#1F4E79'; ctx.lineWidth=2.2;\nfor(let i=0;i<14;i++){\n let x=8+rand()*24, y=110+i*24;\n ctx.beginPath(); ctx.moveTo(0,100+i*26); ctx.quadraticCurveTo(x-10,y,x,y); ctx.stroke();\n ctx.fillStyle='#1F4E79';\n ctx.beginPath(); ctx.ellipse(x,y,7,4,rand()*Math.PI,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(212,175,55,0.55)'; ctx.beginPath(); ctx.arc(x-3,y-1,2,0,Math.PI*2); ctx.fill();\n}\nctx.fillStyle='#1F4E79';\nfor(let i=0;i<10;i++){\n let x=362+rand()*20, y=280+i*20;\n ctx.beginPath(); ctx.moveTo(390,270+i*22); ctx.quadraticCurveTo(x+12,y,x,y); ctx.stroke();\n ctx.beginPath(); ctx.ellipse(x,y,6,4,rand()*Math.PI,0,Math.PI*2); ctx.fill();\n}\nctx.fillStyle='#D4AF37'; ctx.fillRect(352,402,34,20);\nctx.fillStyle='#1F4E79';\nfor(let i=0;i<7;i++){ctx.beginPath(); ctx.moveTo(356+i*4,402); ctx.lineTo(354+i*4,382-rand()*12); ctx.stroke(); ctx.beginPath(); ctx.ellipse(354+i*4,380-rand()*12,3,6,0,0,Math.PI*2); ctx.fill();}\nctx.fillStyle='rgba(27,35,64,0.35)'; ctx.fillRect(0,420,32,100);\nctx.fillRect(358,420,32,100);"
+   },
+   {
+    "name": "rain",
+    "depth": 0.7,
+    "animated": true,
+    "code": "ctx.strokeStyle='rgba(244,231,208,0.34)'; ctx.lineWidth=1.2;\nfor(let i=0;i<135;i++){\n let x=-20+rand()*430;\n let speed=150+rand()*130;\n let phase=rand()*520;\n let y=(phase+t*speed)%520;\n ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x-3,y+13); ctx.stroke();\n}\nctx.fillStyle='rgba(217,119,69,0.16)';\nfor(const w of [[42,150],[102,150],[42,220],[102,220]]){\n let p=0.12+0.08*Math.sin(t*2.1+w[0]); ctx.globalAlpha=p; ctx.fillRect(w[0]-8,w[1]-8,52,60); ctx.globalAlpha=1;\n}\nctx.fillStyle='rgba(27,35,64,0.25)'; ctx.fillRect(236,176,54,66);"
+   }
+  ],
+  "ground": [
+   [
+    -30,
+    432
+   ],
+   [
+    -10,
+    428
+   ],
+   [
+    10,
+    434
+   ],
+   [
+    30,
+    429
+   ],
+   [
+    50,
+    433
+   ],
+   [
+    70,
+    427
+   ],
+   [
+    90,
+    432
+   ],
+   [
+    110,
+    428
+   ],
+   [
+    130,
+    434
+   ],
+   [
+    150,
+    429
+   ],
+   [
+    170,
+    433
+   ],
+   [
+    190,
+    427
+   ],
+   [
+    210,
+    432
+   ],
+   [
+    230,
+    428
+   ],
+   [
+    250,
+    434
+   ],
+   [
+    270,
+    429
+   ],
+   [
+    290,
+    433
+   ],
+   [
+    310,
+    427
+   ],
+   [
+    330,
+    432
+   ],
+   [
+    350,
+    428
+   ],
+   [
+    370,
+    434
+   ],
+   [
+    390,
+    429
+   ],
+   [
+    410,
+    433
+   ],
+   [
+    420,
+    428
+   ]
+  ],
+  "anchors": {},
+  "stage": {
+   "duration": 8,
+   "start": {
+    "swallow": {
+     "char": "swallow",
+     "x": 10,
+     "pose": "fly1",
+     "facing": 1,
+     "scale": 0.95,
+     "lift": 170,
+     "z": 20,
+     "opacity": 0,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0
+     },
+     "exiting": true
+    }
+   },
+   "beats": [
+    {
+     "actor": "swallow",
+     "at": 0,
+     "dur": 1.2,
+     "ease": "out",
+     "phrase": "So the Swallow flew over the great city,",
+     "move_to": 70,
+     "lift_to": 170,
+     "arc": 18,
+     "opacity_to": 1,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 9,
+     "bob": 6,
+     "face": {
+      "mouth": "flat",
+      "look": 0.2,
+      "blink": 0
+     },
+     "exiting": false
+    },
+    {
+     "actor": "swallow",
+     "at": 1.2,
+     "dur": 1.5,
+     "ease": "inOut",
+     "phrase": "and saw the rich making merry in their beautiful houses, while the beggars were sitting at the gates.",
+     "move_to": 160,
+     "lift_to": 155,
+     "arc": 10,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 8,
+     "bob": 5,
+     "face": {
+      "mouth": "flat",
+      "look": -0.2,
+      "blink": 0
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 2.7,
+     "dur": 1.6,
+     "ease": "inOut",
+     "phrase": "He flew into dark lanes, and saw the white faces of starving children looking out listlessly at the black streets.",
+     "move_to": 250,
+     "lift_to": 135,
+     "arc": 8,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 8,
+     "bob": 4,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0.1
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 4.3,
+     "dur": 1.6,
+     "ease": "inOut",
+     "phrase": "Under the archway of a bridge two little boys were lying in one another’s arms to try and keep themselves warm.",
+     "move_to": 325,
+     "lift_to": 145,
+     "arc": 12,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 8,
+     "bob": 5,
+     "face": {
+      "mouth": "frown",
+      "look": -0.4,
+      "blink": 0
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 5.9,
+     "dur": 2,
+     "ease": "in",
+     "phrase": "“How hungry we are!” they said. “You must not lie here,” shouted the Watchman, and they wandered out into the rain.",
+     "move_to": 350,
+     "lift_to": 125,
+     "arc": 16,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 9,
+     "bob": 6,
+     "face": {
+      "mouth": "open",
+      "look": 0,
+      "blink": 0
+     },
+     "exiting": false
+    }
+   ]
+  }
+ }
+}

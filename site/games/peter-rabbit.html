@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home Before Dark</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4eadb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  .wrap {
+    width: min(100vw, 75vh);
+    aspect-ratio: 390 / 520;
+    position: relative;
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <canvas id="game" width="390" height="520" aria-label="Home Before Dark game"></canvas>
+</div>
+<script>
+(() => {
+  "use strict";
+
+  const W = 390;
+  const H = 520;
+  const canvas = document.getElementById("game");
+  const ctx = canvas.getContext("2d");
+
+  const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let phase = "title";
+  let sprigs = 0;
+  let caught = false;
+
+  const PETER_SCALE = 1.7;
+  const MCGREGOR_SCALE = 1.5;
+  const peter = { x: W / 2, y: H - 30, vx: 0, vy: 0, r: 9 * PETER_SCALE };
+  const mc = { x: 80, y: 80, vx: 0, vy: 0, r: 12 * MCGREGOR_SCALE, speed: 80, mode: "patrol", patrolIndex: 0, lostTimer: 0, lastSeenX: 80, lastSeenY: 80 };
+
+  const patches = [
+    { x: 95, y: 150, r: 34 },
+    { x: 295, y: 140, r: 30 },
+    { x: 120, y: 300, r: 38 },
+    { x: 280, y: 330, r: 32 },
+    { x: 200, y: 430, r: 30 }
+  ];
+
+  const puddles = [
+    { x: 180, y: 230, r: 24 },
+    { x: 300, y: 400, r: 20 },
+    { x: 80, y: 380, r: 18 }
+  ];
+
+  const sprigItems = patches.slice(0, 3).map((p, i) => ({
+    x: p.x + (i === 1 ? 4 : -3),
+    y: p.y + (i === 2 ? -4 : 3),
+    taken: false
+  }));
+
+  const patrols = [
+    { x: 70, y: 70 },
+    { x: 320, y: 70 },
+    { x: 320, y: 450 },
+    { x: 70, y: 450 }
+  ];
+
+  const cabbageSpots = [];
+  for (const p of patches) {
+    for (let i = 0; i < 12; i++) {
+      const a = (i / 12) * Math.PI * 2 + p.x * 0.07;
+      const rr = p.r * (0.38 + (i % 4) * 0.16);
+      cabbageSpots.push({
+        x: p.x + Math.cos(a) * rr,
+        y: p.y + Math.sin(a) * rr,
+        r: 5 + (i % 3) * 2
+      });
+    }
+  }
+
+  const keys = {};
+  let pointerActive = false;
+  const pointer = { x: W / 2, y: H / 2 };
+
+  let shakeTime = 0;
+  let shakeX = 0;
+  let shakeY = 0;
+
+  let lastTime = performance.now();
+
+  const catchDistance = peter.r + mc.r - 1;
+
+  function finite(n) { return Number.isFinite(n); }
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function dist(ax, ay, bx, by) {
+    const dx = ax - bx;
+    const dy = ay - by;
+    return Math.hypot(dx, dy);
+  }
+
+  function inPuddle(p) {
+    for (const q of puddles) {
+      if (dist(p.x, p.y, q.x, q.y) <= q.r) return true;
+    }
+    return false;
+  }
+
+  function inCabbagePatch(p) {
+    for (const q of patches) {
+      if (dist(p.x, p.y, q.x, q.y) <= q.r) return true;
+    }
+    return false;
+  }
+
+  function resetGame() {
+    phase = "playing";
+    sprigs = 0;
+    caught = false;
+    peter.x = W / 2;
+    peter.y = H - 30;
+    peter.vx = 0;
+    peter.vy = 0;
+    mc.x = 80;
+    mc.y = 80;
+    mc.vx = 0;
+    mc.vy = 0;
+    mc.speed = 80;
+    mc.mode = "patrol";
+    mc.patrolIndex = 0;
+    mc.lostTimer = 0;
+    mc.lastSeenX = 80;
+    mc.lastSeenY = 80;
+    for (const s of sprigItems) s.taken = false;
+    shakeTime = 0;
+    shakeX = 0;
+    shakeY = 0;
+  }
+
+  function startGame() {
+    resetGame();
+  }
+
+  function triggerShake(dur) {
+    if (reducedMotion) return;
+    shakeTime = Math.max(shakeTime, dur);
+  }
+
+  function updatePointerFromEvent(e) {
+    const r = canvas.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    const x = (e.clientX - r.left) * (W / r.width);
+    const y = (e.clientY - r.top) * (H / r.height);
+    pointer.x = clamp(finite(x) ? x : pointer.x, 0, W);
+    pointer.y = clamp(finite(y) ? y : pointer.y, 0, H);
+  }
+
+  canvas.addEventListener("pointerdown", (e) => {
+    try {
+      updatePointerFromEvent(e);
+      if (phase === "title" || phase === "won" || phase === "lost") {
+        const b = buttonRect;
+        if (b && pointer.x >= b.x && pointer.x <= b.x + b.w && pointer.y >= b.y && pointer.y <= b.y + b.h) {
+          startGame();
+          pointerActive = false;
+          return;
+        }
+      }
+      pointerActive = true;
+      if (canvas.setPointerCapture) canvas.setPointerCapture(e.pointerId);
+    } catch (err) {
+      // Never throw from input handling.
+    }
+  }, { passive: false });
+
+  canvas.addEventListener("pointermove", (e) => {
+    try {
+      if (pointerActive) updatePointerFromEvent(e);
+    } catch (err) {}
+  }, { passive: false });
+
+  function endPointer() { pointerActive = false; }
+  canvas.addEventListener("pointerup", endPointer);
+  canvas.addEventListener("pointercancel", endPointer);
+  canvas.addEventListener("pointerleave", endPointer);
+
+  window.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    if (["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"].includes(k)) {
+      keys[k] = true;
+      e.preventDefault();
+    }
+    if (k === "enter" && (phase === "title" || phase === "won" || phase === "lost")) {
+      startGame();
+    }
+  });
+  window.addEventListener("keyup", (e) => {
+    keys[e.key.toLowerCase()] = false;
+  });
+
+  function moveTowards(ent, tx, ty, spd, dt) {
+    const dx = tx - ent.x;
+    const dy = ty - ent.y;
+    const d = Math.hypot(dx, dy);
+    if (d > 0.001) {
+      const step = spd * dt;
+      if (step >= d) {
+        ent.x = tx;
+        ent.y = ty;
+      } else {
+        ent.x += (dx / d) * step;
+        ent.y += (dy / d) * step;
+      }
+    }
+    ent.x = clamp(ent.x, ent.r, W - ent.r);
+    ent.y = clamp(ent.y, ent.r, H - ent.r);
+  }
+
+  function update(dt) {
+    if (!finite(dt) || dt < 0) dt = 0;
+    dt = clamp(dt, 0, 0.05);
+
+    if (phase !== "playing") {
+      if (shakeTime > 0) {
+        shakeTime = Math.max(0, shakeTime - dt);
+        if (reducedMotion) {
+          shakeX = 0; shakeY = 0;
+        } else {
+          shakeX = (Math.random() - 0.5) * 10 * shakeTime;
+          shakeY = (Math.random() - 0.5) * 10 * shakeTime;
+        }
+      } else {
+        shakeX = 0; shakeY = 0;
+      }
+      return;
+    }
+
+    let ix = 0, iy = 0;
+    if (keys.arrowleft || keys.a) ix -= 1;
+    if (keys.arrowright || keys.d) ix += 1;
+    if (keys.arrowup || keys.w) iy -= 1;
+    if (keys.arrowdown || keys.s) iy += 1;
+
+    if (pointerActive) {
+      const dx = pointer.x - peter.x;
+      const dy = pointer.y - peter.y;
+      const d = Math.hypot(dx, dy);
+      if (d > 1) {
+        ix += dx / d;
+        iy += dy / d;
+      }
+    }
+
+    const mag = Math.hypot(ix, iy);
+    if (mag > 0) {
+      ix /= mag;
+      iy /= mag;
+    }
+
+    const slowed = inPuddle(peter);
+    const pSpeed = slowed ? 135 * 0.55 : 135;
+
+    if (mag > 0) {
+      peter.vx = ix * pSpeed;
+      peter.vy = iy * pSpeed;
+    } else {
+      peter.vx *= 0.82;
+      peter.vy *= 0.82;
+      if (Math.abs(peter.vx) < 0.5) peter.vx = 0;
+      if (Math.abs(peter.vy) < 0.5) peter.vy = 0;
+    }
+
+    peter.x += peter.vx * dt;
+    peter.y += peter.vy * dt;
+    peter.x = clamp(peter.x, peter.r, W - peter.r);
+    peter.y = clamp(peter.y, peter.r, H - peter.r);
+
+    for (const s of sprigItems) {
+      if (!s.taken && dist(peter.x, peter.y, s.x, s.y) <= 20) {
+        s.taken = true;
+        sprigs = Math.min(3, sprigs + 1);
+        mc.speed = Math.min(115, 80 + sprigs * 8);
+        triggerShake(0.18);
+      }
+    }
+
+    if (sprigs >= 3 && peter.x <= 46 && peter.y <= 60) {
+      phase = "won";
+      caught = false;
+      triggerShake(0.12);
+      return;
+    }
+
+    const visible = !inCabbagePatch(peter);
+    if (visible) {
+      mc.lostTimer = 0;
+      mc.mode = "chase";
+      mc.lastSeenX = peter.x;
+      mc.lastSeenY = peter.y;
+    } else {
+      if (mc.mode === "chase") {
+        mc.mode = "search";
+        mc.lostTimer = 2;
+      } else if (mc.mode === "search") {
+        mc.lostTimer -= dt;
+        if (mc.lostTimer <= 0) {
+          mc.mode = "patrol";
+          mc.lostTimer = 0;
+        }
+      }
+    }
+
+    let tx = mc.x, ty = mc.y, spd = 60;
+    if (mc.mode === "chase") {
+      tx = peter.x; ty = peter.y; spd = mc.speed;
+    } else if (mc.mode === "search") {
+      tx = mc.lastSeenX; ty = mc.lastSeenY; spd = mc.speed * 0.65;
+      if (dist(mc.x, mc.y, tx, ty) < 8) spd = 0;
+    } else {
+      const wp = patrols[mc.patrolIndex];
+      tx = wp.x; ty = wp.y; spd = 60;
+      if (dist(mc.x, mc.y, tx, ty) < 14) {
+        mc.patrolIndex = (mc.patrolIndex + 1) % patrols.length;
+      }
+    }
+
+    moveTowards(mc, tx, ty, spd, dt);
+
+    if (visible && dist(mc.x, mc.y, peter.x, peter.y) <= catchDistance) {
+      phase = "lost";
+      caught = true;
+      triggerShake(0.45);
+    }
+
+    if (shakeTime > 0) {
+      shakeTime = Math.max(0, shakeTime - dt);
+      if (reducedMotion) {
+        shakeX = 0; shakeY = 0;
+      } else {
+        shakeX = (Math.random() - 0.5) * 10 * shakeTime;
+        shakeY = (Math.random() - 0.5) * 10 * shakeTime;
+      }
+    } else {
+      shakeX = 0; shakeY = 0;
+    }
+  }
+
+  let buttonRect = null;
+
+  function drawShadow() {
+    ctx.shadowColor = "rgba(45, 30, 15, 0.18)";
+    ctx.shadowBlur = 7;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 3;
+  }
+
+  function clearShadow() {
+    ctx.shadowColor = "transparent";
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+  }
+
+  function fillRoundRect(x, y, w, h, r, color) {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function wrapText(text, maxWidth) {
+    const words = String(text).split(/\s+/).filter(Boolean);
+    const lines = [];
+    let line = "";
+    for (const word of words) {
+      const test = line ? line + " " + word : word;
+      if (ctx.measureText(test).width <= maxWidth) {
+        line = test;
+      } else {
+        if (line) lines.push(line);
+        line = word;
+      }
+    }
+    if (line) lines.push(line);
+    return lines.length ? lines : [""];
+  }
+
+  function drawWrapped(text, centerX, centerY, maxWidth, lineHeight, font, color) {
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    const lines = wrapText(text, maxWidth);
+    const blockHeight = lines.length * lineHeight;
+    let y = centerY - blockHeight / 2;
+    for (const line of lines) {
+      ctx.fillText(line, centerX, y);
+      y += lineHeight;
+    }
+  }
+
+  function draw() {
+    try {
+      ctx.save();
+      if (!reducedMotion) ctx.translate(shakeX, shakeY);
+
+      ctx.fillStyle = "#F4E7C5";
+      ctx.fillRect(0, 0, W, H);
+
+      drawShadow();
+
+      for (const p of puddles) {
+        ctx.fillStyle = "#7B5A3A";
+        ctx.beginPath();
+        ctx.ellipse(p.x, p.y, p.r, p.r * 0.72, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#3B5F8A";
+        ctx.globalAlpha = 0.25;
+        ctx.beginPath();
+        ctx.ellipse(p.x - 4, p.y - 3, p.r * 0.45, p.r * 0.28, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      ctx.fillStyle = "#7B5A3A";
+      fillRoundRect(225, 245, 95, 62, 6, "#7B5A3A");
+      ctx.fillStyle = "#F2C7A8";
+      fillRoundRect(232, 252, 81, 48, 4, "#F2C7A8");
+      ctx.fillStyle = "#4F6F3A";
+      ctx.fillRect(236, 258, 14, 36);
+      ctx.fillRect(258, 258, 14, 36);
+      ctx.fillRect(280, 258, 14, 36);
+      ctx.fillRect(302, 258, 6, 36);
+
+      ctx.fillStyle = "#3B5F8A";
+      ctx.beginPath();
+      ctx.ellipse(52, 275, 24, 18, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#3B5F8A";
+      fillRoundRect(68, 266, 30, 12, 4, "#3B5F8A");
+      ctx.fillStyle = "#D97A3A";
+      ctx.beginPath();
+      ctx.arc(40, 268, 7, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#7B5A3A";
+      fillRoundRect(318, 220, 12, 95, 3, "#7B5A3A");
+      ctx.fillStyle = "#E8A86A";
+      ctx.beginPath();
+      ctx.arc(324, 205, 15, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#D97A3A";
+      fillRoundRect(300, 236, 48, 14, 4, "#D97A3A");
+      ctx.fillStyle = "#F2C7A8";
+      ctx.beginPath();
+      ctx.arc(318, 200, 3, 0, Math.PI * 2);
+      ctx.arc(330, 200, 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#7B5A3A";
+      fillRoundRect(0, 0, 16, 72, 4, "#7B5A3A");
+      fillRoundRect(46, 0, 16, 72, 4, "#7B5A3A");
+      fillRoundRect(0, 0, 62, 16, 4, "#7B5A3A");
+      ctx.fillStyle = "#F2C7A8";
+      ctx.fillRect(16, 16, 30, 56);
+
+      for (const c of cabbageSpots) {
+        ctx.fillStyle = "#8FAE6B";
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#4F6F3A";
+        ctx.beginPath();
+        ctx.arc(c.x - 1, c.y - 1, c.r * 0.55, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      for (const s of sprigItems) {
+        if (s.taken) continue;
+        ctx.fillStyle = "#4F6F3A";
+        ctx.fillRect(s.x - 1, s.y - 8, 2, 16);
+        ctx.fillStyle = "#8FAE6B";
+        ctx.beginPath();
+        ctx.arc(s.x - 6, s.y - 2, 5, 0, Math.PI * 2);
+        ctx.arc(s.x + 5, s.y - 5, 4, 0, Math.PI * 2);
+        ctx.arc(s.x + 2, s.y + 4, 4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Peter, scaled up.
+      ctx.fillStyle = "#E8A86A";
+      ctx.beginPath();
+      ctx.ellipse(peter.x, peter.y, 10 * PETER_SCALE, 9 * PETER_SCALE, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#3B5F8A";
+      ctx.beginPath();
+      ctx.ellipse(peter.x, peter.y + 2 * PETER_SCALE, 7 * PETER_SCALE, 6 * PETER_SCALE, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#E8A86A";
+      ctx.beginPath();
+      ctx.ellipse(peter.x - 5 * PETER_SCALE, peter.y - 8 * PETER_SCALE, 3 * PETER_SCALE, 6 * PETER_SCALE, -0.4, 0, Math.PI * 2);
+      ctx.ellipse(peter.x + 5 * PETER_SCALE, peter.y - 8 * PETER_SCALE, 3 * PETER_SCALE, 6 * PETER_SCALE, 0.4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#D97A3A";
+      ctx.beginPath();
+      ctx.arc(peter.x - 2 * PETER_SCALE, peter.y + 1 * PETER_SCALE, 1.5 * PETER_SCALE, 0, Math.PI * 2);
+      ctx.arc(peter.x + 2 * PETER_SCALE, peter.y + 1 * PETER_SCALE, 1.5 * PETER_SCALE, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#F4E7C5";
+      ctx.beginPath();
+      ctx.arc(peter.x, peter.y + 7 * PETER_SCALE, 3 * PETER_SCALE, 0, Math.PI * 2);
+      ctx.fill();
+
+      // McGregor, scaled up.
+      ctx.fillStyle = "#7B5A3A";
+      ctx.beginPath();
+      ctx.ellipse(mc.x, mc.y, 13 * MCGREGOR_SCALE, 12 * MCGREGOR_SCALE, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#D97A3A";
+      ctx.beginPath();
+      ctx.ellipse(mc.x, mc.y + 1 * MCGREGOR_SCALE, 9 * MCGREGOR_SCALE, 8 * MCGREGOR_SCALE, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#E8A86A";
+      ctx.beginPath();
+      ctx.arc(mc.x, mc.y - 3 * MCGREGOR_SCALE, 11 * MCGREGOR_SCALE, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#D97A3A";
+      ctx.beginPath();
+      ctx.ellipse(mc.x, mc.y + 1 * MCGREGOR_SCALE, 13 * MCGREGOR_SCALE, 4 * MCGREGOR_SCALE, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#7B5A3A";
+      ctx.save();
+      ctx.translate(mc.x, mc.y);
+      ctx.rotate(0.6);
+      ctx.fillRect(10 * MCGREGOR_SCALE, -2 * MCGREGOR_SCALE, 26 * MCGREGOR_SCALE, 4 * MCGREGOR_SCALE);
+      ctx.fillStyle = "#D96B5A";
+      for (let i = 0; i < 4; i++) ctx.fillRect(34 * MCGREGOR_SCALE, -8 * MCGREGOR_SCALE + i * 4 * MCGREGOR_SCALE, 3 * MCGREGOR_SCALE, 3 * MCGREGOR_SCALE);
+      ctx.restore();
+
+      clearShadow();
+
+      ctx.fillStyle = "#3B5F8A";
+      ctx.font = "bold 18px Georgia, serif";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "top";
+      ctx.fillText("Parsley: " + sprigs + " / 3", 12, 12);
+
+      buttonRect = null;
+      if (phase === "title") {
+        ctx.fillStyle = "rgba(244, 231, 197, 0.86)";
+        ctx.fillRect(0, 0, W, H);
+
+        drawWrapped("Home Before Dark", W / 2, 100, 340, 44, "bold 40px Georgia, serif", "#3B5F8A");
+        drawWrapped("A Peter Rabbit reward game", W / 2, 162, 340, 26, "20px Georgia, serif", "#7B5A3A");
+        drawWrapped("Grab 3 sprigs of parsley and reach the gate. Hide in the cabbages when Mr. McGregor chases.", W / 2, 238, 340, 24, "17px Georgia, serif", "#7B5A3A");
+
+        buttonRect = { x: W / 2 - 85, y: 330, w: 170, h: 58 };
+        drawShadow();
+        fillRoundRect(buttonRect.x, buttonRect.y, buttonRect.w, buttonRect.h, 14, "#3B5F8A");
+        clearShadow();
+        ctx.fillStyle = "#F4E7C5";
+        ctx.font = "bold 26px Georgia, serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("Start", W / 2, buttonRect.y + buttonRect.h / 2);
+      } else if (phase === "won") {
+        ctx.fillStyle = "rgba(244, 231, 197, 0.88)";
+        ctx.fillRect(0, 0, W, H);
+        drawWrapped("Home before dark", W / 2, 120, 340, 40, "bold 34px Georgia, serif", "#3B5F8A");
+        drawWrapped("Peter gets home safely and is put to bed with a cup of camomile tea.", W / 2, 205, 340, 28, "20px Georgia, serif", "#4F6F3A");
+
+        buttonRect = { x: W / 2 - 95, y: 320, w: 190, h: 58 };
+        drawShadow();
+        fillRoundRect(buttonRect.x, buttonRect.y, buttonRect.w, buttonRect.h, 14, "#4F6F3A");
+        clearShadow();
+        ctx.fillStyle = "#F4E7C5";
+        ctx.font = "bold 24px Georgia, serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("Play again", W / 2, buttonRect.y + buttonRect.h / 2);
+      } else if (phase === "lost") {
+        ctx.fillStyle = "rgba(244, 231, 197, 0.88)";
+        ctx.fillRect(0, 0, W, H);
+        drawWrapped("Peter squeezes under the gate again. Try once more!", W / 2, 195, 340, 32, "bold 24px Georgia, serif", "#7B5A3A");
+
+        buttonRect = { x: W / 2 - 95, y: 315, w: 190, h: 58 };
+        drawShadow();
+        fillRoundRect(buttonRect.x, buttonRect.y, buttonRect.w, buttonRect.h, 14, "#D97A3A");
+        clearShadow();
+        ctx.fillStyle = "#F4E7C5";
+        ctx.font = "bold 24px Georgia, serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("Try again", W / 2, buttonRect.y + buttonRect.h / 2);
+      }
+
+      ctx.restore();
+    } catch (err) {
+      // Drawing must never throw.
+    }
+  }
+
+  window.livingGame = {
+    state() {
+      return { phase, sprigs, caught };
+    },
+    start() {
+      startGame();
+    }
+  };
+
+  function frame(now) {
+    try {
+      const raw = (now - lastTime) / 1000;
+      lastTime = now;
+      const dt = finite(raw) ? clamp(raw, 0, 0.05) : 0;
+      update(dt);
+      draw();
+    } catch (err) {}
+    requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

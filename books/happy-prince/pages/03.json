@@ -1,0 +1,697 @@
+{
+ "page": 3,
+ "text": "All day long he flew, and at night-time he arrived at the city. “Where shall I put up?” he said; “I hope the town has made preparations.” Then he saw the statue on the tall column. “I will put up there,” he cried; “it is a fine position, with plenty of fresh air.” So he alighted just between the feet of the Happy Prince. “I have a golden bedroom,” he said softly to himself as he looked round, and he prepared to go to sleep; but just as he was putting his head under his wing a large drop of water fell on him. “What a curious thing!” he cried; “there is not a single cloud in the sky, the stars are quite clear and bright, and yet it is raining. The climate in the north of Europe is really dreadful. The Reed used to like the rain, but that was merely her selfishness.” Then another drop fell. “What is the use of a statue if it cannot keep the rain off?” he said; “I must look for a good chimney-pot,” and he determined to fly away. But before he had opened his wings, a third drop fell, and he looked up, and saw—Ah! what did he see?",
+ "feeling": "Surprise",
+ "title": "The Happy Prince, page 3",
+ "director_note": "I kept the swallow perched to the left of the weeping prince so his face stays readable, with his gaze lifted toward the statue. The falling tear lands on his back at the final moment, turning the curious rain into the prince's visible sorrow.",
+ "gate": {
+  "passed": true,
+  "issues": []
+ },
+ "turns": 8,
+ "usage": {
+  "prompt": 116157,
+  "cached": 82240,
+  "completion": 8357,
+  "reasoning": 5967,
+  "seconds": 61.55657196044922,
+  "calls": 8,
+  "route": "reflection"
+ },
+ "scene": {
+  "chars": {
+   "happy_prince": {
+    "id": "happy_prince",
+    "poses": {
+     "give": {
+      "armR": -55,
+      "forearmR": -30,
+      "handR": 10,
+      "_y": -6
+     },
+     "gaze": {
+      "head": -16,
+      "_y": -9
+     },
+     "stand": {
+      "_y": -9
+     },
+     "weep": {
+      "armL": 8,
+      "armR": -8,
+      "head": 20,
+      "_y": -8
+     },
+     "rest": {
+      "_y": -9
+     }
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.2)'; ctx.beginPath(); ctx.ellipse(0,4,26,7,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -130
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let hi=s===4?'#B6BCC6':'#F2D580'; let sh=s===4?'#59606B':'#A9812C'; ctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-34,-42); ctx.bezierCurveTo(-40,0,-36,40,-24,46); ctx.lineTo(24,46); ctx.bezierCurveTo(36,40,40,0,34,-42); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(10,-36); ctx.bezierCurveTo(18,-4,16,30,8,46); ctx.lineTo(24,46); ctx.bezierCurveTo(36,40,40,0,34,-42); ctx.closePath(); ctx.fill();\nctx.fillStyle=hi; ctx.beginPath(); ctx.moveTo(-30,-38); ctx.bezierCurveTo(-26,-12,-24,18,-18,40); ctx.lineTo(-8,40); ctx.bezierCurveTo(-14,16,-16,-12,-20,-38); ctx.closePath(); ctx.fill();\nctx.fillStyle=s===4?'#6b7280':'#8B6A1F'; ctx.fillRect(-24,34,48,14); ctx.fillStyle=sh; ctx.fillRect(-24,44,48,4);\nctx.fillStyle=s===4?'#9aa0a8':'#F2D580';\nfor(let i=0;i<4;i++){ctx.beginPath();ctx.arc(0,-18+i*13,3.4,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,255,255,0.35)';ctx.beginPath();ctx.arc(-1,-19+i*13,1.2,0,Math.PI*2);ctx.fill();ctx.fillStyle=s===4?'#9aa0a8':'#F2D580';}\nctx.fillStyle=s===4?'#9aa0a8':'#F4E7D0'; ctx.beginPath(); ctx.moveTo(-18,-42); ctx.lineTo(0,-28); ctx.lineTo(18,-42); ctx.fill();\nctx.fillStyle=s===4?'#7D8491':'#F2D580'; ctx.fillRect(-7,-42,14,10);"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       0,
+       -45
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "let tears=!!f.tears; ctx.save(); ctx.rotate(tears?0.12:0); ctx.fillStyle='#D9B24C'; ctx.beginPath(); ctx.arc(0,0,25,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#A9812C'; ctx.beginPath(); ctx.arc(8,6,16,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2D580'; ctx.beginPath(); ctx.arc(-8,-6,12,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8B6A1F'; ctx.beginPath(); ctx.ellipse(-8,-10,5,1.6,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(8,-10,5,1.6,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#1F4E79'; ctx.beginPath(); ctx.arc(-8,-2,5.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(8,-2,5.5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B7DBFF'; ctx.beginPath(); ctx.arc(-9,-3,1.8,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(7,-3,1.8,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8B6A1F'; ctx.fillRect(-1,3,2,7); ctx.fillStyle='#8B6A1F'; ctx.beginPath(); ctx.ellipse(0,11,4,1.2,0,0,Math.PI*2); ctx.fill(); if(tears){ ctx.fillStyle='#DCEFFF'; ctx.beginPath(); ctx.ellipse(-9,12,2.2,4.5,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(9,13,2.2,5,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B7DBFF'; ctx.beginPath(); ctx.ellipse(-9,18,1.6,3.5,0,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='#A9812C'; ctx.beginPath(); ctx.ellipse(0,-20,15,9,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#D9B24C'; ctx.beginPath(); ctx.ellipse(-6,-22,5,4,-0.3,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(0,-23,4,3,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(6,-22,5,4,0.3,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2D580'; ctx.beginPath(); ctx.ellipse(-8,-24,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(0,-25,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(8,-24,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.restore();"
+     },
+     {
+      "name": "crown",
+      "parent": "head",
+      "pivot": [
+       0,
+       -24
+      ],
+      "rest": 0,
+      "z": 5,
+      "code": ""
+     },
+     {
+      "name": "armL",
+      "parent": "body",
+      "pivot": [
+       -26,
+       -20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-8,18,-7,38,-4,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(3,18,3,38,2,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmL",
+      "parent": "armL",
+      "pivot": [
+       0,
+       48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-5,0); ctx.bezierCurveTo(-6,16,-5,34,-3,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,16,2,34,1,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handL",
+      "parent": "forearmL",
+      "pivot": [
+       0,
+       42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(0,6,7,9,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(2,8,3,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armR",
+      "parent": "body",
+      "pivot": [
+       26,
+       -20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-8,18,-7,38,-4,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(3,18,3,38,2,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmR",
+      "parent": "armR",
+      "pivot": [
+       0,
+       48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-5,0); ctx.bezierCurveTo(-6,16,-5,34,-3,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,16,2,34,1,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handR",
+      "parent": "forearmR",
+      "pivot": [
+       0,
+       42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(0,6,7,9,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(2,8,3,5,0,0,Math.PI*2); ctx.fill();\nif(s!==4){\n ctx.fillStyle='#C9C9C9'; ctx.fillRect(-2,8,4,62); ctx.fillStyle='#B0B0B0'; ctx.fillRect(0,8,2,62);\n ctx.fillStyle='#8B6A1F'; ctx.fillRect(-8,6,16,6); ctx.fillStyle='#A9812C'; ctx.fillRect(-8,10,16,2);\n if(s===0){ ctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.arc(0,9,5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#D97745'; ctx.beginPath(); ctx.arc(-1,7,1.6,0,Math.PI*2); ctx.fill(); }\n else { ctx.fillStyle='#5a5a5a'; ctx.beginPath(); ctx.arc(0,9,4.5,0,Math.PI*2); ctx.fill(); }\n} else {\n ctx.fillStyle='#7D8491'; ctx.beginPath(); ctx.moveTo(0,10); ctx.bezierCurveTo(-10,0,-18,8,-10,18); ctx.bezierCurveTo(-4,24,0,30,0,30); ctx.bezierCurveTo(0,30,4,24,10,18); ctx.bezierCurveTo(18,8,10,0,0,10); ctx.closePath(); ctx.fill();\n}"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -16,
+       30
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-7,0); ctx.bezierCurveTo(-8,20,-7,42,-4,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,20,2,42,1,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-7,18,-6,40,-3,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,18,2,40,1,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footL",
+      "parent": "shinL",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(4,2,12,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(7,3,4,2.5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       16,
+       30
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-7,0); ctx.bezierCurveTo(-8,20,-7,42,-4,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,20,2,42,1,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-7,18,-6,40,-3,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,18,2,40,1,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footR",
+      "parent": "shinR",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(4,2,12,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(7,3,4,2.5,0,0,Math.PI*2); ctx.fill();"
+     }
+    ]
+   },
+   "swallow": {
+    "id": "swallow",
+    "poses": {
+     "dead": {
+      "_y": 12,
+      "body": 180,
+      "wingL": -40,
+      "wingtipL": -10,
+      "wingR": 40,
+      "wingtipR": 10,
+      "legL": 180,
+      "legR": 180,
+      "tail": 0
+     },
+     "droop": {
+      "head": 28,
+      "wingL": 50,
+      "wingtipL": 40,
+      "wingR": -50,
+      "wingtipR": -40,
+      "tail": 20
+     },
+     "fly1": {
+      "wingL": -35,
+      "wingtipL": -10,
+      "wingR": -35,
+      "wingtipR": -10
+     },
+     "fly2": {
+      "wingL": 25,
+      "wingtipL": 10,
+      "wingR": 25,
+      "wingtipR": 10
+     },
+     "peck": {
+      "head": 20
+     },
+     "perch": {
+      "wingL": 65,
+      "wingtipL": 20,
+      "wingR": -65,
+      "wingtipR": -20
+     },
+     "shiver": {
+      "wingL": 70,
+      "wingtipL": 25,
+      "wingR": -70,
+      "wingtipR": -25
+     },
+     "sleep": {
+      "head": 25,
+      "wingL": 75,
+      "wingtipL": 25,
+      "wingR": -75,
+      "wingtipR": -25
+     },
+     "rest": {}
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.18)'; ctx.beginPath(); ctx.ellipse(0,3,18,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -30
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.ellipse(0,0,15,12,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.ellipse(-3,-2,9,7,0,0,Math.PI*2); ctx.fill();\n// rust throat\nctx.fillStyle='#D97745'; ctx.beginPath(); ctx.ellipse(9,-2,8,7,-0.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.ellipse(11,-1,4,3,-0.2,0,Math.PI*2); ctx.fill();\n// belly\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.ellipse(2,4,9,6,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       18,
+       -10
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.arc(0,0,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.arc(-2,-2,5,0,Math.PI*2); ctx.fill();\n// eye\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(3,-2,3.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#1a1a1a'; ctx.beginPath(); ctx.arc(4,-2,1.8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(3.4,-2.8,0.7,0,Math.PI*2); ctx.fill();\n// cheek\nctx.fillStyle='rgba(217,119,69,0.25)'; ctx.beginPath(); ctx.arc(4,2,3,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "beak",
+      "parent": "head",
+      "pivot": [
+       8,
+       0
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(10,0); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a2a2a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(9,0.5); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nlet c=f.carry;\nif(c==='ruby'||c==='sapphire'){\n let col=c==='ruby'?'#A62C2C':'#1F4E79';\n ctx.fillStyle=col; ctx.beginPath(); ctx.arc(5,-1,4,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(255,255,255,0.45)'; ctx.beginPath(); ctx.arc(4,-2,1.3,0,Math.PI*2); ctx.fill();\n}"
+     },
+     {
+      "name": "wingL",
+      "parent": "body",
+      "pivot": [
+       -4,
+       -2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(-30,-8); ctx.lineTo(-26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-2); ctx.lineTo(-24,-4); ctx.lineTo(-22,8); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipL",
+      "parent": "wingL",
+      "pivot": [
+       -26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(-18,-6); ctx.lineTo(-16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-1,-1); ctx.lineTo(-14,-3); ctx.lineTo(-13,5); ctx.lineTo(-1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingR",
+      "parent": "body",
+      "pivot": [
+       -4,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(30,-8); ctx.lineTo(26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(2,-2); ctx.lineTo(24,-4); ctx.lineTo(22,8); ctx.lineTo(2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipR",
+      "parent": "wingR",
+      "pivot": [
+       26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(18,-6); ctx.lineTo(16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(1,-1); ctx.lineTo(14,-3); ctx.lineTo(13,5); ctx.lineTo(1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       -12,
+       6
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-4); ctx.lineTo(-18,-10); ctx.lineTo(-22,0); ctx.lineTo(-12,2); ctx.lineTo(-22,8); ctx.lineTo(-16,12); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-3); ctx.lineTo(-14,-7); ctx.lineTo(-16,-1); ctx.lineTo(-10,1); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -6,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       4,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     }
+    ]
+   }
+  },
+  "layers": [
+   {
+    "name": "sky_deep",
+    "depth": 0,
+    "code": "const g=ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,'#2A1738'); g.addColorStop(0.45,'#1F2B4A'); g.addColorStop(1,'#1B2340'); ctx.fillStyle=g; ctx.fillRect(-30,0,450,H); const g2=ctx.createRadialGradient(195,430,10,195,430,260); g2.addColorStop(0,'rgba(212,175,55,0.16)'); g2.addColorStop(1,'rgba(212,175,55,0)'); ctx.fillStyle=g2; ctx.fillRect(-30,0,450,H); for(let i=0;i<90;i++){ctx.fillStyle='rgba(244,231,208,'+(0.025+rand()*0.05)+')'; ctx.fillRect(-30+rand()*450,rand()*H,1+rand()*2,1+rand()*3);} for(let i=0;i<24;i++){const y=280+rand()*200; ctx.fillStyle='rgba(212,175,55,'+(0.015+rand()*0.03)+')'; ctx.fillRect(-30,y,450,1+rand()*3);} const g3=ctx.createRadialGradient(300,95,20,300,95,150); g3.addColorStop(0,'rgba(244,231,208,0.10)'); g3.addColorStop(1,'rgba(244,231,208,0)'); ctx.fillStyle=g3; ctx.fillRect(-30,0,450,H);"
+   },
+   {
+    "name": "moon_stars",
+    "depth": 0.1,
+    "code": "const glow=ctx.createRadialGradient(300,95,10,300,95,110); glow.addColorStop(0,'rgba(244,231,208,0.28)'); glow.addColorStop(1,'rgba(244,231,208,0)'); ctx.fillStyle=glow; ctx.fillRect(-30,0,450,H); ctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(300,95,34,0,Math.PI*2); ctx.fill(); ctx.fillStyle='rgba(212,175,55,0.15)'; ctx.beginPath(); ctx.arc(300,95,44,0,Math.PI*2); ctx.fill(); for(let i=0;i<5;i++){const a=rand()*Math.PI*2; const r=8+rand()*18; ctx.fillStyle='rgba(212,175,55,0.18)'; ctx.beginPath(); ctx.arc(300+Math.cos(a)*r,95+Math.sin(a)*r,1.5+rand()*2,0,Math.PI*2); ctx.fill();} for(let i=0;i<170;i++){const x=-20+rand()*440; const y=rand()*300; const s=0.7+rand()*1.9; ctx.fillStyle='rgba(244,231,208,'+(0.35+rand()*0.55)+')'; ctx.beginPath(); ctx.moveTo(x,y-s*2.2); ctx.lineTo(x+s,y); ctx.lineTo(x,y+s*2.2); ctx.lineTo(x-s,y); ctx.closePath(); ctx.fill();} for(let i=0;i<6;i++){const cx=-20+rand()*440; const cy=40+rand()*150; const cr=18+rand()*30; ctx.fillStyle='rgba(244,231,208,0.08)'; for(let j=0;j<3;j++){ctx.beginPath(); ctx.ellipse(cx+(j-1)*cr*0.7,cy,cr*(0.9+j*0.1),cr*0.35,0,0,Math.PI*2); ctx.fill();}}"
+   },
+   {
+    "name": "city_far",
+    "depth": 0.25,
+    "code": "let x=-30; while(x<420){const w=20+rand()*38; const h=40+rand()*70; const y=520-h; ctx.fillStyle=rand()<0.5?'#1F2B40':'#241B33'; ctx.fillRect(x,y,w,h); ctx.fillStyle='#2A1738'; ctx.beginPath(); ctx.moveTo(x-2,y); ctx.lineTo(x+w/2,y-8-rand()*10); ctx.lineTo(x+w+2,y); ctx.closePath(); ctx.fill(); const cols=Math.max(1,Math.floor((w-6)/9)); const rows=Math.max(1,Math.floor((h-8)/11)); for(let c=0;c<cols;c++){for(let r=0;r<rows;r++){if(rand()<0.62){ctx.fillStyle='rgba(212,175,55,'+(0.55+rand()*0.35)+')'; ctx.fillRect(x+4+c*9,y+6+r*11,4,5);}}} x+=w+2+rand()*4;} ctx.fillStyle='#1F2B40'; ctx.beginPath(); ctx.arc(195,468,26,Math.PI,Math.PI*2); ctx.fill(); ctx.fillStyle='rgba(212,175,55,0.7)'; ctx.fillRect(186,452,5,8); ctx.fillRect(196,448,5,12); ctx.fillRect(206,454,5,7);"
+   },
+   {
+    "name": "column_shaft",
+    "depth": 0.45,
+    "code": "ctx.fillStyle='#6B7280'; ctx.fillRect(135,358,120,162); for(let i=0;i<12;i++){const xx=140+i*10; ctx.fillStyle=i%2?'#7D8491':'#5F6673'; ctx.fillRect(xx,358,4,162);} ctx.fillStyle='#5F6673'; ctx.fillRect(105,500,180,20); ctx.fillStyle='#8A909C'; ctx.fillRect(125,346,140,12); ctx.fillStyle='rgba(27,35,64,0.25)'; for(let i=0;i<6;i++){ctx.fillRect(135+i*20,358,1,162);}"
+   },
+   {
+    "name": "column_top",
+    "depth": 0.55,
+    "code": "ctx.fillStyle='#8A909C'; ctx.fillRect(55,346,280,24); ctx.fillStyle='rgba(27,35,64,0.35)'; ctx.fillRect(55,368,280,6); for(let i=0;i<14;i++){const px=65+i*19; ctx.fillStyle=i%2?'#7D8491':'#9AA0AA'; ctx.fillRect(px,350,14,12);} for(let i=0;i<28;i++){ctx.fillStyle='#6B7280'; ctx.fillRect(60+i*9,342,6,4);} ctx.fillStyle='#7D8491'; ctx.fillRect(150,338,35,8); ctx.fillRect(205,338,35,8); ctx.fillStyle='rgba(244,231,208,0.12)'; ctx.fillRect(55,346,280,3);"
+   },
+   {
+    "name": "statue_glow",
+    "depth": 0.65,
+    "code": "const g=ctx.createRadialGradient(195,185,20,195,185,170); g.addColorStop(0,'rgba(212,175,55,0.22)'); g.addColorStop(0.5,'rgba(244,231,208,0.10)'); g.addColorStop(1,'rgba(212,175,55,0)'); ctx.fillStyle=g; ctx.fillRect(-30,0,450,H); const g2=ctx.createRadialGradient(195,358,10,195,358,130); g2.addColorStop(0,'rgba(212,175,55,0.12)'); g2.addColorStop(1,'rgba(212,175,55,0)'); ctx.fillStyle=g2; ctx.fillRect(-30,0,450,H);"
+   },
+   {
+    "name": "rain",
+    "depth": 0.9,
+    "animated": true,
+    "code": "for(let i=0;i<62;i++){const seed=i*97.3; let x=((seed*13)%450)-30; const speed=90+(i%7)*25; let y=(t*speed + i*31)%560 - 60; const r=1.3+(i%4)*0.5; ctx.strokeStyle='rgba(244,231,208,'+(0.32+(i%3)*0.14)+')'; ctx.lineWidth=1.2; ctx.beginPath(); ctx.moveTo(x,y-9); ctx.lineTo(x,y+2); ctx.stroke(); ctx.fillStyle='rgba(244,231,208,0.78)'; ctx.beginPath(); ctx.arc(x,y+4,r,0,Math.PI*2); ctx.fill(); if(i%11===0){ctx.fillStyle='rgba(212,175,55,0.55)'; ctx.beginPath(); ctx.arc(x-3,y+1,1.9,0,Math.PI*2); ctx.fill();}}"
+   },
+   {
+    "name": "foreground_plants",
+    "depth": 1,
+    "front": true,
+    "code": "for(let side=-1;side<=1;side+=2){const baseX=side>0?355:35; ctx.strokeStyle='#2F3F2A'; ctx.lineWidth=2; ctx.beginPath(); let px=baseX, py=H; ctx.moveTo(px,py); for(let i=0;i<30;i++){py -= 12+rand()*8; px += (rand()-0.5)*14*side; ctx.lineTo(px,py);} ctx.stroke(); for(let i=0;i<45;i++){const ly=H-rand()*(H-120); const lx=baseX+side*(10+rand()*28)+(rand()-0.5)*12; const lr=4+rand()*7; ctx.fillStyle=rand()<0.5?'#3F5F35':'#4F6F40'; ctx.beginPath(); ctx.ellipse(lx,ly,lr,lr*0.6,rand()*Math.PI,0,Math.PI*2); ctx.fill();}}"
+   },
+   {
+    "name": "tear_drop",
+    "depth": 1,
+    "front": true,
+    "animated": true,
+    "code": "if (t < 10.5) return;\nvar start = 10.5, land = 12.0;\nvar p = (t - start) / (land - start);\nif (p < 0) p = 0; if (p > 1) p = 1;\nvar sx = 190, sy = 178;\nvar ex = 125, ey = 292;\nvar x = sx + (ex - sx) * p;\nvar y = sy + (ey - sy) * p * p;\nctx.save();\nctx.fillStyle = 'rgba(245,250,255,0.98)';\nctx.strokeStyle = '#2B5F8F';\nctx.lineWidth = 1.4;\nctx.beginPath();\nctx.ellipse(x, y, 5.2, 7.6, 0, 0, Math.PI * 2);\nctx.fill();\nctx.stroke();\nif (p >= 1) {\n  ctx.fillStyle = 'rgba(235,248,255,0.98)';\n  ctx.beginPath();\n  ctx.ellipse(ex, ey, 8.5, 5.8, 0.25, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.stroke();\n}\nctx.restore();"
+   }
+  ],
+  "ground": [
+   [
+    -30,
+    358
+   ],
+   [
+    420,
+    358
+   ]
+  ],
+  "anchors": {},
+  "stage": {
+   "duration": 12.5,
+   "start": {
+    "prince": {
+     "char": "happy_prince",
+     "x": 195,
+     "pose": "weep",
+     "facing": 1,
+     "scale": 0.95,
+     "lift": 0,
+     "z": 3,
+     "opacity": 1,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": -0.6
+     },
+     "exiting": false
+    },
+    "swallow": {
+     "char": "swallow",
+     "x": 50,
+     "pose": "fly1",
+     "facing": 1,
+     "scale": 1.4,
+     "lift": 160,
+     "z": 4,
+     "opacity": 1,
+     "face": {
+      "mouth": "open",
+      "look": 0.2,
+      "blink": 0,
+      "brow": 0
+     },
+     "exiting": true
+    }
+   },
+   "beats": [
+    {
+     "actor": "swallow",
+     "at": 0,
+     "dur": 2,
+     "ease": "out",
+     "phrase": "All day long he flew, and at night-time he arrived at the city.",
+     "move_to": 110,
+     "lift_to": 100,
+     "arc": 60,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 5,
+     "face": {
+      "mouth": "open",
+      "look": 0.2,
+      "blink": 0,
+      "brow": 0
+     },
+     "exiting": false,
+     "z": 4
+    },
+    {
+     "actor": "swallow",
+     "at": 2,
+     "dur": 1.2,
+     "ease": "inOut",
+     "phrase": "'Where shall I put up?' he said; 'I hope the town has made preparations.'",
+     "move_to": 135,
+     "lift_to": 80,
+     "arc": 18,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 4,
+     "face": {
+      "mouth": "open",
+      "look": 0.3,
+      "blink": 0,
+      "brow": 0.1
+     },
+     "z": 4
+    },
+    {
+     "actor": "swallow",
+     "at": 3.2,
+     "dur": 1.4,
+     "ease": "in",
+     "phrase": "Then he saw the statue on the tall column.",
+     "move_to": 125,
+     "lift_to": 100,
+     "arc": 40,
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 3,
+     "face": {
+      "mouth": "flat",
+      "look": 0.6,
+      "blink": 0,
+      "brow": 0.2
+     },
+     "z": 4
+    },
+    {
+     "actor": "swallow",
+     "at": 4.6,
+     "dur": 1.2,
+     "ease": "inOut",
+     "phrase": "'I will put up there,' he cried; 'it is a fine position, with plenty of fresh air.'",
+     "move_to": 125,
+     "lift_to": 0,
+     "arc": 32,
+     "pose": "perch",
+     "face": {
+      "mouth": "smile",
+      "look": 0.4,
+      "blink": 0,
+      "brow": 0.2
+     },
+     "z": 0
+    },
+    {
+     "actor": "swallow",
+     "at": 5.8,
+     "dur": 1,
+     "ease": "inOut",
+     "phrase": "'I have a golden bedroom,' he said softly to himself as he looked round, and he prepared to go to sleep;",
+     "pose": "perch",
+     "face": {
+      "mouth": "smile",
+      "look": 0.8,
+      "blink": 0.1,
+      "brow": 0
+     },
+     "z": 0
+    },
+    {
+     "actor": "swallow",
+     "at": 6.8,
+     "dur": 0.9,
+     "ease": "in",
+     "phrase": "but just as he was putting his head under his wing a large drop of water fell on him.",
+     "pose": "sleep",
+     "face": {
+      "mouth": "flat",
+      "look": -0.2,
+      "blink": 0.2,
+      "brow": -0.2
+     },
+     "z": 0
+    },
+    {
+     "actor": "swallow",
+     "at": 7.7,
+     "dur": 1.6,
+     "ease": "back",
+     "phrase": "'What a curious thing!' he cried; 'there is not a single cloud in the sky, the stars are quite clear and bright, and yet it is raining. The climate in the north of Europe is really dreadful. The Reed used to like the rain, but that was merely her selfishness.'",
+     "pose": "shiver",
+     "face": {
+      "mouth": "open",
+      "look": 0.5,
+      "blink": 0,
+      "brow": -0.3
+     },
+     "z": 0
+    },
+    {
+     "actor": "swallow",
+     "at": 9.3,
+     "dur": 1.2,
+     "ease": "inOut",
+     "phrase": "Then another drop fell. 'What is the use of a statue if it cannot keep the rain off?'",
+     "pose": "perch",
+     "face": {
+      "mouth": "open",
+      "look": 0.8,
+      "blink": 0,
+      "brow": -0.2
+     },
+     "z": 0
+    },
+    {
+     "actor": "swallow",
+     "at": 10.5,
+     "dur": 2,
+     "ease": "anticipate",
+     "phrase": "'I must look for a good chimney-pot,' and he determined to fly away. But before he had opened his wings, a third drop fell, and he looked up, and saw—Ah! what did he see?",
+     "pose": "perch",
+     "face": {
+      "mouth": "flat",
+      "look": 1,
+      "blink": 0,
+      "brow": 0.3
+     },
+     "z": 0
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>capture</title>
+<style>html,body{margin:0;background:#efdcc4}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<canvas id="c" style="width:600px;height:800px"></canvas>
+<script src="engine.js"></script>
+<script type="module">
+import { PopupStage } from './popup.js';
+const stage = new PopupStage(document.getElementById('c'));
+window.cap = {
+  async load(book, page) { const r = await fetch(`data/${book}/pages/${String(page).padStart(2, '0')}.json`).then(r => r.json()); LB.reset(); LB.load(r.scene); stage.load(); return LB.duration(); },
+  show(t, cx, cy) { stage.sun.shadow.needsUpdate = true; stage.show(t, cx, cy); },
+};
+window.ready = true;
+</script>
+</body></html>

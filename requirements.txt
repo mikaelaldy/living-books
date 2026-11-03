@@ -1,0 +1,4 @@
+playwright>=1.48
+pillow>=10
+# only for publishing to Hugging Face (pipeline/package.py upload)
+huggingface_hub>=0.25

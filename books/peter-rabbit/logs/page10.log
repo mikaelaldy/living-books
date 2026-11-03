@@ -1,0 +1,55 @@
+page10 call 1 [xhigh] 60s in=2451 cached=1728 out=8354 reasoning=5122 finish=tool_calls left={'output-tokens-day': '280349', 'requests': '58', 'requests-day': '19745', 'tokens': '12497452', 'tokens-day': '491976643', 'uncached-input-tokens-day': '8427865'}
+p10 paint_scene 7148 {"ok": true, "errors": [], "runtime_errors": [], "layers": ["sky", "wall", "garden_beds", "pond", "tools", "foreground (front)", "ripples (animated)"], "stats": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 2 [high] 12s in=12161 cached=2240 out=3042 reasoning=1788 finish=tool_calls left={'output-tokens-day': '231776', 'requests': '59', 'requests-day': '19724', 'tokens': '12490434', 'tokens-day': '491342377', 'uncached-input-tokens-day': '8300887'}
+p10 stage_scene 3080 {"ok": true, "errors": [], "beats": 10, "duration": 11.5}
+page10 call 3 [high] 4s in=15241 cached=12160 out=1324 reasoning=72 finish=tool_calls left={'output-tokens-day': '226109', 'requests': '59', 'requests-day': '19721', 'tokens': '12487952', 'tokens-day': '491256549', 'uncached-input-tokens-day': '8286073'}
+p10 stage_scene 3080 {"ok": true, "errors": [], "beats": 10, "duration": 11.5}
+page10 call 4 [high] 3s in=16603 cached=15232 out=1372 reasoning=119 finish=tool_calls left={'output-tokens-day': '224785', 'requests': '59', 'requests-day': '19720', 'tokens': '12486910', 'tokens-day': '491238942', 'uncached-input-tokens-day': '8282992'}
+p10 stage_scene 3080 {"ok": true, "errors": [], "beats": 10, "duration": 11.5}
+p10 DONE gate={'passed': False, 'issues': ['mouse is only 54px tall, too small on a phone card', 'cat is only 116px tall, too small on a phone card', 'peter and mouse overlap by 35%']} turns=4 sheet_errs=[] {"prompt": 46456, "cached": 31360, "completion": 14092, "reasoning": 7101, "seconds": 79.11331248283386, "calls": 4, "route": "reflection"}
+page10 call 1 [high] 2s in=4107 cached=0 out=546 reasoning=494 finish=tool_calls left={'requests': '59', 'tokens': '1000000'}
+p10 check_scene 42 {"issue_count": 3, "issues": [{"severity": "medium", "what": "mouse is only 54px tall, too small on a phone card", "times": [0, 0.5, 1, 1.5, 2, 2.5]}, {"severity": "medium", "what": "cat is only 116px tall, too small on a phone card", "times": [7.5, 8, 8.5, 9, 9.5, 10]}, {"severity": "medium", "what": "peter and mouse overlap by 35%", "times": [11, 11.5]}], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 2 [high] 7s in=8414 cached=4608 out=2519 reasoning=2469 finish=tool_calls left={'requests': '60', 'tokens': '978463'}
+p10 check_scene 42 {"issue_count": 3, "issues": [{"severity": "medium", "what": "mouse is only 54px tall, too small on a phone card", "times": [0, 0.5, 1, 1.5, 2, 2.5]}, {"severity": "medium", "what": "cat is only 116px tall, too small on a phone card", "times": [7.5, 8, 8.5, 9, 9.5, 10]}, {"severity": "medium", "what": "peter and mouse overlap by 35%", "times": [11, 11.5]}], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 3 [high] 11s in=14698 cached=0 out=4907 reasoning=3579 finish=tool_calls left={'requests': '59', 'tokens': '948000'}
+p10 stage_scene 3257 {"ok": false, "errors": ["beat at 0.5: no anchor doorstep"], "beats": 11, "duration": 11.5}
+page10 call 4 [high] 2s in=19653 cached=2240 out=1343 reasoning=22 finish=tool_calls left={'requests': '60', 'tokens': '984075'}
+p10 stage_scene 3237 {"ok": true, "errors": [], "beats": 11, "duration": 11.5}
+page10 call 5 [high] 1s in=21034 cached=10880 out=82 reasoning=4 finish=tool_calls left={'requests': '59', 'tokens': '909922'}
+p10 check_scene 68 {"issue_count": 1, "issues": [{"severity": "medium", "what": "mouse is only 110px tall, too small on a phone card", "times": [0, 0.5, 1, 1.5, 2, 2.5]}], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 6 [high] 4s in=24465 cached=20992 out=1266 reasoning=1230 finish=tool_calls left={'requests': '60', 'tokens': '964701'}
+p10 check_scene 27 {"issue_count": 1, "issues": [{"severity": "medium", "what": "mouse is only 110px tall, too small on a phone card", "times": [0, 0.5, 1, 1.5, 2, 2.5]}], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 7 [high] 5s in=29090 cached=25728 out=2530 reasoning=1206 finish=tool_calls left={'requests': '59', 'tokens': '966136'}
+p10 stage_scene 3239 {"ok": true, "errors": [], "beats": 11, "duration": 11.5}
+page10 call 8 [high] 1s in=31658 cached=31616 out=69 reasoning=6 finish=tool_calls left={'requests': '60', 'tokens': '975289'}
+p10 check_scene 53 {"issue_count": 1, "issues": [{"severity": "medium", "what": "mouse is only 122px tall, too small on a phone card", "times": [0, 0.5, 1, 1.5, 2, 2.5]}], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 9 [high] 5s in=35074 cached=21056 out=2233 reasoning=911 finish=tool_calls left={'requests': '60', 'tokens': '886511'}
+p10 stage_scene 3239 {"ok": true, "errors": [], "beats": 11, "duration": 11.5}
+page10 call 10 [high] 1s in=37345 cached=37248 out=78 reasoning=10 finish=tool_calls left={'requests': '60', 'tokens': '893809'}
+p10 check_scene 58 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 11 [high] 5s in=40722 cached=31680 out=2491 reasoning=1170 finish=tool_calls left={'requests': '59', 'tokens': '894095'}
+p10 stage_scene 3239 {"ok": true, "errors": [], "beats": 11, "duration": 11.5}
+page10 call 12 [high] 1s in=43251 cached=43200 out=47 reasoning=10 finish=tool_calls left={'requests': '60', 'tokens': '938290'}
+p10 check_scene 27 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 13 [high] 2s in=46592 cached=37376 out=216 reasoning=103 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p10 finish_scene 425 {"ok": true}
+p10 DONE gate={'passed': True, 'issues': []} turns=13 sheet_errs=[] {"prompt": 356103, "cached": 266624, "completion": 18327, "reasoning": 11214, "seconds": 46.85045623779297, "calls": 13, "route": "hf"}
+page10 call 1 [high] 9s in=4198 cached=2240 out=5245 reasoning=3821 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p10 stage_scene 3520 {"ok": true, "errors": [], "beats": 12, "duration": 11.5}
+page10 call 2 [high] 1s in=9481 cached=9408 out=46 reasoning=5 finish=tool_calls left={'requests': '60', 'tokens': '992258'}
+p10 check_scene 31 {"issue_count": 1, "issues": [{"severity": "medium", "what": "cat is only 116px across, too small on a phone card", "times": [7, 7.5, 8, 8.5, 9, 9.5]}], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 3 [high] 7s in=12886 cached=2304 out=3143 reasoning=1719 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p10 stage_scene 3520 {"ok": true, "errors": [], "beats": 12, "duration": 11.5}
+page10 call 4 [high] 3s in=16067 cached=16000 out=1471 reasoning=46 finish=tool_calls left={'requests': '60', 'tokens': '989470'}
+p10 stage_scene 3520 {"ok": true, "errors": [], "beats": 12, "duration": 11.5}
+page10 call 5 [high] 2s in=17576 cached=9472 out=1473 reasoning=39 finish=tool_calls left={'requests': '60', 'tokens': '974538'}
+p10 stage_scene 3539 {"ok": true, "errors": [], "beats": 12, "duration": 11.5}
+page10 call 6 [high] 1s in=19087 cached=19008 out=46 reasoning=5 finish=tool_calls left={'requests': '60', 'tokens': '985455'}
+p10 check_scene 31 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 7 [high] 4s in=22023 cached=17536 out=1921 reasoning=488 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p10 stage_scene 3544 {"ok": true, "errors": [], "beats": 12, "duration": 11.5}
+page10 call 8 [high] 1s in=23982 cached=19072 out=44 reasoning=3 finish=tool_calls left={'requests': '59', 'tokens': '947481'}
+p10 check_scene 31 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 21, "distinct_colour_buckets": 57, "edge_detail_pct_top_to_bottom": [3.2, 4.7, 18, 28.9, 27.2, 13.9]}}
+page10 call 9 [high] 2s in=27011 cached=24000 out=279 reasoning=195 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p10 finish_scene 291 {"ok": true}
+p10 DONE gate={'passed': True, 'issues': []} turns=9 sheet_errs=[] {"prompt": 152311, "cached": 119040, "completion": 13668, "reasoning": 6321, "seconds": 28.42613983154297, "calls": 9, "route": "hf"}

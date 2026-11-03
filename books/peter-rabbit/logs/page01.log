@@ -1,0 +1,11 @@
+page01 call 1 [xhigh] 30s in=2331 cached=896 out=6226 reasoning=2768 finish=tool_calls left={'output-tokens-day': '447086', 'requests': '59', 'requests-day': '19816', 'tokens': '12497590', 'tokens-day': '493879840', 'uncached-input-tokens-day': '8891100'}
+p1 paint_scene 7375 {"ok": true, "errors": [], "runtime_errors": [], "layers": ["earthback", "roots", "sandfloor", "cooking", "props", "foreground", "framing (front)", "dust (animated)"], "stats": {"largest_flat_colour_pct": 26, "distinct_colour_buckets": 35, "edge_detail_pct_top_to_bottom": [7.2, 20, 17.7, 14.3, 20.5, 42.6]}}
+page01 call 2 [high] 17s in=9827 cached=0 out=3888 reasoning=1531 finish=tool_calls left={'output-tokens-day': '440860', 'requests': '59', 'requests-day': '19812', 'tokens': '12492039', 'tokens-day': '493858731', 'uncached-input-tokens-day': '8889665'}
+p1 stage_scene 5711 {"ok": false, "errors": ["beat at 0: peter has no pose hop1", "beat at 0: peter has no pose hop2"], "beats": 23, "duration": 14}
+page01 call 3 [high] 8s in=13776 cached=0 out=2501 reasoning=146 finish=tool_calls left={'output-tokens-day': '428180', 'requests': '59', 'requests-day': '19810', 'tokens': '12488901', 'tokens-day': '493822995', 'uncached-input-tokens-day': '8877543'}
+p1 stage_scene 5713 {"ok": true, "errors": [], "beats": 23, "duration": 14}
+page01 call 4 [high] 1s in=16313 cached=13760 out=52 reasoning=13 finish=tool_calls left={'output-tokens-day': '415663', 'requests': '59', 'requests-day': '19808', 'tokens': '12487048', 'tokens-day': '493785476', 'uncached-input-tokens-day': '8862504'}
+p1 check_scene 38 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 26, "distinct_colour_buckets": 35, "edge_detail_pct_top_to_bottom": [7.2, 20, 17.7, 14.3, 20.5, 42.6]}}
+page01 call 5 [high] 6s in=22040 cached=16256 out=676 reasoning=595 finish=tool_calls left={'output-tokens-day': '402714', 'requests': '59', 'requests-day': '19805', 'tokens': '12484150', 'tokens-day': '493726759', 'uncached-input-tokens-day': '8847735'}
+p1 finish_scene 320 {"ok": true}
+p1 DONE gate={'passed': True, 'issues': []} turns=5 sheet_errs=[] {"prompt": 64287, "cached": 30912, "completion": 13343, "reasoning": 5053, "seconds": 63.015175342559814, "calls": 5, "route": "reflection"}

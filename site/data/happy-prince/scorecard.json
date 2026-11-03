@@ -1,0 +1,11 @@
+{
+ "title": "The Happy Prince",
+ "pages": 19,
+ "pages_passed_gate": 19,
+ "beam_calls": 320,
+ "output_tokens": 768447,
+ "minutes_in_beam_calls": 71,
+ "fix_rounds_after_first_check": 78,
+ "characters": 10,
+ "note": "Counts describe Beam's own runs in this project. They do not rank Beam against other models."
+}

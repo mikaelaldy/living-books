@@ -1,0 +1,11 @@
+{
+ "title": "The Tale of Peter Rabbit",
+ "pages": 14,
+ "pages_passed_gate": 14,
+ "beam_calls": 350,
+ "output_tokens": 752332,
+ "minutes_in_beam_calls": 54,
+ "fix_rounds_after_first_check": 71,
+ "characters": 7,
+ "note": "Counts describe Beam's own runs in this project. They do not rank Beam against other models."
+}

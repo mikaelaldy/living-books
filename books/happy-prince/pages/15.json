@@ -1,0 +1,738 @@
+{
+ "page": 15,
+ "text": "Then he flew back and told the Prince what he had seen. “I am covered with fine gold,” said the Prince, “you must take it off, leaf by leaf, and give it to my poor; the living always think that gold can make them happy.” Leaf after leaf of the fine gold the Swallow picked off, till the Happy Prince looked quite dull and grey. Leaf after leaf of the fine gold he brought to the poor, and the children’s faces grew rosier, and they laughed and played games in the street. “We have bread now!” they cried.",
+ "feeling": "Generosity",
+ "title": "The Happy Prince - Page 15",
+ "director_note": "The swallow moves from the prince's shoulder to the distant street and back, making each gold leaf's journey visible, while the prince's rest pose and grey variant show his sacrifice. The scene keeps both figures in frame and apart, so the generosity reads clearly against the moonlit city below.",
+ "gate": {
+  "passed": true,
+  "issues": []
+ },
+ "turns": 15,
+ "usage": {
+  "prompt": 556691,
+  "cached": 456896,
+  "completion": 35970,
+  "reasoning": 20900,
+  "seconds": 195.51162981987,
+  "calls": 15,
+  "route": "reflection"
+ },
+ "scene": {
+  "chars": {
+   "happy_prince": {
+    "id": "happy_prince",
+    "poses": {
+     "give": {
+      "armR": -55,
+      "forearmR": -30,
+      "handR": 10,
+      "_y": -6
+     },
+     "gaze": {
+      "head": -16,
+      "_y": -9
+     },
+     "stand": {
+      "_y": -9
+     },
+     "weep": {
+      "armL": 8,
+      "armR": -8,
+      "head": 20,
+      "_y": -8
+     },
+     "rest": {
+      "_y": -9
+     }
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.2)'; ctx.beginPath(); ctx.ellipse(0,4,26,7,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -130
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let hi=s===4?'#B6BCC6':'#F2D580'; let sh=s===4?'#59606B':'#A9812C'; ctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-34,-42); ctx.bezierCurveTo(-40,0,-36,40,-24,46); ctx.lineTo(24,46); ctx.bezierCurveTo(36,40,40,0,34,-42); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(10,-36); ctx.bezierCurveTo(18,-4,16,30,8,46); ctx.lineTo(24,46); ctx.bezierCurveTo(36,40,40,0,34,-42); ctx.closePath(); ctx.fill();\nctx.fillStyle=hi; ctx.beginPath(); ctx.moveTo(-30,-38); ctx.bezierCurveTo(-26,-12,-24,18,-18,40); ctx.lineTo(-8,40); ctx.bezierCurveTo(-14,16,-16,-12,-20,-38); ctx.closePath(); ctx.fill();\nctx.fillStyle=s===4?'#6b7280':'#8B6A1F'; ctx.fillRect(-24,34,48,14); ctx.fillStyle=sh; ctx.fillRect(-24,44,48,4);\nctx.fillStyle=s===4?'#9aa0a8':'#F2D580';\nfor(let i=0;i<4;i++){ctx.beginPath();ctx.arc(0,-18+i*13,3.4,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,255,255,0.35)';ctx.beginPath();ctx.arc(-1,-19+i*13,1.2,0,Math.PI*2);ctx.fill();ctx.fillStyle=s===4?'#9aa0a8':'#F2D580';}\nctx.fillStyle=s===4?'#9aa0a8':'#F4E7D0'; ctx.beginPath(); ctx.moveTo(-18,-42); ctx.lineTo(0,-28); ctx.lineTo(18,-42); ctx.fill();\nctx.fillStyle=s===4?'#7D8491':'#F2D580'; ctx.fillRect(-7,-42,14,10);"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       0,
+       -45
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "let tears=!!f.tears; ctx.save(); ctx.rotate(tears?0.12:0); ctx.fillStyle='#D9B24C'; ctx.beginPath(); ctx.arc(0,0,25,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#A9812C'; ctx.beginPath(); ctx.arc(8,6,16,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2D580'; ctx.beginPath(); ctx.arc(-8,-6,12,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8B6A1F'; ctx.beginPath(); ctx.ellipse(-8,-10,5,1.6,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(8,-10,5,1.6,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#1F4E79'; ctx.beginPath(); ctx.arc(-8,-2,5.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(8,-2,5.5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B7DBFF'; ctx.beginPath(); ctx.arc(-9,-3,1.8,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(7,-3,1.8,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8B6A1F'; ctx.fillRect(-1,3,2,7); ctx.fillStyle='#8B6A1F'; ctx.beginPath(); ctx.ellipse(0,11,4,1.2,0,0,Math.PI*2); ctx.fill(); if(tears){ ctx.fillStyle='#DCEFFF'; ctx.beginPath(); ctx.ellipse(-9,12,2.2,4.5,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(9,13,2.2,5,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B7DBFF'; ctx.beginPath(); ctx.ellipse(-9,18,1.6,3.5,0,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='#A9812C'; ctx.beginPath(); ctx.ellipse(0,-20,15,9,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#D9B24C'; ctx.beginPath(); ctx.ellipse(-6,-22,5,4,-0.3,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(0,-23,4,3,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(6,-22,5,4,0.3,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2D580'; ctx.beginPath(); ctx.ellipse(-8,-24,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(0,-25,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(8,-24,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.restore();"
+     },
+     {
+      "name": "crown",
+      "parent": "head",
+      "pivot": [
+       0,
+       -24
+      ],
+      "rest": 0,
+      "z": 5,
+      "code": ""
+     },
+     {
+      "name": "armL",
+      "parent": "body",
+      "pivot": [
+       -26,
+       -20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-8,18,-7,38,-4,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(3,18,3,38,2,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmL",
+      "parent": "armL",
+      "pivot": [
+       0,
+       48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-5,0); ctx.bezierCurveTo(-6,16,-5,34,-3,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,16,2,34,1,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handL",
+      "parent": "forearmL",
+      "pivot": [
+       0,
+       42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(0,6,7,9,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(2,8,3,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armR",
+      "parent": "body",
+      "pivot": [
+       26,
+       -20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-8,18,-7,38,-4,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(3,18,3,38,2,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmR",
+      "parent": "armR",
+      "pivot": [
+       0,
+       48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-5,0); ctx.bezierCurveTo(-6,16,-5,34,-3,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,16,2,34,1,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handR",
+      "parent": "forearmR",
+      "pivot": [
+       0,
+       42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(0,6,7,9,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(2,8,3,5,0,0,Math.PI*2); ctx.fill();\nif(s!==4){\n ctx.fillStyle='#C9C9C9'; ctx.fillRect(-2,8,4,62); ctx.fillStyle='#B0B0B0'; ctx.fillRect(0,8,2,62);\n ctx.fillStyle='#8B6A1F'; ctx.fillRect(-8,6,16,6); ctx.fillStyle='#A9812C'; ctx.fillRect(-8,10,16,2);\n if(s===0){ ctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.arc(0,9,5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#D97745'; ctx.beginPath(); ctx.arc(-1,7,1.6,0,Math.PI*2); ctx.fill(); }\n else { ctx.fillStyle='#5a5a5a'; ctx.beginPath(); ctx.arc(0,9,4.5,0,Math.PI*2); ctx.fill(); }\n} else {\n ctx.fillStyle='#7D8491'; ctx.beginPath(); ctx.moveTo(0,10); ctx.bezierCurveTo(-10,0,-18,8,-10,18); ctx.bezierCurveTo(-4,24,0,30,0,30); ctx.bezierCurveTo(0,30,4,24,10,18); ctx.bezierCurveTo(18,8,10,0,0,10); ctx.closePath(); ctx.fill();\n}"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -16,
+       30
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-7,0); ctx.bezierCurveTo(-8,20,-7,42,-4,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,20,2,42,1,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-7,18,-6,40,-3,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,18,2,40,1,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footL",
+      "parent": "shinL",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(4,2,12,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(7,3,4,2.5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       16,
+       30
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-7,0); ctx.bezierCurveTo(-8,20,-7,42,-4,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,20,2,42,1,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-7,18,-6,40,-3,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,18,2,40,1,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footR",
+      "parent": "shinR",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(4,2,12,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(7,3,4,2.5,0,0,Math.PI*2); ctx.fill();"
+     }
+    ]
+   },
+   "swallow": {
+    "id": "swallow",
+    "poses": {
+     "dead": {
+      "_y": 12,
+      "body": 180,
+      "wingL": -40,
+      "wingtipL": -10,
+      "wingR": 40,
+      "wingtipR": 10,
+      "legL": 180,
+      "legR": 180,
+      "tail": 0
+     },
+     "droop": {
+      "head": 28,
+      "wingL": 50,
+      "wingtipL": 40,
+      "wingR": -50,
+      "wingtipR": -40,
+      "tail": 20
+     },
+     "fly1": {
+      "wingL": -35,
+      "wingtipL": -10,
+      "wingR": -35,
+      "wingtipR": -10
+     },
+     "fly2": {
+      "wingL": 25,
+      "wingtipL": 10,
+      "wingR": 25,
+      "wingtipR": 10
+     },
+     "peck": {
+      "head": 20
+     },
+     "perch": {
+      "wingL": 65,
+      "wingtipL": 20,
+      "wingR": -65,
+      "wingtipR": -20
+     },
+     "shiver": {
+      "wingL": 70,
+      "wingtipL": 25,
+      "wingR": -70,
+      "wingtipR": -25
+     },
+     "sleep": {
+      "head": 25,
+      "wingL": 75,
+      "wingtipL": 25,
+      "wingR": -75,
+      "wingtipR": -25
+     },
+     "rest": {}
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.18)'; ctx.beginPath(); ctx.ellipse(0,3,18,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -30
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.ellipse(0,0,15,12,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.ellipse(-3,-2,9,7,0,0,Math.PI*2); ctx.fill();\n// rust throat\nctx.fillStyle='#D97745'; ctx.beginPath(); ctx.ellipse(9,-2,8,7,-0.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.ellipse(11,-1,4,3,-0.2,0,Math.PI*2); ctx.fill();\n// belly\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.ellipse(2,4,9,6,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       18,
+       -10
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.arc(0,0,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.arc(-2,-2,5,0,Math.PI*2); ctx.fill();\n// eye\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(3,-2,3.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#1a1a1a'; ctx.beginPath(); ctx.arc(4,-2,1.8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(3.4,-2.8,0.7,0,Math.PI*2); ctx.fill();\n// cheek\nctx.fillStyle='rgba(217,119,69,0.25)'; ctx.beginPath(); ctx.arc(4,2,3,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "beak",
+      "parent": "head",
+      "pivot": [
+       8,
+       0
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(10,0); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a2a2a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(9,0.5); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nlet c=f.carry;\nif(c==='ruby'||c==='sapphire'){\n let col=c==='ruby'?'#A62C2C':'#1F4E79';\n ctx.fillStyle=col; ctx.beginPath(); ctx.arc(5,-1,4,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(255,255,255,0.45)'; ctx.beginPath(); ctx.arc(4,-2,1.3,0,Math.PI*2); ctx.fill();\n}"
+     },
+     {
+      "name": "wingL",
+      "parent": "body",
+      "pivot": [
+       -4,
+       -2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(-30,-8); ctx.lineTo(-26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-2); ctx.lineTo(-24,-4); ctx.lineTo(-22,8); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipL",
+      "parent": "wingL",
+      "pivot": [
+       -26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(-18,-6); ctx.lineTo(-16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-1,-1); ctx.lineTo(-14,-3); ctx.lineTo(-13,5); ctx.lineTo(-1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingR",
+      "parent": "body",
+      "pivot": [
+       -4,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(30,-8); ctx.lineTo(26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(2,-2); ctx.lineTo(24,-4); ctx.lineTo(22,8); ctx.lineTo(2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipR",
+      "parent": "wingR",
+      "pivot": [
+       26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(18,-6); ctx.lineTo(16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(1,-1); ctx.lineTo(14,-3); ctx.lineTo(13,5); ctx.lineTo(1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       -12,
+       6
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-4); ctx.lineTo(-18,-10); ctx.lineTo(-22,0); ctx.lineTo(-12,2); ctx.lineTo(-22,8); ctx.lineTo(-16,12); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-3); ctx.lineTo(-14,-7); ctx.lineTo(-16,-1); ctx.lineTo(-10,1); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -6,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       4,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     }
+    ]
+   }
+  },
+  "layers": [
+   {
+    "name": "sky",
+    "depth": 0,
+    "code": "const g=ctx.createLinearGradient(0,0,0,H);\ng.addColorStop(0,'#2A1B40');\ng.addColorStop(0.42,'#1B2340');\ng.addColorStop(0.78,'#3A2A5C');\ng.addColorStop(1,'#241633');\nctx.fillStyle=g; ctx.fillRect(0,0,W,H);\nconst mg=ctx.createRadialGradient(300,95,0,300,95,190);\nmg.addColorStop(0,'rgba(244,231,208,0.30)');\nmg.addColorStop(1,'rgba(244,231,208,0)');\nctx.fillStyle=mg; ctx.fillRect(0,0,W,H);\nfor(let i=0;i<9;i++){\n  const x=(i*67+13)%W, y=42+(i*31)%88;\n  ctx.fillStyle='rgba(244,231,208,0.13)';\n  ctx.beginPath(); ctx.ellipse(x,y,58+(i%3)*22,13+(i%2)*6,0,0,Math.PI*2); ctx.fill();\n  ctx.fillStyle='rgba(125,132,145,0.10)';\n  ctx.beginPath(); ctx.ellipse(x+9,y+5,44,10,0,0,Math.PI*2); ctx.fill();\n}\nfor(let i=0;i<118;i++){\n  const x=(i*97+23)%W, y=(i*53+17)%(Math.floor(H*0.70));\n  const r=0.75+(i%3)*0.45;\n  ctx.fillStyle=i%5===0?'rgba(244,231,208,0.96)':'rgba(212,175,55,0.78)';\n  ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill();\n  if(i%7===0){\n    ctx.strokeStyle='rgba(244,231,208,0.48)'; ctx.lineWidth=0.8;\n    ctx.beginPath(); ctx.moveTo(x-4,y); ctx.lineTo(x+4,y); ctx.moveTo(x,y-4); ctx.lineTo(x,y+4); ctx.stroke();\n  }\n}\nctx.fillStyle='#F4E7D0';\nctx.beginPath(); ctx.arc(300,95,46,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(212,175,55,0.16)';\nctx.beginPath(); ctx.arc(286,88,10,0,Math.PI*2); ctx.fill();\nctx.beginPath(); ctx.arc(318,108,7,0,Math.PI*2); ctx.fill();\nctx.beginPath(); ctx.arc(304,92,5,0,Math.PI*2); ctx.fill();\nconst cg=ctx.createRadialGradient(195,430,10,195,430,270);\ncg.addColorStop(0,'rgba(217,119,69,0.18)');\ncg.addColorStop(1,'rgba(217,119,69,0)');\nctx.fillStyle=cg; ctx.fillRect(0,0,W,H);\n"
+   },
+   {
+    "name": "distant_city",
+    "depth": 0.18,
+    "code": "const cols=['#1B2340','#24305A','#2A1B40','#1F2A4A'];\nlet x=-30;\nwhile(x<420){\n  const w=18+Math.floor(rand()*6)*6;\n  const h=90+Math.floor(rand()*6)*18;\n  const y=330-h;\n  ctx.fillStyle=cols[Math.floor(rand()*cols.length)];\n  ctx.fillRect(x,y,w,h);\n  ctx.fillStyle='#12182B';\n  if(rand()<0.5){ ctx.fillRect(x-2,y-6,w+4,6); }\n  else { ctx.beginPath(); ctx.moveTo(x-4,y); ctx.lineTo(x+w/2,y-14); ctx.lineTo(x+w+4,y); ctx.closePath(); ctx.fill(); }\n  for(let wy=y+12; wy<y+h-10; wy+=18){\n    for(let wx=x+4; wx<x+w-6; wx+=10){\n      if(rand()<0.65){\n        ctx.fillStyle=rand()<0.3?'#F4E7D0':'#D4AF37';\n        ctx.globalAlpha=0.86;\n        ctx.fillRect(wx,wy,4,6);\n        ctx.globalAlpha=1;\n      }\n    }\n  }\n  if(rand()<0.28){\n    ctx.fillStyle='#D4AF37';\n    ctx.fillRect(x+w/2-1,y-28,2,28);\n    ctx.beginPath(); ctx.arc(x+w/2,y-30,3,0,Math.PI*2); ctx.fill();\n  }\n  x += w + 4 + Math.floor(rand()*8);\n}\n"
+   },
+   {
+    "name": "mid_city",
+    "depth": 0.35,
+    "code": "let x=-30;\nwhile(x<420){\n  const w=34+Math.floor(rand()*5)*8;\n  const h=130+Math.floor(rand()*4)*22;\n  const y=360-h;\n  ctx.fillStyle=rand()<0.5?'#2A1B40':'#3A2A5C';\n  ctx.fillRect(x,y,w,h);\n  ctx.fillStyle='#12182B';\n  ctx.fillRect(x-3,y-8,w+6,8);\n  ctx.fillStyle='rgba(0,0,0,0.18)';\n  for(let by=y+4; by<y+h-4; by+=12){\n    for(let bx=x+2; bx<x+w-2; bx+=14){\n      ctx.fillRect(bx+((by%24)?7:0),by,8,6);\n    }\n  }\n  for(let wy=y+18; wy<y+h-20; wy+=26){\n    for(let wx=x+8; wx<x+w-12; wx+=24){\n      ctx.fillStyle=rand()<0.7?'#F4E7D0':'#D4AF37';\n      ctx.globalAlpha=0.90;\n      ctx.fillRect(wx,wy,10,14);\n      ctx.globalAlpha=1;\n      ctx.strokeStyle='#1B2340'; ctx.lineWidth=1;\n      ctx.strokeRect(wx,wy,10,14);\n      ctx.beginPath(); ctx.moveTo(wx+5,wy); ctx.lineTo(wx+5,wy+14); ctx.stroke();\n    }\n  }\n  if(rand()<0.35){\n    const dx=x+w/2-7;\n    ctx.fillStyle='#5A3825';\n    ctx.fillRect(dx,y+h-28,14,28);\n    ctx.fillStyle='#D4AF37';\n    ctx.beginPath(); ctx.arc(dx+10,y+h-14,2,0,Math.PI*2); ctx.fill();\n  }\n  x += w + 2 + Math.floor(rand()*6);\n}\nfor(let i=0;i<7;i++){\n  const x=20+i*55+Math.floor(rand()*10);\n  const y=360;\n  ctx.fillStyle='#7D8491';\n  ctx.fillRect(x,y-92,4,92);\n  ctx.fillStyle='#D4AF37';\n  ctx.beginPath(); ctx.arc(x+2,y-94,8,0,Math.PI*2); ctx.fill();\n  const g=ctx.createRadialGradient(x+2,y-94,0,x+2,y-94,42);\n  g.addColorStop(0,'rgba(244,231,208,0.22)');\n  g.addColorStop(1,'rgba(244,231,208,0)');\n  ctx.fillStyle=g; ctx.fillRect(x-40,y-136,80,84);\n}\n"
+   },
+   {
+    "name": "column_shaft",
+    "depth": 0.5,
+    "code": "const cx=195;\nctx.fillStyle='#D8CEB8';\nctx.fillRect(cx-62,228,124,18);\nctx.fillStyle='#B8AFA0';\nfor(let i=0;i<12;i++){ ctx.fillRect(cx-60+i*10,230,6,12); }\nctx.fillStyle='#D4AF37';\nctx.fillRect(cx-64,226,128,3);\nctx.fillRect(cx-64,244,128,3);\nconst topW=92, botW=118;\nctx.fillStyle='#D8CEB8';\nctx.beginPath();\nctx.moveTo(cx-topW/2,246);\nctx.lineTo(cx+topW/2,246);\nctx.lineTo(cx+botW/2,520);\nctx.lineTo(cx-botW/2,520);\nctx.closePath(); ctx.fill();\nctx.strokeStyle='#B8AFA0'; ctx.lineWidth=2;\nfor(let i=-4;i<=4;i++){\n  const t=i/4;\n  const x1=cx+t*(topW/2-8);\n  const x2=cx+t*(botW/2-8);\n  ctx.beginPath(); ctx.moveTo(x1,246); ctx.lineTo(x2,520); ctx.stroke();\n}\nctx.fillStyle='rgba(27,35,64,0.24)';\nctx.beginPath();\nctx.moveTo(cx+topW/2-14,246);\nctx.lineTo(cx+topW/2,246);\nctx.lineTo(cx+botW/2,520);\nctx.lineTo(cx+botW/2-20,520);\nctx.closePath(); ctx.fill();\nfor(let y=275;y<495;y+=68){\n  ctx.fillStyle='#B8AFA0';\n  ctx.fillRect(cx-54,y,108,6);\n  ctx.fillStyle='#D4AF37';\n  for(let k=0;k<6;k++){ ctx.fillRect(cx-48+k*16,y+1,4,4); }\n}\nfor(let y=260;y<485;y+=24){\n  for(let s=-1;s<=1;s+=2){\n    ctx.fillStyle='rgba(125,132,145,0.13)';\n    ctx.fillRect(cx+s*(topW/2)- (s>0?8:0), y, 8, 12);\n  }\n}\nctx.fillStyle='#B8AFA0';\nctx.fillRect(cx-72,492,144,28);\nctx.fillStyle='#7D8491';\nctx.fillRect(cx-76,488,152,6);\n"
+   },
+   {
+    "name": "column_top",
+    "depth": 0.65,
+    "code": "const cx=195, gy=220;\nctx.fillStyle='#D8CEB8';\nctx.fillRect(72,212,246,16);\nctx.beginPath(); ctx.ellipse(72,220,10,8,0,0,Math.PI*2); ctx.fill();\nctx.beginPath(); ctx.ellipse(318,220,10,8,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#B8AFA0';\nctx.fillRect(72,228,246,14);\nctx.fillStyle='#7D8491';\nctx.fillRect(72,226,246,3);\nfor(let i=0;i<12;i++){\n  for(let j=0;j<3;j++){\n    ctx.fillStyle=(i+j)%2===0?'#D8CEB8':'#CFC4AE';\n    ctx.fillRect(78+i*20,214+j*5,18,4);\n  }\n}\nfor(let i=0;i<22;i++){\n  const x=76+i*10.5;\n  ctx.fillStyle='#7D8491';\n  ctx.beginPath(); ctx.arc(x,226,2.2,0,Math.PI*2); ctx.fill();\n}\nctx.fillStyle='#D4AF37';\nctx.fillRect(cx-28,195,56,25);\nctx.fillStyle='#B8AFA0';\nctx.fillRect(cx-30,218,60,3);\nfor(let i=0;i<7;i++){\n  ctx.fillStyle='#F4E7D0';\n  ctx.fillRect(cx-24+i*7,199,4,17);\n}\nctx.fillStyle='#A62C2C';\nctx.beginPath(); ctx.ellipse(cx,193,18,6,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#D4AF37';\nctx.fillRect(cx-2,171,4,22);\nctx.beginPath(); ctx.arc(cx,169,5,0,Math.PI*2); ctx.fill();\nfor(let i=0;i<18;i++){\n  const a=i*0.34;\n  const x=cx+Math.cos(a)*105;\n  const y=220+Math.sin(a)*10;\n  ctx.fillStyle=i%2===0?'#D4AF37':'#F4E7D0';\n  ctx.fillRect(x,y,3,3);\n}\nctx.fillStyle='rgba(27,35,64,0.16)';\nctx.fillRect(72,235,246,6);\n"
+   },
+   {
+    "name": "foreground_frame",
+    "depth": 0.85,
+    "front": true,
+    "code": "function leaf(x,y,s){\n  ctx.fillStyle='#2F5A3D';\n  ctx.beginPath(); ctx.ellipse(x,y,7*s,4*s,0.7,0,Math.PI*2); ctx.fill();\n  ctx.fillStyle='#4A7A52';\n  ctx.beginPath(); ctx.ellipse(x-1,y-1,3*s,2*s,0.7,0,Math.PI*2); ctx.fill();\n}\nfor(let y=0;y<H;y+=17){\n  const x=16+Math.sin(y*0.045)*13;\n  ctx.strokeStyle='#2F5A3D'; ctx.lineWidth=3;\n  ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x+4,y+17); ctx.stroke();\n  leaf(x,y,1.1);\n  if(y%34===0) leaf(x+18,y+8,0.85);\n}\nfor(let y=0;y<H;y+=19){\n  const x=W-18+Math.sin(y*0.05)*13;\n  ctx.strokeStyle='#2F5A3D'; ctx.lineWidth=3;\n  ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x-4,y+19); ctx.stroke();\n  leaf(x,y,1.05);\n  if(y%38===0) leaf(x-18,y+9,0.8);\n}\nfor(let i=0;i<8;i++){\n  const x=18+i*9, y=H-34+i*2;\n  ctx.fillStyle='#6B4A33';\n  ctx.fillRect(x,y,6,18);\n  ctx.fillStyle='#A62C2C';\n  ctx.beginPath(); ctx.arc(x+3,y-4,5,0,Math.PI*2); ctx.fill();\n  ctx.fillStyle='#D4AF37';\n  ctx.beginPath(); ctx.arc(x+3,y-4,2,0,Math.PI*2); ctx.fill();\n}\nfor(let i=0;i<8;i++){\n  const x=W-24-i*9, y=H-30+i*2;\n  ctx.fillStyle='#6B4A33';\n  ctx.fillRect(x,y,6,18);\n  ctx.fillStyle='#3A6B4A';\n  ctx.beginPath(); ctx.arc(x+3,y-4,5,0,Math.PI*2); ctx.fill();\n  ctx.fillStyle='#F4E7D0';\n  ctx.beginPath(); ctx.arc(x+3,y-4,2,0,Math.PI*2); ctx.fill();\n}\n"
+   },
+   {
+    "name": "gold_leaves",
+    "depth": 0.55,
+    "animated": true,
+    "code": "for(let i=0;i<18;i++){\n  const phase=(t*0.55+i*0.053)%1;\n  const x=118+(i%6)*46+Math.sin(t*1.8+i)*9;\n  const y=128+phase*255;\n  const rot=t*2.6+i*0.7;\n  const g=ctx.createRadialGradient(x,y,0,x,y,13);\n  g.addColorStop(0,'rgba(212,175,55,0.24)');\n  g.addColorStop(1,'rgba(212,175,55,0)');\n  ctx.fillStyle=g; ctx.fillRect(x-13,y-13,26,26);\n  ctx.save(); ctx.translate(x,y); ctx.rotate(rot);\n  ctx.fillStyle='#D4AF37';\n  ctx.beginPath(); ctx.ellipse(0,0,5.5,3.2,0,0,Math.PI*2); ctx.fill();\n  ctx.strokeStyle='#A62C2C'; ctx.lineWidth=0.9;\n  ctx.beginPath(); ctx.moveTo(-4.5,0); ctx.lineTo(4.5,0); ctx.stroke();\n  ctx.restore();\n}\n"
+   }
+  ],
+  "ground": [
+   [
+    -30,
+    360
+   ],
+   [
+    80,
+    360
+   ],
+   [
+    120,
+    220
+   ],
+   [
+    270,
+    220
+   ],
+   [
+    310,
+    360
+   ],
+   [
+    420,
+    360
+   ]
+  ],
+  "anchors": {
+   "column_top": {
+    "x": 195,
+    "y": 220,
+    "rx": 82,
+    "ry": 14
+   },
+   "prince_pedestal": {
+    "x": 195,
+    "y": 210,
+    "rx": 28,
+    "ry": 10
+   },
+   "moon": {
+    "x": 300,
+    "y": 95,
+    "rx": 46,
+    "ry": 46
+   },
+   "city_below": {
+    "x": 195,
+    "y": 355,
+    "rx": 170,
+    "ry": 55
+   },
+   "street_left": {
+    "x": 95,
+    "y": 375,
+    "rx": 60,
+    "ry": 24
+   },
+   "street_right": {
+    "x": 300,
+    "y": 375,
+    "rx": 60,
+    "ry": 24
+   }
+  },
+  "stage": {
+   "duration": 9.5,
+   "start": {
+    "happy_prince": {
+     "char": "happy_prince",
+     "x": 195,
+     "pose": "gaze",
+     "facing": 1,
+     "scale": 1,
+     "lift": 0,
+     "z": 2,
+     "opacity": 1,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": 0,
+      "variant": 0
+     }
+    },
+    "swallow": {
+     "char": "swallow",
+     "x": 275,
+     "pose": "perch",
+     "facing": -1,
+     "scale": 1,
+     "lift": 135,
+     "z": 3,
+     "opacity": 1,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": 0
+     }
+    }
+   },
+   "beats": [
+    {
+     "actor": "swallow",
+     "at": 0,
+     "dur": 1.2,
+     "ease": "out",
+     "phrase": "Then he flew back and told the Prince what he had seen.",
+     "move_to": 245,
+     "lift_to": 130,
+     "pose": "perch",
+     "bob": 3,
+     "face": {
+      "mouth": "open",
+      "look": -1,
+      "blink": 0,
+      "brow": 0.2
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 1.2,
+     "dur": 1.8,
+     "ease": "inOut",
+     "phrase": "I am covered with fine gold,” said the Prince, “you must take it off, leaf by leaf, and give it to my poor; the living always think that gold can make them happy.",
+     "pose": "give",
+     "face": {
+      "mouth": "open",
+      "look": 0.6,
+      "blink": 0,
+      "brow": 0.3
+     },
+     "z": 2
+    },
+    {
+     "actor": "swallow",
+     "at": 3,
+     "dur": 2,
+     "ease": "out",
+     "phrase": "Leaf after leaf of the fine gold the Swallow picked off, till the Happy Prince looked quite dull and grey.",
+     "move_to": 245,
+     "lift_to": 128,
+     "arc": 15,
+     "facing": -1,
+     "pose": "peck",
+     "cycle": [
+      "peck",
+      "fly1",
+      "fly2"
+     ],
+     "hz": 3,
+     "bob": 5,
+     "face": {
+      "mouth": "flat",
+      "look": -1,
+      "blink": 0,
+      "brow": 0
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 4.6,
+     "dur": 0.8,
+     "ease": "in",
+     "phrase": "Leaf after leaf of the fine gold the Swallow picked off, till the Happy Prince looked quite dull and grey.",
+     "pose": "rest",
+     "squash": -0.1,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0.1,
+      "brow": -0.3,
+      "variant": 1
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 5,
+     "dur": 1.2,
+     "ease": "out",
+     "phrase": "Leaf after leaf of the fine gold he brought to the poor, and the children’s faces grew rosier, and they laughed and played games in the street.",
+     "move_to": 95,
+     "lift_to": 0,
+     "arc": 90,
+     "facing": -1,
+     "pose": "peck",
+     "face": {
+      "mouth": "open",
+      "look": 0,
+      "blink": 0,
+      "brow": 0.2
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 5.4,
+     "dur": 1,
+     "ease": "in",
+     "phrase": "Leaf after leaf of the fine gold he brought to the poor, and the children’s faces grew rosier, and they laughed and played games in the street.",
+     "pose": "rest",
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": -0.2,
+      "variant": 1
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 6.2,
+     "dur": 1.6,
+     "ease": "out",
+     "phrase": "Leaf after leaf of the fine gold he brought to the poor, and the children’s faces grew rosier, and they laughed and played games in the street.",
+     "move_to": 125,
+     "lift_to": 140,
+     "arc": 30,
+     "facing": 1,
+     "pose": "fly1",
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 3,
+     "bob": 4,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": 0
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 7.8,
+     "dur": 1.2,
+     "ease": "inOut",
+     "phrase": "We have bread now!” they cried.",
+     "pose": "rest",
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": -0.2,
+      "variant": 1
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 7.8,
+     "dur": 1.2,
+     "ease": "inOut",
+     "phrase": "We have bread now!” they cried.",
+     "move_to": 125,
+     "lift_to": 140,
+     "pose": "perch",
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "blink": 0,
+      "brow": 0
+     }
+    }
+   ]
+  }
+ }
+}

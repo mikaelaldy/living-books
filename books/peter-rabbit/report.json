@@ -1,0 +1,110 @@
+{
+ "pages": [
+  {
+   "page": 1,
+   "passed": true,
+   "issues": [],
+   "turns": 5,
+   "out": 13343
+  },
+  {
+   "page": 2,
+   "passed": true,
+   "issues": [],
+   "turns": 7,
+   "out": 15847
+  },
+  {
+   "page": 3,
+   "passed": true,
+   "issues": [],
+   "turns": 4,
+   "out": 4996
+  },
+  {
+   "page": 4,
+   "passed": true,
+   "issues": [],
+   "turns": 5,
+   "out": 7646
+  },
+  {
+   "page": 5,
+   "passed": true,
+   "issues": [],
+   "turns": 7,
+   "out": 20585
+  },
+  {
+   "page": 6,
+   "passed": true,
+   "issues": [],
+   "turns": 5,
+   "out": 11796
+  },
+  {
+   "page": 7,
+   "passed": true,
+   "issues": [],
+   "turns": 7,
+   "out": 11751
+  },
+  {
+   "page": 8,
+   "passed": true,
+   "issues": [],
+   "turns": 10,
+   "out": 19943
+  },
+  {
+   "page": 9,
+   "passed": true,
+   "issues": [],
+   "turns": 9,
+   "out": 17940
+  },
+  {
+   "page": 10,
+   "passed": true,
+   "issues": [],
+   "turns": 9,
+   "out": 13668
+  },
+  {
+   "page": 11,
+   "passed": true,
+   "issues": [],
+   "turns": 4,
+   "out": 9640
+  },
+  {
+   "page": 12,
+   "passed": true,
+   "issues": [],
+   "turns": 13,
+   "out": 14118
+  },
+  {
+   "page": 13,
+   "passed": true,
+   "issues": [],
+   "turns": 18,
+   "out": 17368
+  },
+  {
+   "page": 14,
+   "passed": true,
+   "issues": [],
+   "turns": 7,
+   "out": 21589
+  }
+ ],
+ "totals": {
+  "prompt": 2047117,
+  "cached": 1455360,
+  "completion": 200230,
+  "reasoning": 116560,
+  "seconds": 812.3914773464203,
+  "calls": 110
+ }
+}

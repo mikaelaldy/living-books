@@ -1,0 +1,21 @@
+# Only the Living Books project is tracked; other folders here are unrelated work.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/requirements.txt
+!/docs/
+!/engine/
+!/pipeline/
+!/site/
+!/books/
+# review screenshots and scratch images
+/books/*.png
+/books/*/*.png
+/books/*/*.jpg
+__pycache__/
+*.pyc
+# never commit keys
+*.key
+.env*
+secrets/

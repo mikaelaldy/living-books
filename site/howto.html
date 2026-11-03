@@ -1,0 +1,91 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>how it works capture</title>
+<!-- Development only: draws the "how it works" clip frame by frame from Beam's real record of page 5. Not shipped. -->
+<style>
+  html,body { margin:0; background:#f4eadb; color:#2b2420; font-family:Georgia,serif }
+  #f { position:relative; width:1280px; height:720px; overflow:hidden; background:#f4eadb }
+  .steps { position:absolute; left:64px; top:34px; display:flex; gap:10px; font:600 17px system-ui,sans-serif }
+  .steps span { padding:9px 18px; border-radius:999px; border:1.5px solid #dccbb4; color:#8a7b6e; transition:none }
+  .steps span.on { background:#3b5f8a; border-color:#3b5f8a; color:#fff }
+  .steps span.done { color:#3b5f8a; border-color:#3b5f8a }
+  #sceneBox { position:absolute; left:64px; top:96px; width:450px; height:600px; border-radius:14px; overflow:hidden; box-shadow:0 14px 34px rgba(70,45,20,.25); background:#e7d7bf }
+  #sceneBox canvas { position:absolute; inset:0; width:450px; height:600px }
+  #read { position:absolute; inset:0; padding:46px 40px; font-size:25px; line-height:1.55; background:#fbf4e8 }
+  #read small { display:block; font:600 14px system-ui,sans-serif; letter-spacing:.08em; color:#c8743a; margin-bottom:16px }
+  #scan { position:absolute; left:0; right:0; height:3px; background:#c8743a; box-shadow:0 0 18px 6px rgba(200,116,58,.45); display:none }
+  #box { position:absolute; border:3px solid #d0533a; border-radius:6px; display:none }
+  .right { position:absolute; left:568px; top:96px; width:650px; height:572px; display:flex; flex-direction:column }
+  .right h2 { margin:0 0 6px; font-size:40px; font-weight:normal; letter-spacing:-.01em }
+  .right p.sub { margin:0 0 20px; font-size:20px; color:#6d6055; min-height:58px; line-height:1.4 }
+  #log { flex:1; background:#2b2420; color:#efe5d6; border-radius:14px; padding:20px 24px; font:15.5px/1.5 Consolas,ui-monospace,monospace; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end }
+  #log .hd { color:#a8998a; font:600 13px system-ui,sans-serif; letter-spacing:.1em; margin-bottom:auto }
+  .ln { margin-top:10px } .ln b { color:#f2b27a; font-weight:600 } .ln .d { color:#c9bcaa; display:block; padding-left:18px }
+  .ln .bad { color:#ff9c86 } .ln .ok { color:#a9d98f } .sw { display:inline-block; width:22px; height:22px; border-radius:5px; margin:6px 6px 0 0; vertical-align:middle }
+  .foot { position:absolute; right:62px; bottom:22px; font:14px system-ui,sans-serif; color:#8a7b6e }
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<div id="f">
+  <div class="steps" id="steps"><span>1 Read</span><span>2 Paint</span><span>3 Stage</span><span>4 Check and fix</span><span>5 Pop-up</span></div>
+  <div id="sceneBox"><canvas id="flat" width="900" height="1200"></canvas><canvas id="pop" style="display:none"></canvas><div id="read"></div><div id="scan"></div><div id="box"></div></div>
+  <div class="right"><h2 id="h"></h2><p class="sub" id="sub"></p><div id="log"><div class="hd">BEAM · TOOL CALLS · THE TALE OF PETER RABBIT, PAGE 5</div></div></div>
+  <div class="foot">Real calls from Beam's log · Living Books</div>
+</div>
+<script src="engine.js"></script>
+<script type="module">
+import { PopupStage } from './popup.js';
+const $ = s => document.querySelector(s);
+const page = await fetch('data/peter-rabbit/pages/05.json').then(r => r.json());
+const replay = await fetch('data/peter-rabbit/replay.json').then(r => r.json());
+const pal = replay.bible.palette;
+const flat = $('#flat'), fx = flat.getContext('2d');
+// Snapshots of the world as each layer is added, back to front, with no actors.
+const snaps = [];
+for (let k = 1; k <= page.scene.layers.length; k++) {
+  const sc = structuredClone(page.scene); sc.layers = sc.layers.slice(0, k); LB.reset(); LB.load(sc);
+  const c = document.createElement('canvas'); c.width = 900; c.height = 1200; LB.render(c.getContext('2d'), 0.5, { scale: 900 / LB.W, actors: false }); snaps.push(c);
+}
+LB.reset(); LB.load(structuredClone(page.scene));
+const pop = new PopupStage($('#pop')); $('#pop').style.display = 'block'; pop.resize(); pop.load(); $('#pop').style.display = 'none';
+
+const layerNames = page.scene.layers.map(l => l.name).join(', ');
+// Each line appears at its time (seconds). Text is taken from Beam's real log for this page.
+const LINES = [
+  [0.6, `<b>read</b> the whole book in one call<span class="d">${replay.read.out.toLocaleString()} tokens → story plan: world, cast, 14 pages, palette</span><span class="d">${pal.map(c => `<i class="sw" style="background:${c}"></i>`).join('')}</span>`],
+  [3.9, `<b>paint_scene</b> 7 layers painted<span class="d">${layerNames}</span><span class="d">flat colour 18% · detail per band 4.5 8.7 35.8 48.4 51.2 41.5</span>`],
+  [8.2, `<b>stage_scene</b> 7 beats over 9.0 s<span class="d ok">timeline accepted</span>`],
+  [11.6, `<b>check_scene</b> 2 issues found<span class="d bad">peter is 57% hidden by front layers</span><span class="d bad">peter is 5% outside the frame</span>`],
+  [13.4, `<b>paint_scene</b> repaints foreground_plants, breeze_leaves<span class="d">clears the zone where Peter runs</span>`],
+  [14.3, `<b>stage_scene</b> Peter now runs to x = 70<span class="d ok">timeline accepted</span>`],
+  [15.2, `<b>check_scene</b> 0 issues found<span class="d ok">clean</span>`],
+  [16.6, `<b>finish_scene</b> accepted: “${page.title}”<span class="d ok">scene gate passed</span>`],
+];
+const PH = [
+  [0, 'Read', 'Beam takes in the whole book at once and plans the edition: the world, a palette, the cast, and how the text splits into pages.'],
+  [3.6, 'Paint', 'It paints each page as layers of code, back to front. The tool returns measurements, because Beam cannot see images.'],
+  [7.9, 'Stage', 'Jointed paper puppets Beam designed act out the words on a timed beat sheet.'],
+  [11.3, 'Check and fix', 'A checker reports what is wrong as text. Beam repaints and restages until the page is clean.'],
+  [16.4, 'Pop-up', 'The finished page becomes a little paper theatre you can tilt and look into.'],
+];
+const DUR = 22;
+window.DUR = DUR;
+let shown = -1, ph = -1;
+window.frame = T => {
+  const p = PH.reduce((a, x, i) => (T >= x[0] ? i : a), 0);
+  if (p !== ph) { ph = p; $('#h').textContent = PH[p][1]; $('#sub').textContent = PH[p][2]; [...$('#steps').children].forEach((s, i) => s.className = i === p ? 'on' : i < p ? 'done' : ''); }
+  const n = LINES.filter(l => T >= l[0]).length;
+  if (n !== shown) { shown = n; $('#log').querySelectorAll('.ln').forEach(e => e.remove()); LINES.slice(0, n).forEach(l => { const d = document.createElement('div'); d.className = 'ln'; d.innerHTML = l[1]; $('#log').append(d); }); }
+  const read = $('#read'); read.style.display = p === 0 ? 'block' : 'none';
+  if (p === 0) { const k = Math.floor(Math.min(1, T / 2.6) * page.text.length); read.innerHTML = `<small>PAGE 5 OF 14</small>${page.text.slice(0, k)}`; }
+  $('#pop').style.display = p === 4 ? 'block' : 'none'; flat.style.display = p === 4 ? 'none' : 'block';
+  fx.setTransform(1, 0, 0, 1, 0, 0); fx.clearRect(0, 0, 900, 1200);
+  if (p === 1) { // layers arrive one at a time
+    const u = (T - 3.9) / 3.6 * snaps.length, k = Math.max(0, Math.min(snaps.length - 1, Math.floor(u))), a = Math.min(1, Math.max(0, (u - k) * 2.2));
+    if (u < 0) { fx.fillStyle = '#efe3d0'; fx.fillRect(0, 0, 900, 1200); } else { if (k > 0) fx.drawImage(snaps[k - 1], 0, 0); fx.globalAlpha = a; fx.drawImage(snaps[k], 0, 0); fx.globalAlpha = 1; }
+  } else if (p === 2 || p === 3) LB.render(fx, (T - 7.9) % LB.duration(), { scale: 900 / LB.W });
+  const scan = $('#scan'); scan.style.display = p === 3 && T < 15.2 ? 'block' : 'none'; scan.style.top = `${((T - 11.3) % 1.3) / 1.3 * 600}px`;
+  if (p === 4) { const u = (T - 16.4) / (DUR - 16.4); pop.sun.shadow.needsUpdate = true; pop.show((T - 16.4 + 1) % LB.duration(), 1.1 * Math.sin(2 * Math.PI * (u * 0.6 - 0.25)), 0.3 * Math.sin(2 * Math.PI * u * 0.6)); }
+};
+window.ready = true;
+</script>
+</body></html>

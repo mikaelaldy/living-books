@@ -1,0 +1,28 @@
+page11 call 1 [xhigh] 56s in=2445 cached=1728 out=11374 reasoning=7546 finish=tool_calls left={'output-tokens-day': '244937', 'requests': '59', 'requests-day': '19730', 'tokens': '12497473', 'tokens-day': '491505844', 'uncached-input-tokens-day': '8348521'}
+p11 paint_scene 7564 {"ok": true, "errors": [], "runtime_errors": [], "layers": ["sky", "far_wall_wood", "tool_shed", "onion_patch", "wheelbarrow_bushes", "gate_wood", "foreground_frame (front)", "dappled_light (animated)"], "stats": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [0.5, 4.1, 8.1, 31, 40.6, 11.9]}, "not_yet": "This fails phase 1: need every band >= 3, largest flat colour <= 30, at least 5 static layers. Patch the weak layers."}
+page11 call 2 [xhigh] 12s in=14585 cached=1728 out=1897 reasoning=1005 finish=tool_calls left={'output-tokens-day': '212039', 'requests': '59', 'requests-day': '19717', 'tokens': '12489255', 'tokens-day': '491207276', 'uncached-input-tokens-day': '8280904'}
+p11 paint_scene 1714 {"ok": true, "errors": [], "runtime_errors": [], "layers": ["sky", "far_wall_wood", "tool_shed", "onion_patch", "wheelbarrow_bushes", "gate_wood", "foreground_frame (front)", "dappled_light (animated)"], "stats": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.3, 8.1, 31, 40.6, 11.9]}}
+page11 call 3 [high] 35s in=17716 cached=2240 out=6762 reasoning=5295 finish=tool_calls left={'output-tokens-day': '210142', 'requests': '59', 'requests-day': '19716', 'tokens': '12486408', 'tokens-day': '491187947', 'uncached-input-tokens-day': '8268047'}
+p11 stage_scene 3404 {"ok": true, "errors": [], "beats": 14, "duration": 11}
+page11 call 4 [high] 1s in=24502 cached=17664 out=77 reasoning=36 finish=tool_calls left={'output-tokens-day': '181156', 'requests': '59', 'requests-day': '19712', 'tokens': '12480723', 'tokens-day': '491099463', 'uncached-input-tokens-day': '8238649'}
+p11 check_scene 37 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.3, 8.1, 31, 40.6, 11.9]}}
+page11 call 5 [high] 13s in=27503 cached=24448 out=1697 reasoning=1197 finish=tool_calls left={'output-tokens-day': '181079', 'requests': '59', 'requests-day': '19711', 'tokens': '12479097', 'tokens-day': '491073258', 'uncached-input-tokens-day': '8231811'}
+p11 paint_scene 888 {"ok": true, "errors": [], "runtime_errors": [], "layers": ["sky", "far_wall_wood", "tool_shed", "onion_patch", "wheelbarrow_bushes", "gate_wood", "foreground_frame (front)", "dappled_light (animated)"], "stats": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.1, 6.5, 30.2, 39.8, 11.6]}}
+page11 call 6 [high] 2s in=29841 cached=27456 out=109 reasoning=73 finish=tool_calls left={'output-tokens-day': '175240', 'requests': '59', 'requests-day': '19709', 'tokens': '12477416', 'tokens-day': '491017904', 'uncached-input-tokens-day': '8225546'}
+p11 check_scene 28 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.1, 6.5, 30.2, 39.8, 11.6]}}
+page11 call 7 [high] 8s in=32865 cached=29824 out=1856 reasoning=448 finish=tool_calls left={'output-tokens-day': '167736', 'requests': '59', 'requests-day': '19706', 'tokens': '12475772', 'tokens-day': '490934566', 'uncached-input-tokens-day': '8185497'}
+p11 stage_scene 3317 {"ok": true, "errors": [], "beats": 14, "duration": 11}
+page11 call 8 [high] 1s in=34757 cached=32832 out=49 reasoning=20 finish=tool_calls left={'output-tokens-day': '164151', 'requests': '59', 'requests-day': '19703', 'tokens': '12474361', 'tokens-day': '490854092', 'uncached-input-tokens-day': '8179510'}
+p11 check_scene 28 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.1, 6.5, 30.2, 39.8, 11.6]}}
+page11 call 9 [high] 2s in=37710 cached=34752 out=194 reasoning=123 finish=tool_calls left={'output-tokens-day': '161559', 'requests': '59', 'requests-day': '19701', 'tokens': '12472740', 'tokens-day': '490787240', 'uncached-input-tokens-day': '8171952'}
+p11 finish_scene 261 {"ok": true}
+p11 DONE gate={'passed': True, 'issues': []} turns=9 sheet_errs=[] {"prompt": 221924, "cached": 172672, "completion": 24015, "reasoning": 15743, "seconds": 130.55217504501343, "calls": 9, "route": "reflection"}
+page11 call 1 [high] 2s in=4229 cached=2240 out=462 reasoning=426 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p11 check_scene 27 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.1, 6.5, 30.2, 39.8, 11.6]}}
+page11 call 2 [high] 17s in=7610 cached=4672 out=8694 reasoning=7244 finish=tool_calls left={'requests': '60', 'tokens': '1000000'}
+p11 stage_scene 3407 {"ok": true, "errors": [], "beats": 14, "duration": 9}
+page11 call 3 [high] 1s in=16339 cached=1856 out=55 reasoning=4 finish=tool_calls left={'requests': '59', 'tokens': '976465'}
+p11 check_scene 41 {"issue_count": 0, "issues": [], "background": {"largest_flat_colour_pct": 18, "distinct_colour_buckets": 54, "edge_detail_pct_top_to_bottom": [24, 15.1, 6.5, 30.2, 39.8, 11.6]}}
+page11 call 4 [high] 2s in=19094 cached=16256 out=429 reasoning=320 finish=tool_calls left={'requests': '60', 'tokens': '964271'}
+p11 finish_scene 398 {"ok": true}
+p11 DONE gate={'passed': True, 'issues': []} turns=4 sheet_errs=[] {"prompt": 47272, "cached": 25024, "completion": 9640, "reasoning": 7994, "seconds": 21.827163457870483, "calls": 4, "route": "hf"}

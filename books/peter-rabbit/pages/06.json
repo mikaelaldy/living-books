@@ -1,0 +1,1458 @@
+{
+ "page": 6,
+ "text": "Peter was most dreadfully frightened; he rushed all over the garden, for he had forgotten the way back to the gate. He lost one of his shoes among the cabbages, and the other shoe amongst the potatoes. After losing them, he ran on four legs and went faster, so that I think he might have got away altogether if he had not unfortunately run into a gooseberry net, and got caught by the large buttons on his jacket. It was a blue jacket with brass buttons, quite new.",
+ "feeling": "panic",
+ "title": null,
+ "director_note": null,
+ "gate": {
+  "passed": true,
+  "issues": []
+ },
+ "turns": 5,
+ "usage": {
+  "prompt": 59578,
+  "cached": 37888,
+  "completion": 11796,
+  "reasoning": 5148,
+  "seconds": 20.7059166431427,
+  "calls": 5,
+  "route": "hf"
+ },
+ "scene": {
+  "chars": {
+   "peter": {
+    "id": "peter",
+    "poses": {
+     "idle": {
+      "_y": -7
+     },
+     "walk1": {
+      "armL": -35,
+      "forearmL": 20,
+      "armR": 35,
+      "forearmR": -20,
+      "legL": 28,
+      "shinL": -16,
+      "footL": -12,
+      "legR": -28,
+      "shinR": 16,
+      "footR": 12,
+      "tail": 6,
+      "_y": -3
+     },
+     "walk2": {
+      "armL": 35,
+      "forearmL": -20,
+      "armR": -35,
+      "forearmR": 20,
+      "legL": -28,
+      "shinL": 16,
+      "footL": 12,
+      "legR": 28,
+      "shinR": -16,
+      "footR": -12,
+      "tail": -6,
+      "_y": -3
+     },
+     "run1": {
+      "armL": -62,
+      "forearmL": 34,
+      "armR": 62,
+      "forearmR": -34,
+      "legL": 46,
+      "shinL": -38,
+      "footL": -8,
+      "legR": -46,
+      "shinR": 38,
+      "footR": 8,
+      "body": 6,
+      "tail": 10
+     },
+     "run2": {
+      "armL": 62,
+      "forearmL": -34,
+      "armR": -62,
+      "forearmR": 34,
+      "legL": -46,
+      "shinL": 38,
+      "footL": 8,
+      "legR": 46,
+      "shinR": -38,
+      "footR": -8,
+      "body": -6,
+      "tail": -10
+     },
+     "sit": {
+      "legL": 85,
+      "shinL": -85,
+      "footL": -5,
+      "legR": 85,
+      "shinR": -85,
+      "footR": -5,
+      "armL": -15,
+      "forearmL": 10,
+      "armR": 15,
+      "forearmR": -10,
+      "body": 0,
+      "_y": 18
+     },
+     "hide": {
+      "legL": 95,
+      "shinL": -95,
+      "footL": 0,
+      "legR": 85,
+      "shinR": -85,
+      "footR": 0,
+      "body": 12,
+      "head": 8,
+      "armL": -40,
+      "forearmL": 20,
+      "armR": 10,
+      "forearmR": -10,
+      "_y": 20
+     },
+     "eat": {
+      "body": 32,
+      "head": -14,
+      "armL": -20,
+      "forearmL": 30,
+      "armR": 20,
+      "forearmR": -30,
+      "legL": 40,
+      "shinL": -42,
+      "footL": -30,
+      "legR": 40,
+      "shinR": -42,
+      "footR": -30,
+      "_y": 10
+     },
+     "trap": {
+      "armL": -100,
+      "forearmL": -25,
+      "armR": 100,
+      "forearmR": -25,
+      "body": -8,
+      "legL": 22,
+      "shinL": -12,
+      "footL": -10,
+      "legR": -22,
+      "shinR": 12,
+      "footR": 10,
+      "head": -5,
+      "_y": -7
+     },
+     "wriggle": {
+      "body": 12,
+      "head": 6,
+      "armL": -45,
+      "forearmL": 65,
+      "armR": 45,
+      "forearmR": -65,
+      "legL": 35,
+      "shinL": -25,
+      "footL": -10,
+      "legR": -35,
+      "shinR": 25,
+      "footR": 10,
+      "_y": -9
+     },
+     "cry": {
+      "body": 22,
+      "head": 8,
+      "armL": 35,
+      "forearmL": -25,
+      "armR": -35,
+      "forearmR": 25,
+      "legL": 60,
+      "shinL": -72,
+      "footL": -10,
+      "legR": 60,
+      "shinR": -72,
+      "footR": -10,
+      "_y": 13
+     },
+     "rest": {
+      "body": 18,
+      "head": 6,
+      "armL": 25,
+      "forearmL": -15,
+      "armR": -25,
+      "forearmR": 15,
+      "legL": 70,
+      "shinL": -80,
+      "footL": -8,
+      "legR": 70,
+      "shinR": -80,
+      "footR": -8,
+      "_y": 16
+     },
+     "flop": {
+      "body": 82,
+      "head": -18,
+      "legL": -20,
+      "shinL": 35,
+      "footL": 10,
+      "legR": 20,
+      "shinR": -35,
+      "footR": -10,
+      "armL": -30,
+      "forearmL": 20,
+      "armR": 30,
+      "forearmR": -20,
+      "_y": 23
+     },
+     "bed": {
+      "body": 88,
+      "head": -12,
+      "legL": -15,
+      "shinL": 25,
+      "footL": 8,
+      "legR": 15,
+      "shinR": -25,
+      "footR": -8,
+      "armL": -20,
+      "forearmL": 15,
+      "armR": 20,
+      "forearmR": -15,
+      "_y": 28
+     },
+     "startled": {
+      "body": -8,
+      "head": -10,
+      "armL": -70,
+      "forearmL": 20,
+      "armR": 70,
+      "forearmR": -20,
+      "legL": 10,
+      "shinL": -5,
+      "footL": -5,
+      "legR": -10,
+      "shinR": 5,
+      "footR": 5,
+      "earL": -20,
+      "earR": 20,
+      "tail": -5,
+      "_y": -8
+     },
+     "peep": {
+      "body": 15,
+      "head": -20,
+      "armL": -20,
+      "forearmL": 15,
+      "armR": 20,
+      "forearmR": -15,
+      "legL": 65,
+      "shinL": -70,
+      "footL": -5,
+      "legR": 65,
+      "shinR": -70,
+      "footR": -5,
+      "_y": 13
+     },
+     "sneeze": {
+      "body": -5,
+      "head": -35,
+      "armL": -20,
+      "forearmL": 10,
+      "armR": 20,
+      "forearmR": -10,
+      "legL": 5,
+      "shinL": -3,
+      "footL": -3,
+      "legR": -5,
+      "shinR": 3,
+      "footR": 3,
+      "tail": -5,
+      "_y": -7
+     },
+     "sneeze2": {
+      "body": 5,
+      "head": 25,
+      "armL": -10,
+      "forearmL": 5,
+      "armR": 10,
+      "forearmR": -5,
+      "legL": 5,
+      "shinL": -3,
+      "footL": -3,
+      "legR": -5,
+      "shinR": 3,
+      "footR": 3,
+      "_y": -9
+     },
+     "ask": {
+      "body": 0,
+      "head": 0,
+      "armL": -50,
+      "forearmL": 30,
+      "armR": 50,
+      "forearmR": -30,
+      "legL": 5,
+      "shinL": -3,
+      "footL": -3,
+      "legR": -5,
+      "shinR": 3,
+      "footR": 3,
+      "tail": 3,
+      "_y": -7
+     },
+     "sick": {
+      "body": 20,
+      "head": -5,
+      "armL": -30,
+      "forearmL": 60,
+      "armR": 10,
+      "forearmR": -10,
+      "legL": 0,
+      "shinL": -12,
+      "footL": -5,
+      "legR": -40,
+      "shinR": 12,
+      "footR": 5,
+      "_y": -8
+     },
+     "tremble": {
+      "body": 15,
+      "head": -5,
+      "armL": -15,
+      "forearmL": 10,
+      "armR": 15,
+      "forearmR": -10,
+      "legL": 0,
+      "shinL": -8,
+      "footL": -4,
+      "legR": -30,
+      "shinR": 8,
+      "footR": 4,
+      "earL": 25,
+      "earR": -25,
+      "_y": -8
+     },
+     "four1": {
+      "body": 75,
+      "head": -75,
+      "armL": -155,
+      "forearmL": 0,
+      "armR": -155,
+      "forearmR": 0,
+      "legL": -45,
+      "shinL": -20,
+      "footL": 0,
+      "legR": -105,
+      "shinR": 20,
+      "footR": 0,
+      "_y": -11
+     },
+     "four2": {
+      "body": 75,
+      "head": -75,
+      "armL": 5,
+      "forearmL": 0,
+      "armR": 5,
+      "forearmR": 0,
+      "legL": -105,
+      "shinL": 20,
+      "footL": 0,
+      "legR": -45,
+      "shinR": -20,
+      "footR": 0,
+      "_y": -13
+     },
+     "squeeze": {
+      "body": 85,
+      "head": -10,
+      "armL": -30,
+      "forearmL": 20,
+      "armR": 30,
+      "forearmR": -20,
+      "legL": -20,
+      "shinL": 10,
+      "footL": 5,
+      "legR": 20,
+      "shinR": -10,
+      "footR": -5,
+      "earL": 30,
+      "earR": -30,
+      "_y": 26
+     },
+     "tea": {
+      "body": 0,
+      "head": 0,
+      "armL": -20,
+      "forearmL": 15,
+      "armR": 20,
+      "forearmR": -15,
+      "legL": 85,
+      "shinL": -85,
+      "footL": 0,
+      "legR": 85,
+      "shinR": -85,
+      "footR": 0,
+      "_y": 18
+     }
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": ""
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -52
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "function tapered(a,b,L,fill,sh){ctx.fillStyle=fill; ctx.beginPath(); ctx.moveTo(-a,0); ctx.lineTo(-b,L); ctx.arc(0,L,b,Math.PI,2*Math.PI,false); ctx.lineTo(a,0); ctx.closePath(); ctx.fill(); if(sh){ctx.fillStyle=sh; ctx.beginPath(); ctx.ellipse(0,L*0.55,b*0.55,L*0.35,0,0,Math.PI*2); ctx.fill();}}\nlet jacket=f.jacket!==false;\nif(jacket){\n ctx.fillStyle='#3E5C8A'; ctx.beginPath(); ctx.ellipse(0,-26,19,33,0,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(0,0,0,0.16)'; ctx.beginPath(); ctx.ellipse(8,-20,10,26,0.35,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(255,255,255,0.12)'; ctx.beginPath(); ctx.ellipse(-8,-36,7,16,-0.3,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='#2F4F3A'; ctx.fillRect(-20,-3,40,9);\n ctx.fillStyle='#1f3a2a'; ctx.fillRect(-20,6,40,3);\n ctx.fillStyle='#B8863B';\n for(let i=0;i<4;i++){ctx.beginPath();ctx.arc(0,-46+i*15,3.8,0,Math.PI*2);ctx.fill(); ctx.fillStyle='rgba(255,255,255,0.45)'; ctx.beginPath(); ctx.arc(-1.2,-47.2+i*15,1.2,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B8863B';}\n ctx.fillStyle='#E8D7B6'; ctx.beginPath(); ctx.moveTo(-10,-60); ctx.lineTo(0,-50); ctx.lineTo(10,-60); ctx.lineTo(8,-62); ctx.lineTo(0,-54); ctx.lineTo(-8,-62); ctx.closePath(); ctx.fill();\n ctx.fillStyle='#F2C7C0'; ctx.fillRect(-4,-56,8,7);\n} else {\n ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(0,-26,19,33,0,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.ellipse(8,-20,10,26,0.35,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(255,255,255,0.12)'; ctx.beginPath(); ctx.ellipse(-8,-36,7,16,-0.3,0,Math.PI*2); ctx.fill();\n}"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       0,
+       -60
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.arc(0,0,22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.arc(7,5,13,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.12)'; ctx.beginPath(); ctx.arc(-7,-8,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#E8D7B6'; ctx.beginPath(); ctx.ellipse(8,6,12,10,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.06)'; ctx.beginPath(); ctx.ellipse(11,9,7,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#D97A3A'; ctx.beginPath(); ctx.arc(18,4,3.6,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.35)'; ctx.beginPath(); ctx.arc(17,3,1.2,0,Math.PI*2); ctx.fill();\nlet blink=f.blink||0; let look=f.look||0;\nctx.fillStyle='#2F2F2F';\nif(blink>0.5){ ctx.fillRect(-8,-6,15,3); ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.fillRect(-8,-6,15,1); }\nelse { ctx.beginPath(); ctx.arc(-4+look*2,-4,3.6,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(-3+look*2,-5,1.3,0,Math.PI*2); ctx.fill(); }\nctx.fillStyle='#3a2a1a'; ctx.save(); ctx.translate(-7,-9); ctx.rotate((f.brow||0)*0.25); ctx.fillRect(-5,-1,10,2.2); ctx.restore();\nlet m=f.mouth||'flat';\nctx.fillStyle='#3a2a1a';\nif(m==='open'){ctx.beginPath();ctx.ellipse(9,10,4.5,5,0,0,Math.PI*2);ctx.fill(); ctx.fillStyle='#D97A3A'; ctx.beginPath();ctx.ellipse(9,11,2.5,2.5,0,0,Math.PI*2);ctx.fill();}\nelse if(m==='smile'){ctx.beginPath();ctx.ellipse(9,8,5.5,2.8,0,0,Math.PI*2);ctx.fill();}\nelse if(m==='frown'){ctx.beginPath();ctx.ellipse(9,12,5.5,2.8,0,0,Math.PI*2);ctx.fill();}\nelse{ctx.fillRect(4,9,10,2.2);}\nctx.fillStyle='rgba(217,122,58,0.25)'; ctx.beginPath(); ctx.arc(12,5,5,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "earL",
+      "parent": "head",
+      "pivot": [
+       -13,
+       -17
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "let w=Math.sin((f.t||0)*6)*1.2;\nctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(-3+w,-22,8,26,-0.22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.1)'; ctx.beginPath(); ctx.ellipse(-1+w,-18,5,18,-0.22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#F2C7C0'; ctx.beginPath(); ctx.ellipse(-3+w,-22,4.5,18,-0.22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(217,122,58,0.18)'; ctx.beginPath(); ctx.ellipse(-3+w,-22,2,12,-0.22,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "earR",
+      "parent": "head",
+      "pivot": [
+       13,
+       -17
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "let w=Math.sin((f.t||0)*6+1)*1.2;\nctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(3+w,-22,8,26,0.22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.1)'; ctx.beginPath(); ctx.ellipse(1+w,-18,5,18,0.22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#F2C7C0'; ctx.beginPath(); ctx.ellipse(3+w,-22,4.5,18,0.22,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(217,122,58,0.18)'; ctx.beginPath(); ctx.ellipse(3+w,-22,2,12,0.22,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armL",
+      "parent": "body",
+      "pivot": [
+       -17,
+       -42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let jacket=f.jacket!==false;\nlet fill=jacket?'#3E5C8A':'#C9894A';\nctx.fillStyle=fill; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4,28); ctx.arc(0,28,4,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,28); ctx.lineTo(4,28); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();\nif(jacket){ctx.fillStyle='#2F4F3A'; ctx.fillRect(-5,24,10,4);}"
+     },
+     {
+      "name": "forearmL",
+      "parent": "armL",
+      "pivot": [
+       0,
+       28
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-4,0); ctx.lineTo(-3.5,26); ctx.arc(0,26,3.5,Math.PI,2*Math.PI,false); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,26); ctx.lineTo(3.5,26); ctx.lineTo(3.5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handL",
+      "parent": "forearmL",
+      "pivot": [
+       0,
+       23
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(0,4,6,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.ellipse(2,5,3,3,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#E8D7B6'; ctx.beginPath(); ctx.ellipse(4,2,2.5,2,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armR",
+      "parent": "body",
+      "pivot": [
+       17,
+       -42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let jacket=f.jacket!==false;\nlet fill=jacket?'#3E5C8A':'#C9894A';\nctx.fillStyle=fill; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4,28); ctx.arc(0,28,4,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,28); ctx.lineTo(4,28); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();\nif(jacket){ctx.fillStyle='#2F4F3A'; ctx.fillRect(-5,24,10,4);}"
+     },
+     {
+      "name": "forearmR",
+      "parent": "armR",
+      "pivot": [
+       0,
+       28
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-4,0); ctx.lineTo(-3.5,26); ctx.arc(0,26,3.5,Math.PI,2*Math.PI,false); ctx.lineTo(4,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,26); ctx.lineTo(3.5,26); ctx.lineTo(3.5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handR",
+      "parent": "forearmR",
+      "pivot": [
+       0,
+       23
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.ellipse(0,4,6,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.ellipse(2,5,3,3,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#E8D7B6'; ctx.beginPath(); ctx.ellipse(4,2,2.5,2,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -9,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-6,0); ctx.lineTo(-5,30); ctx.arc(0,30,5,Math.PI,2*Math.PI,false); ctx.lineTo(6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,30); ctx.lineTo(5,30); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       27
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4.5,28); ctx.arc(0,28,4.5,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,28); ctx.lineTo(4.5,28); ctx.lineTo(4.5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footL",
+      "parent": "shinL",
+      "pivot": [
+       0,
+       25
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let shoes=f.shoes!==false;\nctx.fillStyle=shoes?'#2a1a0a':'#C9894A'; ctx.beginPath(); ctx.ellipse(6,3,12,5,0,0,Math.PI*2); ctx.fill();\nif(shoes){ctx.fillStyle='#1a0f05'; ctx.fillRect(-4,-1,6,4); ctx.fillStyle='#B8863B'; ctx.beginPath(); ctx.arc(6,3,1.5,0,Math.PI*2); ctx.fill();}\nelse{ctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.ellipse(8,4,5,3,0,0,Math.PI*2); ctx.fill();}"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       9,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-6,0); ctx.lineTo(-5,30); ctx.arc(0,30,5,Math.PI,2*Math.PI,false); ctx.lineTo(6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,30); ctx.lineTo(5,30); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       27
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4.5,28); ctx.arc(0,28,4.5,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,28); ctx.lineTo(4.5,28); ctx.lineTo(4.5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footR",
+      "parent": "shinR",
+      "pivot": [
+       0,
+       25
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let shoes=f.shoes!==false;\nctx.fillStyle=shoes?'#2a1a0a':'#C9894A'; ctx.beginPath(); ctx.ellipse(6,3,12,5,0,0,Math.PI*2); ctx.fill();\nif(shoes){ctx.fillStyle='#1a0f05'; ctx.fillRect(-4,-1,6,4); ctx.fillStyle='#B8863B'; ctx.beginPath(); ctx.arc(6,3,1.5,0,Math.PI*2); ctx.fill();}\nelse{ctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.ellipse(8,4,5,3,0,0,Math.PI*2); ctx.fill();}"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       0,
+       -4
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#F2EFE7'; ctx.beginPath(); ctx.arc(0,0,8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.08)'; ctx.beginPath(); ctx.arc(2,2,5,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.35)'; ctx.beginPath(); ctx.arc(-2,-2,3,0,Math.PI*2); ctx.fill();"
+     }
+    ]
+   },
+   "mcgregor": {
+    "id": "mcgregor",
+    "poses": {
+     "idle": {
+      "_y": 11
+     },
+     "walk1": {
+      "armL": -32,
+      "forearmL": 20,
+      "armR": 32,
+      "forearmR": -20,
+      "legL": 28,
+      "shinL": -16,
+      "footL": -14,
+      "legR": -28,
+      "shinR": 16,
+      "footR": 14,
+      "_y": 16
+     },
+     "walk2": {
+      "armL": 32,
+      "forearmL": -20,
+      "armR": -32,
+      "forearmR": 20,
+      "legL": -28,
+      "shinL": 16,
+      "footL": 14,
+      "legR": 28,
+      "shinR": -16,
+      "footR": -14,
+      "_y": 16
+     },
+     "run1": {
+      "armL": -60,
+      "forearmL": 35,
+      "armR": 60,
+      "forearmR": -35,
+      "legL": 48,
+      "shinL": -40,
+      "footL": -10,
+      "legR": -48,
+      "shinR": 40,
+      "footR": 10,
+      "body": 8,
+      "_y": 17
+     },
+     "run2": {
+      "armL": 60,
+      "forearmL": -35,
+      "armR": -60,
+      "forearmR": 35,
+      "legL": -48,
+      "shinL": 40,
+      "footL": 10,
+      "legR": 48,
+      "shinR": -40,
+      "footR": -10,
+      "body": -8,
+      "_y": 23
+     },
+     "kneel": {
+      "body": 80,
+      "head": -100,
+      "armL": -80,
+      "forearmL": 0,
+      "armR": -80,
+      "forearmR": 0,
+      "legL": -80,
+      "shinL": 90,
+      "footL": -90,
+      "legR": -80,
+      "shinR": 90,
+      "footR": -90,
+      "_y": 27
+     },
+     "hoe": {
+      "body": 20,
+      "head": -25,
+      "armL": -40,
+      "forearmL": 55,
+      "armR": -10,
+      "forearmR": 10,
+      "legL": -20,
+      "shinL": 0,
+      "footL": 0,
+      "legR": -20,
+      "shinR": 0,
+      "footR": 0,
+      "_y": 7
+     },
+     "bend": {
+      "body": 35,
+      "head": -20,
+      "armL": -30,
+      "forearmL": 40,
+      "armR": 30,
+      "forearmR": -40,
+      "legL": -15,
+      "shinL": -10,
+      "footL": -10,
+      "legR": -55,
+      "shinR": 10,
+      "footR": 10,
+      "_y": 7
+     },
+     "tired": {
+      "body": 10,
+      "head": 15,
+      "armL": 20,
+      "forearmL": -10,
+      "armR": -20,
+      "forearmR": 10,
+      "_y": 8
+     },
+     "rest": {
+      "_y": 11
+     },
+     "rise": {
+      "body": 45,
+      "head": -50,
+      "armL": -30,
+      "forearmL": 20,
+      "armR": -10,
+      "forearmR": 10,
+      "legL": -25,
+      "shinL": 40,
+      "footL": -10,
+      "legR": 15,
+      "shinR": -30,
+      "footR": 0,
+      "_y": 20
+     },
+     "shout": {
+      "body": 0,
+      "head": -5,
+      "armL": -20,
+      "forearmL": 10,
+      "armR": -150,
+      "forearmR": -20,
+      "legL": 5,
+      "shinL": -3,
+      "footL": -3,
+      "legR": -5,
+      "shinR": 3,
+      "footR": 3,
+      "_y": 11
+     },
+     "lunge": {
+      "body": 25,
+      "head": -30,
+      "armL": -10,
+      "forearmL": 5,
+      "armR": 30,
+      "forearmR": -20,
+      "legL": 5,
+      "shinL": -10,
+      "footL": -5,
+      "legR": -35,
+      "shinR": 5,
+      "footR": 5,
+      "_y": 5
+     },
+     "stamp": {
+      "body": 0,
+      "head": 0,
+      "armL": -10,
+      "forearmL": 5,
+      "armR": 10,
+      "forearmR": -5,
+      "legL": -35,
+      "shinL": 20,
+      "footL": 10,
+      "legR": 0,
+      "shinR": 0,
+      "footR": 0,
+      "_y": 11
+     },
+     "peer": {
+      "body": 40,
+      "head": -20,
+      "armL": -10,
+      "forearmL": 5,
+      "armR": 40,
+      "forearmR": 30,
+      "legL": -30,
+      "shinL": -5,
+      "footL": -5,
+      "legR": -50,
+      "shinR": 5,
+      "footR": 5,
+      "_y": 4
+     },
+     "turnpot": {
+      "body": 50,
+      "head": -30,
+      "armL": -20,
+      "forearmL": 30,
+      "armR": 20,
+      "forearmR": -30,
+      "legL": -40,
+      "shinL": -5,
+      "footL": -5,
+      "legR": -60,
+      "shinR": 5,
+      "footR": 5,
+      "_y": 2
+     }
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": ""
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -90
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "ctx.fillStyle='#D9C28A'; ctx.beginPath(); ctx.ellipse(0,-30,24,34,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.ellipse(9,-24,12,26,0.3,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.10)'; ctx.beginPath(); ctx.ellipse(-9,-38,10,20,-0.3,0,Math.PI*2); ctx.fill();\n// waistcoat\nctx.fillStyle='#7B5A3A'; ctx.beginPath(); ctx.moveTo(-20,-52); ctx.lineTo(-22,12); ctx.lineTo(22,12); ctx.lineTo(20,-52); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(6,-50); ctx.lineTo(8,12); ctx.lineTo(22,12); ctx.lineTo(20,-52); ctx.closePath(); ctx.fill();\n// shirt peek\nctx.fillStyle='#E8F0F8'; ctx.fillRect(-6,-56,12,8);\n// waistcoat buttons\nctx.fillStyle='#B8863B';\nfor(let i=0;i<4;i++){ctx.beginPath();ctx.arc(0,-40+i*11,3,0,Math.PI*2);ctx.fill();}\n// belt\nctx.fillStyle='#3a2a1a'; ctx.fillRect(-22,10,44,5);"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       0,
+       -66
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#E8B08C'; ctx.beginPath(); ctx.arc(0,0,19,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.arc(6,5,11,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.12)'; ctx.beginPath(); ctx.arc(-6,-6,8,0,Math.PI*2); ctx.fill();\n// clear nose\nctx.fillStyle='#C9894A'; ctx.beginPath(); ctx.arc(18,3,4.5,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(255,255,255,0.35)'; ctx.beginPath(); ctx.arc(17,2,1.4,0,Math.PI*2); ctx.fill();\n// big readable eye\nlet blink=f.blink||0; let look=f.look||0;\nif(blink>0.5){ ctx.fillStyle='#5a3a2a'; ctx.fillRect(-8,-4,14,3); }\nelse { ctx.fillStyle='#2F2F2F'; ctx.beginPath(); ctx.arc(-4+look*2,-2,5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(-3+look*2,-3,1.8,0,Math.PI*2); ctx.fill(); }\n// brow\nctx.fillStyle='#5a3a2a'; ctx.save(); ctx.translate(-6,-9); ctx.rotate((f.brow||0)*0.2); ctx.fillRect(-6,-1,12,2.4); ctx.restore();\n// mouth\nlet m=f.mouth||'flat';\nctx.fillStyle='#3a2a1a';\nif(m==='open'){ctx.beginPath();ctx.ellipse(9,8,4,4.5,0,0,Math.PI*2);ctx.fill();}\nelse{ctx.fillRect(8,8,8,2);}\n// neat white beard on chin and lower cheeks only\nctx.fillStyle='#F2EFE7'; ctx.beginPath(); ctx.moveTo(-6,10); ctx.quadraticCurveTo(-8,18,0,22); ctx.quadraticCurveTo(8,26,16,20); ctx.quadraticCurveTo(18,12,12,10); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.06)'; ctx.beginPath(); ctx.ellipse(8,18,9,6,0,0,Math.PI*2); ctx.fill();\n// cheek\nctx.fillStyle='rgba(217,122,58,0.20)'; ctx.beginPath(); ctx.arc(12,7,5,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "hat",
+      "parent": "head",
+      "pivot": [
+       0,
+       -20
+      ],
+      "rest": 0,
+      "z": 5,
+      "code": "ctx.fillStyle='#D9B56A'; ctx.beginPath(); ctx.ellipse(0,-4,20,6,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.ellipse(0,-3,20,3,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#D9B56A'; ctx.beginPath(); ctx.moveTo(-16,-6); ctx.lineTo(-14,-20); ctx.lineTo(14,-20); ctx.lineTo(16,-6); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.12)'; ctx.beginPath(); ctx.moveTo(4,-20); ctx.lineTo(16,-6); ctx.lineTo(14,-20); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a1a0a'; ctx.fillRect(-16,-8,32,2);"
+     },
+     {
+      "name": "armL",
+      "parent": "body",
+      "pivot": [
+       -20,
+       -48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#E8F0F8'; ctx.beginPath(); ctx.moveTo(-6,0); ctx.lineTo(-5,26); ctx.arc(0,26,5,Math.PI,2*Math.PI,false); ctx.lineTo(6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,26); ctx.lineTo(5,26); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\n// rolled cuff\nctx.fillStyle='#D9C28A'; ctx.fillRect(-6,20,12,6);"
+     },
+     {
+      "name": "forearmL",
+      "parent": "armL",
+      "pivot": [
+       0,
+       23
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#D9C28A'; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4.5,24); ctx.arc(0,24,4.5,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,24); ctx.lineTo(4.5,24); ctx.lineTo(4.5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handL",
+      "parent": "forearmL",
+      "pivot": [
+       0,
+       21
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#D9C28A'; ctx.beginPath(); ctx.ellipse(0,4,6.5,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.ellipse(2,5,3,3,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armR",
+      "parent": "body",
+      "pivot": [
+       20,
+       -48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#E8F0F8'; ctx.beginPath(); ctx.moveTo(-6,0); ctx.lineTo(-5,26); ctx.arc(0,26,5,Math.PI,2*Math.PI,false); ctx.lineTo(6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,26); ctx.lineTo(5,26); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='#D9C28A'; ctx.fillRect(-6,20,12,6);"
+     },
+     {
+      "name": "forearmR",
+      "parent": "armR",
+      "pivot": [
+       0,
+       23
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#D9C28A'; ctx.beginPath(); ctx.moveTo(-5,0); ctx.lineTo(-4.5,24); ctx.arc(0,24,4.5,Math.PI,2*Math.PI,false); ctx.lineTo(5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,24); ctx.lineTo(4.5,24); ctx.lineTo(4.5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handR",
+      "parent": "forearmR",
+      "pivot": [
+       0,
+       21
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#D9C28A'; ctx.beginPath(); ctx.ellipse(0,4,6.5,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.10)'; ctx.beginPath(); ctx.ellipse(2,5,3,3,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "rake",
+      "parent": "handR",
+      "pivot": [
+       2,
+       4
+      ],
+      "rest": 0,
+      "z": 6,
+      "code": "if(f.prop!=='rake') return;\nctx.fillStyle='#7B5A3A'; ctx.fillRect(-2,-40,4,52);\nctx.fillStyle='#B8863B';\nfor(let i=0;i<6;i++){ctx.fillRect(-14,-40+i*7,30,2);}\nctx.fillStyle='#5a3a2a'; ctx.fillRect(-2,-40,4,4);"
+     },
+     {
+      "name": "hoe",
+      "parent": "handR",
+      "pivot": [
+       2,
+       4
+      ],
+      "rest": 0,
+      "z": 6,
+      "code": "if(f.prop!=='hoe') return;\nctx.fillStyle='#7B5A3A'; ctx.fillRect(-2,-52,4,64);\nctx.fillStyle='#B8863B'; ctx.beginPath(); ctx.moveTo(-2,-52); ctx.lineTo(-16,-42); ctx.lineTo(-12,-38); ctx.lineTo(2,-48); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "sieve",
+      "parent": "handR",
+      "pivot": [
+       2,
+       4
+      ],
+      "rest": 0,
+      "z": 6,
+      "code": "if(f.prop!=='sieve') return;\nctx.fillStyle='#B8863B'; ctx.beginPath(); ctx.ellipse(0,0,16,10,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#D9C28A'; ctx.beginPath(); ctx.ellipse(0,-2,14,8,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#7B5A3A'; ctx.fillRect(-16,-1,32,2);"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -12,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#4F4F4F'; ctx.beginPath(); ctx.moveTo(-8,0); ctx.lineTo(-7,42); ctx.arc(0,42,7,Math.PI,2*Math.PI,false); ctx.lineTo(8,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,42); ctx.lineTo(7,42); ctx.lineTo(7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       39
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.moveTo(-7,0); ctx.lineTo(-6,34); ctx.arc(0,34,6,Math.PI,2*Math.PI,false); ctx.lineTo(7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,34); ctx.lineTo(6,34); ctx.lineTo(6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footL",
+      "parent": "shinL",
+      "pivot": [
+       0,
+       31
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.ellipse(8,4,14,6,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#1a0f05'; ctx.fillRect(-4,-1,8,5);"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       12,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#4F4F4F'; ctx.beginPath(); ctx.moveTo(-8,0); ctx.lineTo(-7,42); ctx.arc(0,42,7,Math.PI,2*Math.PI,false); ctx.lineTo(8,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,42); ctx.lineTo(7,42); ctx.lineTo(7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       39
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.moveTo(-7,0); ctx.lineTo(-6,34); ctx.arc(0,34,6,Math.PI,2*Math.PI,false); ctx.lineTo(7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle='rgba(0,0,0,0.14)'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,34); ctx.lineTo(6,34); ctx.lineTo(6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footR",
+      "parent": "shinR",
+      "pivot": [
+       0,
+       31
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#2a1a0a'; ctx.beginPath(); ctx.ellipse(8,4,14,6,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#1a0f05'; ctx.fillRect(-4,-1,8,5);"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       0,
+       -2
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#5a3a2a'; ctx.fillRect(8,-30,10,12); ctx.fillStyle='rgba(0,0,0,0.15)'; ctx.fillRect(8,-30,10,3);"
+     }
+    ]
+   }
+  },
+  "layers": [
+   {
+    "name": "sky_far",
+    "depth": 0,
+    "code": "const g=ctx.createLinearGradient(0,0,0,H);\ng.addColorStop(0,'#F4E7C5');\ng.addColorStop(0.35,'#F2C7A8');\ng.addColorStop(0.72,'#E8A86A');\ng.addColorStop(1,'#D97A3A');\nctx.fillStyle=g; ctx.fillRect(0,0,W,H);\n// strong top cloud masses for edge detail\nfor(let i=0;i<12;i++){\n const x=10+i*33;const y=18+(i%3)*24;const s=16+(i%4)*5;\n ctx.fillStyle=i%2?'#E8A86A':'#D97A3A';\n ctx.globalAlpha=0.42;\n ctx.beginPath();ctx.ellipse(x,y,s*1.5,s*0.62,0,0,Math.PI*2);ctx.fill();\n ctx.globalAlpha=0.75;\n ctx.fillStyle='#F4E7C5';\n ctx.beginPath();ctx.ellipse(x-s*0.4,y+s*0.1,s*0.9,s*0.42,0,0,Math.PI*2);ctx.fill();\n ctx.beginPath();ctx.ellipse(x+s*0.45,y-s*0.08,s*0.95,s*0.45,0,0,Math.PI*2);ctx.fill();\n ctx.globalAlpha=1;\n ctx.strokeStyle='rgba(123,90,58,0.28)';ctx.lineWidth=1.5;\n ctx.beginPath();ctx.ellipse(x,y,s*1.5,s*0.62,0,0,Math.PI*2);ctx.stroke();\n}\n// sun\nctx.globalAlpha=0.42;\nctx.beginPath(); ctx.arc(318,118,62,0,Math.PI*2); ctx.fillStyle='#E8A86A'; ctx.fill();\nctx.globalAlpha=0.78;\nctx.beginPath(); ctx.arc(318,118,34,0,Math.PI*2); ctx.fillStyle='#F4E7C5'; ctx.fill();\nctx.globalAlpha=1;\nfunction cloud(x,y,s){ctx.beginPath();ctx.ellipse(x,y,s*1.35,s*0.58,0,0,Math.PI*2);ctx.fillStyle='rgba(244,231,197,0.78)';ctx.fill();ctx.beginPath();ctx.ellipse(x-s*0.75,y+s*0.14,s*0.88,s*0.48,0,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.ellipse(x+s*0.78,y+s*0.12,s*0.92,s*0.5,0,0,Math.PI*2);ctx.fill();}\nfor(let i=0;i<8;i++){cloud(30+i*52,68+(i%3)*26,17+(i%4)*3);}\nfor(let i=0;i<6;i++){cloud(20+i*68,42+(i%2)*15,13+(i%3)*2);}\nctx.fillStyle='#4F6F3A';\nfor(let i=0;i<13;i++){const x=-24+i*36;ctx.beginPath();ctx.moveTo(x,304);ctx.lineTo(x+17,248+(i%4)*9);ctx.lineTo(x+34,304);ctx.closePath();ctx.fill();}\nctx.fillStyle='#8FAE6B';\nctx.beginPath();ctx.moveTo(-30,316);for(let x=-30;x<=420;x+=10){ctx.lineTo(x,307+Math.sin(x*0.045)*7);}ctx.lineTo(420,332);ctx.lineTo(-30,332);ctx.closePath();ctx.fill();\nconst g2=ctx.createLinearGradient(0,330,0,H);\ng2.addColorStop(0,'rgba(217,122,58,0.16)');g2.addColorStop(1,'rgba(123,90,58,0.26)');\nctx.fillStyle=g2;ctx.fillRect(0,330,W,H-330);"
+   },
+   {
+    "name": "garden_wall",
+    "depth": 0.16,
+    "code": "const top=255,bottom=355;\nctx.fillStyle='#7B5A3A';ctx.fillRect(-30,top,W+60,bottom-top);\nfor(let row=0;row<9;row++){\n const y=top+row*11+2;\n for(let i=0;i<23;i++){\n  const x=-28+i*20+(row%2)*10;\n  ctx.fillStyle=(i+row)%3===0?'#8B6543':'#6E5135';\n  ctx.fillRect(x,y,17,9);\n  ctx.strokeStyle='rgba(55,32,18,0.38)';ctx.lineWidth=1;ctx.strokeRect(x,y,17,9);\n }\n}\nctx.fillStyle='#D97A3A';ctx.fillRect(-30,top-8,W+60,8);\nfor(let x=-30;x<W+30;x+=22){ctx.fillStyle='#E8A86A';ctx.fillRect(x,top-8,11,4);}\nctx.strokeStyle='#4F6F3A';ctx.lineWidth=2.2;\nfor(let i=0;i<9;i++){const x=18+i*46;ctx.beginPath();ctx.moveTo(x,top+4);ctx.quadraticCurveTo(x+12,top+38,x-6,top+76);ctx.stroke();}\nfor(let i=0;i<46;i++){const x=-16+i*9.5;const y=top+8+Math.sin(i*0.65)*16;ctx.beginPath();ctx.ellipse(x,y,7,5,0,0,Math.PI*2);ctx.fillStyle=i%2?'#4F6F3A':'#8FAE6B';ctx.fill();}\nctx.fillStyle='rgba(60,40,25,0.24)';ctx.fillRect(-30,bottom,W+60,16);"
+   },
+   {
+    "name": "long_shadows",
+    "depth": 0.28,
+    "code": "ctx.fillStyle='rgba(60,40,25,0.17)';\nctx.beginPath();ctx.ellipse(195,374,215,26,0,0,Math.PI*2);ctx.fill();\nctx.fillStyle='rgba(60,40,25,0.22)';\nctx.beginPath();ctx.ellipse(105,399,88,13,0,0,Math.PI*2);ctx.fill();\nctx.beginPath();ctx.ellipse(248,401,96,14,0,0,Math.PI*2);ctx.fill();\nctx.beginPath();ctx.ellipse(328,396,58,11,0,0,Math.PI*2);ctx.fill();\nctx.fillStyle='rgba(60,40,25,0.12)';\nfor(let i=0;i<6;i++){ctx.beginPath();ctx.ellipse(60+i*62,412,40,7,0,0,Math.PI*2);ctx.fill();}"
+   },
+   {
+    "name": "garden_beds",
+    "depth": 0.5,
+    "code": "const soilY=350; ctx.fillStyle='#7B5A3A'; ctx.beginPath(); ctx.roundRect(-30, soilY, 450, 170, 12); ctx.fill(); for(let i=0;i<9;i++){ ctx.fillStyle = i%2?'#6A4A2A':'#8B6A4A'; ctx.fillRect(-30, soilY+8+i*17, 450, 11); } for(let i=0;i<14;i++){ let x=-20+i*30 + (i%2?6:0); let y=soilY+24+(i%3)*12; for(let j=0;j<7;j++){ ctx.fillStyle = j%2?'#4F6F3A':'#8FAE6B'; ctx.beginPath(); ctx.ellipse(x+Math.cos(j*1.1)*7, y+Math.sin(j*1.1)*5, 11, 7, j*0.6, 0, Math.PI*2); ctx.fill(); } ctx.fillStyle='#4F6F3A'; ctx.beginPath(); ctx.arc(x,y,6,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8FAE6B'; ctx.beginPath(); ctx.arc(x-2,y-2,3,0,Math.PI*2); ctx.fill(); } for(let i=0;i<10;i++){ let x=0+i*38; let y=soilY+95+(i%2)*8; ctx.fillStyle='#A89060'; ctx.beginPath(); ctx.ellipse(x,y,6,4,0.3,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#7B5A3A'; ctx.beginPath(); ctx.arc(x,y,2,0,Math.PI*2); ctx.fill(); }"
+   },
+   {
+    "name": "gooseberry_net",
+    "depth": 0.46,
+    "code": "for(let i=0;i<20;i++){const x=298+i*4;const y=354+Math.sin(i*0.75)*13;ctx.beginPath();ctx.ellipse(x,y,8.5,6.5,0,0,Math.PI*2);ctx.fillStyle=i%2?'#4F6F3A':'#8FAE6B';ctx.fill();}\nfor(let i=0;i<13;i++){ctx.beginPath();ctx.arc(296+i*6,350+(i%3)*4,3.2,0,Math.PI*2);ctx.fillStyle='#D96B5A';ctx.fill();}\nctx.fillStyle='#7B5A3A';\nctx.fillRect(284,330,6,66);ctx.fillRect(360,328,6,68);\nctx.fillRect(284,324,82,6);\nctx.strokeStyle='rgba(244,231,197,0.8)';ctx.lineWidth=1;\nfor(let x=290;x<362;x+=7){ctx.beginPath();ctx.moveTo(x,330);ctx.lineTo(x,392);ctx.stroke();}\nfor(let y=330;y<392;y+=7){ctx.beginPath();ctx.moveTo(284,y);ctx.lineTo(366,y);ctx.stroke();}\nctx.strokeStyle='rgba(232,168,106,0.45)';ctx.lineWidth=1;\nfor(let i=0;i<11;i++){ctx.beginPath();ctx.moveTo(284+i*8,330);ctx.lineTo(284+i*8+42,392);ctx.stroke();}"
+   },
+   {
+    "name": "foreground_left",
+    "depth": 0.78,
+    "front": true,
+    "code": "for(let i=0;i<10;i++){\n const x=8+i*6;const baseY=318+i*20;\n ctx.strokeStyle='#4F6F3A';ctx.lineWidth=3.4;\n ctx.beginPath();ctx.moveTo(x,520);ctx.quadraticCurveTo(x-5,425,x+2,baseY);ctx.stroke();\n for(let j=0;j<4;j++){\n  ctx.beginPath();ctx.ellipse(x+(j%2?9:-9),baseY+j*14,13,6.5,j%2?0.55:-0.55,0,Math.PI*2);\n  ctx.fillStyle=j%2?'#8FAE6B':'#4F6F3A';ctx.fill();\n }\n}\nfor(let i=0;i<6;i++){\n const x=18+i*9;const y=305+i*28;\n ctx.fillStyle=i%2?'#D96B5A':'#F2C7A8';\n ctx.beginPath();ctx.arc(x,y,4.5,0,Math.PI*2);ctx.fill();\n ctx.fillStyle='#E8A86A';ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();\n}"
+   },
+   {
+    "name": "foreground_right",
+    "depth": 0.82,
+    "front": true,
+    "code": "for(let i=0;i<10;i++){\n const x=332+i*6;const baseY=320+i*19;\n ctx.strokeStyle='#4F6F3A';ctx.lineWidth=3.4;\n ctx.beginPath();ctx.moveTo(x,520);ctx.quadraticCurveTo(x+5,428,x-2,baseY);ctx.stroke();\n for(let j=0;j<4;j++){\n  ctx.beginPath();ctx.ellipse(x+(j%2?9:-9),baseY+j*14,13,6.5,j%2?0.55:-0.55,0,Math.PI*2);\n  ctx.fillStyle=j%2?'#8FAE6B':'#4F6F3A';ctx.fill();\n }\n}\nfor(let i=0;i<6;i++){\n const x=345+i*8;const y=308+i*27;\n ctx.fillStyle=i%2?'#D96B5A':'#F2C7A8';\n ctx.beginPath();ctx.arc(x,y,4.5,0,Math.PI*2);ctx.fill();\n ctx.fillStyle='#E8A86A';ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();\n}"
+   },
+   {
+    "name": "breeze_leaves",
+    "depth": 0.62,
+    "animated": true,
+    "code": "function leaf(x,y,a,c){ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(8,-5,16,0);ctx.quadraticCurveTo(8,5,0,0);ctx.fillStyle=c;ctx.fill();ctx.restore();}\nfor(let i=0;i<8;i++){\n const p=(t*0.32+i*0.13)%1;\n const x=52+i*42+Math.sin(t*0.8+i*1.1)*13;\n const y=125+p*255;\n const a=t*1.15+i*0.7;\n leaf(x,y,a,i%2?'#8FAE6B':'#F2C7A8');\n}"
+   }
+  ],
+  "ground": [
+   [
+    -30,
+    400
+   ],
+   [
+    50,
+    398
+   ],
+   [
+    120,
+    402
+   ],
+   [
+    190,
+    400
+   ],
+   [
+    260,
+    398
+   ],
+   [
+    330,
+    401
+   ],
+   [
+    420,
+    399
+   ]
+  ],
+  "anchors": {
+   "cabbage_patch": {
+    "x": 105,
+    "y": 388,
+    "rx": 78,
+    "ry": 24
+   },
+   "potato_patch": {
+    "x": 245,
+    "y": 395,
+    "rx": 86,
+    "ry": 26
+   },
+   "gooseberry_net": {
+    "x": 325,
+    "y": 360,
+    "rx": 42,
+    "ry": 34
+   },
+   "garden_wall": {
+    "x": 195,
+    "y": 305,
+    "rx": 225,
+    "ry": 52
+   }
+  },
+  "stage": {
+   "duration": 9.6,
+   "start": {
+    "peter": {
+     "char": "peter",
+     "x": 170,
+     "pose": "startled",
+     "facing": 1,
+     "scale": 1,
+     "lift": 0,
+     "z": 2,
+     "opacity": 1,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": -1,
+      "shoes": true,
+      "variant": 0
+     },
+     "exiting": false
+    },
+    "mcgregor": {
+     "char": "mcgregor",
+     "x": -40,
+     "pose": "run1",
+     "facing": 1,
+     "scale": 1.3,
+     "lift": 0,
+     "z": 1,
+     "opacity": 0,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 0,
+      "prop": "rake"
+     },
+     "exiting": true
+    }
+   },
+   "beats": [
+    {
+     "actor": "peter",
+     "at": 0,
+     "dur": 0.8,
+     "ease": "out",
+     "phrase": "Peter was most dreadfully frightened;",
+     "pose": "startled",
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": -1,
+      "shoes": true,
+      "variant": 0
+     },
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "peter",
+     "at": 0.8,
+     "dur": 1.2,
+     "ease": "inOut",
+     "phrase": "he rushed all over the garden, for he had forgotten the way back to the gate.",
+     "move_to": 210,
+     "cycle": [
+      "run1",
+      "run2"
+     ],
+     "hz": 4,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": -1,
+      "shoes": true,
+      "variant": 0
+     },
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 0.9,
+     "dur": 1.1,
+     "ease": "inOut",
+     "phrase": "he rushed all over the garden, for he had forgotten the way back to the gate.",
+     "move_to": 90,
+     "cycle": [
+      "run1",
+      "run2"
+     ],
+     "hz": 3.5,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 0,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    },
+    {
+     "actor": "peter",
+     "at": 2,
+     "dur": 0.9,
+     "ease": "inOut",
+     "phrase": "He lost one of his shoes among the cabbages,",
+     "move_to": 110,
+     "pose": "run2",
+     "face": {
+      "mouth": "flat",
+      "look": -1,
+      "brow": 0,
+      "shoes": false,
+      "variant": 0
+     },
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 2,
+     "dur": 0.9,
+     "ease": "inOut",
+     "phrase": "He lost one of his shoes among the cabbages,",
+     "move_to": 60,
+     "cycle": [
+      "run1",
+      "run2"
+     ],
+     "hz": 3.5,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 0,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    },
+    {
+     "actor": "peter",
+     "at": 2.9,
+     "dur": 1,
+     "ease": "inOut",
+     "phrase": "and the other shoe amongst the potatoes.",
+     "move_to": 230,
+     "pose": "run1",
+     "face": {
+      "mouth": "flat",
+      "look": 1,
+      "brow": 0,
+      "shoes": false,
+      "variant": 0
+     },
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 2.9,
+     "dur": 1,
+     "ease": "inOut",
+     "phrase": "and the other shoe amongst the potatoes.",
+     "move_to": 140,
+     "cycle": [
+      "run1",
+      "run2"
+     ],
+     "hz": 3.5,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 0,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    },
+    {
+     "actor": "peter",
+     "at": 3.9,
+     "dur": 1.3,
+     "ease": "out",
+     "phrase": "After losing them, he ran on four legs and went faster,",
+     "move_to": 300,
+     "cycle": [
+      "four1",
+      "four2"
+     ],
+     "hz": 6,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": -1,
+      "shoes": false,
+      "variant": 0
+     },
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 3.9,
+     "dur": 1.3,
+     "ease": "inOut",
+     "phrase": "After losing them, he ran on four legs and went faster,",
+     "move_to": 200,
+     "cycle": [
+      "run1",
+      "run2"
+     ],
+     "hz": 3,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 0,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    },
+    {
+     "actor": "peter",
+     "at": 5.2,
+     "dur": 1,
+     "ease": "in",
+     "phrase": "so that I think he might have got away altogether if he had not unfortunately run into a gooseberry net,",
+     "move_to": 300,
+     "cycle": [
+      "four1",
+      "four2"
+     ],
+     "hz": 6,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": -1,
+      "shoes": false,
+      "variant": 0
+     },
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 5.2,
+     "dur": 1,
+     "ease": "inOut",
+     "phrase": "so that I think he might have got away altogether if he had not unfortunately run into a gooseberry net,",
+     "move_to": 200,
+     "cycle": [
+      "run1",
+      "run2"
+     ],
+     "hz": 3,
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 0,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    },
+    {
+     "actor": "peter",
+     "at": 6.2,
+     "dur": 0.9,
+     "ease": "anticipate",
+     "phrase": "and got caught by the large buttons on his jacket.",
+     "move_to": 300,
+     "pose": "trap",
+     "clip": "gooseberry_net",
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 6.2,
+     "dur": 0.9,
+     "ease": "inOut",
+     "phrase": "and got caught by the large buttons on his jacket.",
+     "move_to": 240,
+     "pose": "lunge",
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 1,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    },
+    {
+     "actor": "peter",
+     "at": 7.1,
+     "dur": 2.5,
+     "ease": "inOut",
+     "phrase": "It was a blue jacket with brass buttons, quite new.",
+     "move_to": 300,
+     "pose": "wriggle",
+     "cycle": [
+      "wriggle",
+      "trap"
+     ],
+     "hz": 2,
+     "clip": "gooseberry_net",
+     "exiting": false,
+     "z": 2
+    },
+    {
+     "actor": "mcgregor",
+     "at": 7.1,
+     "dur": 2.5,
+     "ease": "inOut",
+     "phrase": "It was a blue jacket with brass buttons, quite new.",
+     "move_to": 240,
+     "pose": "shout",
+     "face": {
+      "mouth": "open",
+      "look": 1,
+      "brow": 1,
+      "prop": "rake"
+     },
+     "exiting": false,
+     "z": 1
+    }
+   ]
+  }
+ }
+}

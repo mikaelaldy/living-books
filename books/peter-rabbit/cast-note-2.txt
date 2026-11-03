@@ -1,0 +1,5 @@
+Legs are children of the body, so rotating the body by A also swings the legs by A. Whenever a pose leans the body, add minus A to both thigh bones (and minus A to the head) so that the legs stay under the character and the head stays level. Only send poses, not bones.
+1. mcgregor: fix bend, turnpot, peer, hoe, lunge, kneel, rise with that rule. In kneel the body is level (about 80 degrees), thighs point straight down, shins folded back flat on the ground, and both arms point straight down to the ground with palms flat.
+2. peter: fix eat, cry, rest, peep, sick, tremble with that rule. four1 and four2: a true gallop: body level (about 75 degrees forward), head counter-rotated to look forward, both arms reaching forward and down in four1 and back in four2, both thighs swung the opposite way, so that he is low and long, on all fours.
+3. mother: she has a long skirt, so keep her body within 15 degrees of upright in dose and tuck, and lean only the head and arms.
+4. sisters: same for eat, hop1, hop2: keep the body within 10 degrees of upright.

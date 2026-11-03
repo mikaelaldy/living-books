@@ -1,0 +1,111 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>step images capture</title>
+<!-- Development only: draws one image per step of the method from Beam's real data for Peter Rabbit page 5. Not shipped. -->
+<style>
+  html,body { margin:0; background:#fff; font-family:Georgia,serif; color:#2b2420 }
+  .s { position:relative; width:800px; height:560px; overflow:hidden; background:#f4eadb; margin-bottom:20px }
+  .tag { position:absolute; left:28px; top:24px; font:600 14px system-ui,sans-serif; letter-spacing:.08em; color:#c8743a }
+  .mono { font:14px/1.45 Consolas,ui-monospace,monospace }
+  .dark { background:#2b2420; color:#efe5d6; border-radius:12px; padding:16px 18px }
+  .lab { font:600 13px system-ui,sans-serif; color:#6d6055; text-align:center; margin-top:8px }
+  canvas.sc { border-radius:10px; box-shadow:0 8px 20px rgba(70,45,20,.22); display:block }
+  b.k { color:#f2b27a; font-weight:600 } .bad { color:#ff9c86 } .ok { color:#a9d98f } .soft { color:#a8998a }
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head><body>
+<!-- 1 Read -->
+<div class="s" id="s1">
+  <div style="position:absolute;left:28px;top:56px;width:330px;height:470px;background:#fbf4e8;border-radius:12px;box-shadow:0 8px 20px rgba(70,45,20,.15);padding:22px 24px;box-sizing:border-box;overflow:hidden">
+    <div style="font:600 12px system-ui;letter-spacing:.08em;color:#c8743a;margin-bottom:10px">THE WHOLE BOOK, IN ONE CALL</div>
+    <div id="bookText" style="font-size:13px;line-height:1.5;color:#6d6055;-webkit-mask-image:linear-gradient(#000 70%,transparent)"></div>
+  </div>
+  <div style="position:absolute;left:372px;top:236px;font-size:40px;color:#c8743a">→</div>
+  <div class="dark mono" style="position:absolute;left:420px;top:56px;width:352px;height:470px;box-sizing:border-box" id="plan"></div>
+</div>
+<!-- 2 Design characters -->
+<div class="s" id="s2"><canvas id="c2" width="1600" height="1120" style="width:800px;height:560px"></canvas></div>
+<!-- 3 Paint in layers -->
+<div class="s" id="s3" style="height:440px"><div id="layers" style="position:absolute;left:28px;top:62px;display:flex;gap:16px"></div><div class="mono" id="stats" style="position:absolute;left:28px;top:340px;right:28px;color:#6d6055;font-size:15px;line-height:1.5"></div></div>
+<!-- 4 What Beam reads, and the fix -->
+<div class="s" id="s4">
+  <div style="position:absolute;left:28px;top:56px"><canvas class="sc" id="c4" width="510" height="680" style="width:255px;height:340px"></canvas><div class="lab">What you see</div></div>
+  <div style="position:absolute;left:300px;top:56px"><div class="dark mono" id="map" style="font-size:7.6px;line-height:1.02;letter-spacing:.5px;padding:10px 12px;width:226px;height:316px;box-sizing:border-box;overflow:hidden;white-space:pre"></div><div class="lab">What Beam reads</div></div>
+  <div class="dark mono" style="position:absolute;left:548px;top:56px;width:226px;height:470px;box-sizing:border-box;font-size:13px">
+    <b class="k">check_scene</b><br><span class="bad">peter is 57% hidden by front layers</span><br><span class="bad">peter is 5% outside the frame</span><br><br>
+    <b class="k">paint_scene</b><br><span class="soft">repaints foreground_plants and breeze_leaves</span><br><br>
+    <b class="k">stage_scene</b><br><span class="soft">Peter now runs to x = 70</span><br><br>
+    <b class="k">check_scene</b><br><span class="ok">0 issues · clean</span><br><br>
+    <b class="k">finish_scene</b><br><span class="ok">gate passed</span>
+  </div>
+  <div style="position:absolute;left:28px;top:430px;width:500px;font-size:16px;line-height:1.45;color:#6d6055">Beam cannot see images. Its tools turn each frame into a map of colour letters and a list of problems, and it fixes them in code.</div>
+</div>
+<!-- 5 Pop-up -->
+<div class="s" id="s5"><canvas id="pop" style="position:absolute;left:28px;top:20px;width:390px;height:520px;border-radius:12px"></canvas><canvas id="side" width="680" height="1040" style="position:absolute;left:446px;top:20px;width:340px;height:520px"></canvas></div>
+<script src="engine.js"></script>
+<script type="module">
+import { PopupStage } from './popup.js';
+const $ = s => document.querySelector(s);
+const RAW = await fetch('data/peter-rabbit/pages/05.json').then(r => r.text()); const page = JSON.parse(RAW); const fresh = () => JSON.parse(RAW).scene;
+const R = await fetch('data/peter-rabbit/replay.json').then(r => r.json());
+const book = await fetch('data/peter-rabbit/book.json').then(r => r.json());
+const firstPages = await Promise.all([1, 2, 3, 4, 5].map(i => fetch(`data/peter-rabbit/pages/0${i}.json`).then(r => r.json())));
+// 1 Read
+$('#bookText').textContent = firstPages.map(p => p.text).join('\n\n');
+const B = R.bible;
+const castNames = (B.cast || []).map(c => typeof c === 'string' ? c : (c.name || c.id)).slice(0, 6).join(', ');
+$('#plan').innerHTML = `<div class="soft" style="font:600 12px system-ui;letter-spacing:.08em;margin-bottom:12px">BEAM'S STORY PLAN</div>
+<b class="k">world</b><br><span>${B.world.split('.')[0]}.</span><br><br>
+<b class="k">palette</b><br>${B.palette.map(c => `<i style="display:inline-block;width:24px;height:24px;border-radius:5px;margin:4px 4px 0 0;background:${c}"></i>`).join('')}<br><br>
+<b class="k">cast</b><br><span>${castNames}</span><br><br>
+<b class="k">pages</b><br><span>${book.pages.length} pages, each with a feeling:</span><br><span class="soft">${(B.arc || []).slice(0, 3).join(' ')}</span>`;
+// 2 Characters: the rig and some of its poses
+LB.reset(); LB.load(fresh());
+const c2 = $('#c2').getContext('2d'); c2.scale(2, 2);
+c2.font = '600 14px system-ui'; c2.fillStyle = '#c8743a'; c2.fillText('JOINTED PAPER PUPPETS, DRAWN IN CODE BY BEAM', 28, 38);
+const peter = fresh().chars.peter;
+const poses = Object.keys(peter.poses);
+const pick = ['stand', 'run', 'shock', 'sneak', 'hop', 'cry', 'walk', 'peek'].map(w => poses.find(p => p.includes(w))).filter(Boolean);
+const show = [...new Set([...pick, ...poses])].slice(0, 5);
+show.forEach((p, i) => {
+  const x = 92 + i * 154, y = 400;
+  c2.save(); c2.translate(x, y); c2.scale(1.6, 1.6); c2.translate(-0, 0); LB.poseSheet(c2, 'peter', p); c2.restore();
+  c2.fillStyle = '#6d6055'; c2.font = '15px Consolas, monospace'; c2.textAlign = 'center'; c2.fillText(p, x, 452); c2.textAlign = 'left';
+});
+const nb = peter.bones ? (Array.isArray(peter.bones) ? peter.bones.length : Object.keys(peter.bones).length) : '';
+c2.fillStyle = '#2b2420'; c2.font = '18px Georgia'; c2.fillText(`Peter: ${nb} bones, ${poses.length} poses. The tool measures joints and silhouettes so Beam can check them.`, 28, 528);
+window.layout2 = { show, x0: 90 };
+// 3 Layers, back to front
+const L = fresh().layers, at = [1, 3, 5, 7];
+for (const k of at) {
+  const sc = fresh(); sc.layers = L.slice(0, k); LB.reset(); LB.load(sc);
+  const cv = document.createElement('canvas'); cv.width = 340; cv.height = 453; cv.className = 'sc'; cv.style.width = '174px'; cv.style.height = '232px';
+  LB.render(cv.getContext('2d'), 0.5, { scale: 340 / LB.W, actors: false });
+  const w = document.createElement('div'); w.append(cv); const lab = document.createElement('div'); lab.className = 'lab'; lab.textContent = `${k} of ${L.length}: ${L[k - 1].name}`; w.append(lab); $('#layers').append(w);
+}
+$('#s3').insertAdjacentHTML('afterbegin', '<div class="tag">EACH PAGE IS PAINTED IN LAYERS OF CODE, BACK TO FRONT</div>');
+$('#s1').insertAdjacentHTML('afterbegin', '');
+// 4 What Beam reads
+LB.reset(); LB.load(fresh());
+LB.render($('#c4').getContext('2d'), 1.2, { scale: 510 / LB.W });
+const res = LB.toolPaint({}); $('#map').textContent = res.frame;
+$('#stats').textContent = `paint_scene returns: flat colour ${res.stats.largest_flat_colour_pct ?? ''}% · detail per band ${res.stats.edge_detail_pct_top_to_bottom.join(' ')} · ${res.stats.distinct_colour_buckets} colour groups, so Beam can tell flat or busy areas without seeing them`;
+$('#s4').insertAdjacentHTML('afterbegin', '<div class="tag">CHECK AND FIX</div>');
+// 5 Pop-up
+LB.reset(); LB.load(fresh());
+const pop = new PopupStage($('#pop')); pop.resize(); pop.load(); pop.sun.shadow.needsUpdate = true; pop.show(1.2, 0.9, 0.25);
+const sd = $('#side').getContext('2d'); sd.scale(2, 2);
+sd.font = '600 13px system-ui'; sd.fillStyle = '#c8743a'; sd.fillText('EACH LAYER STANDS AT ITS OWN DEPTH', 0, 18);
+const LL = fresh().layers, X0 = 128, XW = 190, rowY = i => 70 + i * 34;
+sd.fillStyle = '#6d6055'; sd.font = '600 12px system-ui'; sd.fillText('back', X0 - 8, 48); sd.fillText('front', X0 + XW - 22, 48);
+LL.forEach((l, i) => {
+  const z = l.depth ?? i / LL.length, y = rowY(i);
+  sd.strokeStyle = '#dccbb4'; sd.lineWidth = 2; sd.beginPath(); sd.moveTo(X0, y); sd.lineTo(X0 + XW, y); sd.stroke();
+  sd.fillStyle = l.front ? '#5f8a46' : '#3b5f8a'; sd.fillRect(X0 + z * XW - 4, y - 11, 8, 22);
+  sd.fillStyle = '#2b2420'; sd.font = '12.5px Consolas, monospace'; sd.fillText(l.name, 0, y + 4);
+});
+const fy = rowY(LL.findIndex(l => l.front)) - 17; sd.fillStyle = '#c8743a'; sd.font = '600 12px system-ui'; sd.fillText('▲ puppets act here, between the layers', X0 - 60, fy);
+sd.fillStyle = '#2b2420'; sd.font = '17px Georgia'; ['Beam gives every layer a depth.', 'The reader stands them up like', 'a paper theatre. Tilt a phone or', 'move the mouse to look in.'].forEach((t, i) => sd.fillText(t, 0, 360 + i * 24));
+window.redrawPop = () => { pop.sun.shadow.needsUpdate = true; pop.show(1.2, 0.9, 0.25); };
+window.ready = true;
+</script>
+</body></html>

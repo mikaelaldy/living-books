@@ -1,0 +1,717 @@
+{
+ "page": 17,
+ "text": "But at last he knew that he was going to die. He had just strength to fly up to the Prince’s shoulder once more. “Good-bye, dear Prince!” he murmured, “will you let me kiss your hand?” “I am glad that you are going to Egypt at last, little Swallow,” said the Prince, “you have stayed too long here; but you must kiss me on the lips, for I love you.” “It is not to Egypt that I am going,” said the Swallow. “I am going to the House of Death. Death is the brother of Sleep, is he not?” And he kissed the Happy Prince on the lips, and fell down dead at his feet. At that moment a curious crack sounded inside the statue, as if something had broken. The fact is that the leaden heart had snapped right in two. It certainly was a dreadfully hard frost.",
+ "feeling": "Grief",
+ "title": "Page 17: The Swallow's Death and the Cracked Heart",
+ "director_note": "I staged the swallow's final flight as a slow, exhausted climb to the prince's shoulder, letting his farewell linger before the kiss and fall. The prince's statue remains fixed and grieving, so the cracked heart reads as the tragedy's quiet, devastating turn.",
+ "gate": {
+  "passed": true,
+  "issues": []
+ },
+ "turns": 6,
+ "usage": {
+  "prompt": 98120,
+  "cached": 75200,
+  "completion": 15336,
+  "reasoning": 10126,
+  "seconds": 72.10174655914307,
+  "calls": 6,
+  "route": "reflection"
+ },
+ "scene": {
+  "chars": {
+   "happy_prince": {
+    "id": "happy_prince",
+    "poses": {
+     "give": {
+      "armR": -55,
+      "forearmR": -30,
+      "handR": 10,
+      "_y": -6
+     },
+     "gaze": {
+      "head": -16,
+      "_y": -9
+     },
+     "stand": {
+      "_y": -9
+     },
+     "weep": {
+      "armL": 8,
+      "armR": -8,
+      "head": 20,
+      "_y": -8
+     },
+     "rest": {
+      "_y": -9
+     }
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.2)'; ctx.beginPath(); ctx.ellipse(0,4,26,7,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -130
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let hi=s===4?'#B6BCC6':'#F2D580'; let sh=s===4?'#59606B':'#A9812C'; ctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-34,-42); ctx.bezierCurveTo(-40,0,-36,40,-24,46); ctx.lineTo(24,46); ctx.bezierCurveTo(36,40,40,0,34,-42); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(10,-36); ctx.bezierCurveTo(18,-4,16,30,8,46); ctx.lineTo(24,46); ctx.bezierCurveTo(36,40,40,0,34,-42); ctx.closePath(); ctx.fill();\nctx.fillStyle=hi; ctx.beginPath(); ctx.moveTo(-30,-38); ctx.bezierCurveTo(-26,-12,-24,18,-18,40); ctx.lineTo(-8,40); ctx.bezierCurveTo(-14,16,-16,-12,-20,-38); ctx.closePath(); ctx.fill();\nctx.fillStyle=s===4?'#6b7280':'#8B6A1F'; ctx.fillRect(-24,34,48,14); ctx.fillStyle=sh; ctx.fillRect(-24,44,48,4);\nctx.fillStyle=s===4?'#9aa0a8':'#F2D580';\nfor(let i=0;i<4;i++){ctx.beginPath();ctx.arc(0,-18+i*13,3.4,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,255,255,0.35)';ctx.beginPath();ctx.arc(-1,-19+i*13,1.2,0,Math.PI*2);ctx.fill();ctx.fillStyle=s===4?'#9aa0a8':'#F2D580';}\nctx.fillStyle=s===4?'#9aa0a8':'#F4E7D0'; ctx.beginPath(); ctx.moveTo(-18,-42); ctx.lineTo(0,-28); ctx.lineTo(18,-42); ctx.fill();\nctx.fillStyle=s===4?'#7D8491':'#F2D580'; ctx.fillRect(-7,-42,14,10);"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       0,
+       -45
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "let tears=!!f.tears; ctx.save(); ctx.rotate(tears?0.12:0); ctx.fillStyle='#D9B24C'; ctx.beginPath(); ctx.arc(0,0,25,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#A9812C'; ctx.beginPath(); ctx.arc(8,6,16,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2D580'; ctx.beginPath(); ctx.arc(-8,-6,12,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8B6A1F'; ctx.beginPath(); ctx.ellipse(-8,-10,5,1.6,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(8,-10,5,1.6,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#1F4E79'; ctx.beginPath(); ctx.arc(-8,-2,5.5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(8,-2,5.5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B7DBFF'; ctx.beginPath(); ctx.arc(-9,-3,1.8,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(7,-3,1.8,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#8B6A1F'; ctx.fillRect(-1,3,2,7); ctx.fillStyle='#8B6A1F'; ctx.beginPath(); ctx.ellipse(0,11,4,1.2,0,0,Math.PI*2); ctx.fill(); if(tears){ ctx.fillStyle='#DCEFFF'; ctx.beginPath(); ctx.ellipse(-9,12,2.2,4.5,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(9,13,2.2,5,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#B7DBFF'; ctx.beginPath(); ctx.ellipse(-9,18,1.6,3.5,0,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='#A9812C'; ctx.beginPath(); ctx.ellipse(0,-20,15,9,0,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#D9B24C'; ctx.beginPath(); ctx.ellipse(-6,-22,5,4,-0.3,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(0,-23,4,3,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(6,-22,5,4,0.3,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#F2D580'; ctx.beginPath(); ctx.ellipse(-8,-24,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(0,-25,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.ellipse(8,-24,2,1.4,0,0,Math.PI*2); ctx.fill(); ctx.restore();"
+     },
+     {
+      "name": "crown",
+      "parent": "head",
+      "pivot": [
+       0,
+       -24
+      ],
+      "rest": 0,
+      "z": 5,
+      "code": ""
+     },
+     {
+      "name": "armL",
+      "parent": "body",
+      "pivot": [
+       -26,
+       -20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-8,18,-7,38,-4,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(3,18,3,38,2,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmL",
+      "parent": "armL",
+      "pivot": [
+       0,
+       48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-5,0); ctx.bezierCurveTo(-6,16,-5,34,-3,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,16,2,34,1,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handL",
+      "parent": "forearmL",
+      "pivot": [
+       0,
+       42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(0,6,7,9,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(2,8,3,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "armR",
+      "parent": "body",
+      "pivot": [
+       26,
+       -20
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-8,18,-7,38,-4,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(3,18,3,38,2,48); ctx.lineTo(4,48); ctx.bezierCurveTo(7,38,8,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "forearmR",
+      "parent": "armR",
+      "pivot": [
+       0,
+       48
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-5,0); ctx.bezierCurveTo(-6,16,-5,34,-3,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,16,2,34,1,42); ctx.lineTo(3,42); ctx.bezierCurveTo(5,34,6,16,5,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "handR",
+      "parent": "forearmR",
+      "pivot": [
+       0,
+       42
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(0,6,7,9,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(2,8,3,5,0,0,Math.PI*2); ctx.fill();\nif(s!==4){\n ctx.fillStyle='#C9C9C9'; ctx.fillRect(-2,8,4,62); ctx.fillStyle='#B0B0B0'; ctx.fillRect(0,8,2,62);\n ctx.fillStyle='#8B6A1F'; ctx.fillRect(-8,6,16,6); ctx.fillStyle='#A9812C'; ctx.fillRect(-8,10,16,2);\n if(s===0){ ctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.arc(0,9,5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='#D97745'; ctx.beginPath(); ctx.arc(-1,7,1.6,0,Math.PI*2); ctx.fill(); }\n else { ctx.fillStyle='#5a5a5a'; ctx.beginPath(); ctx.arc(0,9,4.5,0,Math.PI*2); ctx.fill(); }\n} else {\n ctx.fillStyle='#7D8491'; ctx.beginPath(); ctx.moveTo(0,10); ctx.bezierCurveTo(-10,0,-18,8,-10,18); ctx.bezierCurveTo(-4,24,0,30,0,30); ctx.bezierCurveTo(0,30,4,24,10,18); ctx.bezierCurveTo(18,8,10,0,0,10); ctx.closePath(); ctx.fill();\n}"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -16,
+       30
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-7,0); ctx.bezierCurveTo(-8,20,-7,42,-4,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,20,2,42,1,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-7,18,-6,40,-3,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,18,2,40,1,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footL",
+      "parent": "shinL",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(4,2,12,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(7,3,4,2.5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       16,
+       30
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-7,0); ctx.bezierCurveTo(-8,20,-7,42,-4,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,20,2,42,1,50); ctx.lineTo(4,50); ctx.bezierCurveTo(7,42,8,20,7,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "shinR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C'; let sh=s===4?'#59606B':'#A9812C';\nctx.fillStyle=base; ctx.beginPath(); ctx.moveTo(-6,0); ctx.bezierCurveTo(-7,18,-6,40,-3,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();\nctx.fillStyle=sh; ctx.beginPath(); ctx.moveTo(1,0); ctx.bezierCurveTo(2,18,2,40,1,50); ctx.lineTo(3,50); ctx.bezierCurveTo(6,40,7,18,6,0); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "footR",
+      "parent": "shinR",
+      "pivot": [
+       0,
+       50
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "let s=f.state||0; let base=s===4?'#7D8491':'#D9B24C';\nctx.fillStyle=base; ctx.beginPath(); ctx.ellipse(4,2,12,5,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle=s===4?'#59606B':'#A9812C'; ctx.beginPath(); ctx.ellipse(7,3,4,2.5,0,0,Math.PI*2); ctx.fill();"
+     }
+    ]
+   },
+   "swallow": {
+    "id": "swallow",
+    "poses": {
+     "dead": {
+      "_y": 12,
+      "body": 180,
+      "wingL": -40,
+      "wingtipL": -10,
+      "wingR": 40,
+      "wingtipR": 10,
+      "legL": 180,
+      "legR": 180,
+      "tail": 0
+     },
+     "droop": {
+      "head": 28,
+      "wingL": 50,
+      "wingtipL": 40,
+      "wingR": -50,
+      "wingtipR": -40,
+      "tail": 20
+     },
+     "fly1": {
+      "wingL": -35,
+      "wingtipL": -10,
+      "wingR": -35,
+      "wingtipR": -10
+     },
+     "fly2": {
+      "wingL": 25,
+      "wingtipL": 10,
+      "wingR": 25,
+      "wingtipR": 10
+     },
+     "peck": {
+      "head": 20
+     },
+     "perch": {
+      "wingL": 65,
+      "wingtipL": 20,
+      "wingR": -65,
+      "wingtipR": -20
+     },
+     "shiver": {
+      "wingL": 70,
+      "wingtipL": 25,
+      "wingR": -70,
+      "wingtipR": -25
+     },
+     "sleep": {
+      "head": 25,
+      "wingL": 75,
+      "wingtipL": 25,
+      "wingR": -75,
+      "wingtipR": -25
+     },
+     "rest": {}
+    },
+    "bones": [
+     {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+       0,
+       0
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='rgba(0,0,0,0.18)'; ctx.beginPath(); ctx.ellipse(0,3,18,5,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "body",
+      "parent": "root",
+      "pivot": [
+       0,
+       -30
+      ],
+      "rest": 0,
+      "z": 1,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.ellipse(0,0,15,12,0,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.ellipse(-3,-2,9,7,0,0,Math.PI*2); ctx.fill();\n// rust throat\nctx.fillStyle='#D97745'; ctx.beginPath(); ctx.ellipse(9,-2,8,7,-0.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.ellipse(11,-1,4,3,-0.2,0,Math.PI*2); ctx.fill();\n// belly\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.ellipse(2,4,9,6,0,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "head",
+      "parent": "body",
+      "pivot": [
+       18,
+       -10
+      ],
+      "rest": 0,
+      "z": 3,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.arc(0,0,9,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.arc(-2,-2,5,0,Math.PI*2); ctx.fill();\n// eye\nctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(3,-2,3.2,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#1a1a1a'; ctx.beginPath(); ctx.arc(4,-2,1.8,0,Math.PI*2); ctx.fill();\nctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(3.4,-2.8,0.7,0,Math.PI*2); ctx.fill();\n// cheek\nctx.fillStyle='rgba(217,119,69,0.25)'; ctx.beginPath(); ctx.arc(4,2,3,0,Math.PI*2); ctx.fill();"
+     },
+     {
+      "name": "beak",
+      "parent": "head",
+      "pivot": [
+       8,
+       0
+      ],
+      "rest": 0,
+      "z": 4,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(10,0); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a2a2a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(9,0.5); ctx.lineTo(0,2); ctx.closePath(); ctx.fill();\nlet c=f.carry;\nif(c==='ruby'||c==='sapphire'){\n let col=c==='ruby'?'#A62C2C':'#1F4E79';\n ctx.fillStyle=col; ctx.beginPath(); ctx.arc(5,-1,4,0,Math.PI*2); ctx.fill();\n ctx.fillStyle='rgba(255,255,255,0.45)'; ctx.beginPath(); ctx.arc(4,-2,1.3,0,Math.PI*2); ctx.fill();\n}"
+     },
+     {
+      "name": "wingL",
+      "parent": "body",
+      "pivot": [
+       -4,
+       -2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(-30,-8); ctx.lineTo(-26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-2); ctx.lineTo(-24,-4); ctx.lineTo(-22,8); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipL",
+      "parent": "wingL",
+      "pivot": [
+       -26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(-18,-6); ctx.lineTo(-16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-1,-1); ctx.lineTo(-14,-3); ctx.lineTo(-13,5); ctx.lineTo(-1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingR",
+      "parent": "body",
+      "pivot": [
+       -4,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-3); ctx.lineTo(30,-8); ctx.lineTo(26,12); ctx.lineTo(0,6); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(2,-2); ctx.lineTo(24,-4); ctx.lineTo(22,8); ctx.lineTo(2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "wingtipR",
+      "parent": "wingR",
+      "pivot": [
+       26,
+       2
+      ],
+      "rest": 0,
+      "z": 2,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-2); ctx.lineTo(18,-6); ctx.lineTo(16,8); ctx.lineTo(0,4); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(1,-1); ctx.lineTo(14,-3); ctx.lineTo(13,5); ctx.lineTo(1,3); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "tail",
+      "parent": "body",
+      "pivot": [
+       -12,
+       6
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#1B2340'; ctx.beginPath(); ctx.moveTo(0,-4); ctx.lineTo(-18,-10); ctx.lineTo(-22,0); ctx.lineTo(-12,2); ctx.lineTo(-22,8); ctx.lineTo(-16,12); ctx.closePath(); ctx.fill();\nctx.fillStyle='#2a3a5a'; ctx.beginPath(); ctx.moveTo(-2,-3); ctx.lineTo(-14,-7); ctx.lineTo(-16,-1); ctx.lineTo(-10,1); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legL",
+      "parent": "body",
+      "pivot": [
+       -6,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footL",
+      "parent": "legL",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     },
+     {
+      "name": "legR",
+      "parent": "body",
+      "pivot": [
+       4,
+       10
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.fillRect(-1.5,0,3,14);"
+     },
+     {
+      "name": "footR",
+      "parent": "legR",
+      "pivot": [
+       0,
+       14
+      ],
+      "rest": 0,
+      "z": 0,
+      "code": "ctx.fillStyle='#3a3a3a'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(8,2); ctx.lineTo(6,5); ctx.lineTo(-2,4); ctx.closePath(); ctx.fill();"
+     }
+    ]
+   }
+  },
+  "layers": [
+   {
+    "name": "deep_sky",
+    "depth": 0,
+    "code": "const g=ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,'#1B2340'); g.addColorStop(0.5,'#2a1f55'); g.addColorStop(1,'#3b2458'); ctx.fillStyle=g; ctx.fillRect(0,0,W,H); ctx.fillStyle='rgba(244,231,208,0.85)'; for(let i=0;i<100;i++){ const x=(i*41+17)%W; const y=(i*67+23)%(Math.floor(H*0.62)); const r=(i%5===0)?1.7:0.8; ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='rgba(212,175,55,0.06)'; for(let i=0;i<8;i++){ ctx.fillRect(0,40+i*55,W,18); }"
+   },
+   {
+    "name": "moon_glow",
+    "depth": 0.05,
+    "code": "const gx=305, gy=82; const grd=ctx.createRadialGradient(gx,gy,4,gx,gy,105); grd.addColorStop(0,'rgba(244,231,208,0.9)'); grd.addColorStop(0.4,'rgba(212,175,55,0.28)'); grd.addColorStop(1,'rgba(212,175,55,0)'); ctx.fillStyle=grd; ctx.fillRect(gx-105,gy-105,210,210); ctx.fillStyle='#F4E7D0'; ctx.beginPath(); ctx.arc(gx,gy,36,0,Math.PI*2); ctx.fill(); ctx.strokeStyle='rgba(212,175,55,0.6)'; ctx.lineWidth=2; ctx.stroke(); ctx.fillStyle='rgba(212,175,55,0.22)'; for(let i=0;i<12;i++){ const a=i*0.52; ctx.beginPath(); ctx.arc(gx+Math.cos(a)*16, gy+Math.sin(a)*12, (3+(i%4))*0.35,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='rgba(244,231,208,0.16)'; for(let i=0;i<18;i++){ const x=(i*47+30)%W; const y=30+(i*29)%120; ctx.beginPath(); ctx.ellipse(x,y,26+(i%4)*8,8+(i%3)*3,0,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='rgba(244,231,208,0.7)'; for(let i=0;i<60;i++){ const x=(i*31+90)%W; const y=(i*43+10)%180; ctx.fillRect(x,y,1,1); }"
+   },
+   {
+    "name": "far_city",
+    "depth": 0.2,
+    "code": "const base=405; for(let i=0;i<16;i++){ const x=-30+i*27; const w=22+(i%4)*7; const h=80+(i*19)%135; ctx.fillStyle=i%3===0?'#5b6270':'#6e7583'; ctx.fillRect(x,base-h,w,h+40); ctx.fillStyle='#A62C2C'; ctx.beginPath(); ctx.moveTo(x-2,base-h); ctx.lineTo(x+w/2,base-h-16); ctx.lineTo(x+w+2,base-h); ctx.closePath(); ctx.fill(); ctx.fillStyle='rgba(244,231,208,0.75)'; ctx.fillRect(x,base-h-3,w,3); ctx.fillStyle='#D97745'; for(let wy=base-h+10; wy<base-6; wy+=17){ for(let wx=x+4; wx<x+w-4; wx+=9){ if((wx+wy+i)%7!==0) ctx.fillRect(wx,wy,3,5); } } if(i%3===0){ ctx.fillStyle='#7D8491'; ctx.fillRect(x+w/2-2,base-h-24,4,10); } }"
+   },
+   {
+    "name": "mid_city",
+    "depth": 0.35,
+    "code": "const base=430; for(let i=0;i<10;i++){ const x=-20+i*42; const w=30+(i%3)*12; const h=100+(i*23)%150; ctx.fillStyle=i%2?'#6b7280':'#808794'; ctx.fillRect(x,base-h,w,h+35); ctx.fillStyle='#A62C2C'; ctx.fillRect(x,base-h-4,w,4); ctx.fillStyle='#F4E7D0'; ctx.fillRect(x,base-h-6,w,2); ctx.fillStyle='#D4AF37'; for(let wy=base-h+14; wy<base-10; wy+=20){ for(let wx=x+6; wx<x+w-6; wx+=12){ ctx.fillRect(wx,wy,5,7); } } ctx.fillStyle='#3a2550'; ctx.fillRect(x+w/2-4,base-18,8,18); }"
+   },
+   {
+    "name": "column_shaft",
+    "depth": 0.5,
+    "code": "ctx.fillStyle='#8b919c'; ctx.fillRect(160,329,70,191); ctx.fillStyle='rgba(27,35,64,0.25)'; for(let y=329;y<520;y+=12){ for(let x=166;x<225;x+=11){ ctx.fillRect(x,y,2,12); } } ctx.fillStyle='rgba(244,231,208,0.25)'; ctx.fillRect(160,329,8,191); ctx.fillStyle='rgba(60,65,75,0.3)'; for(let y=335;y<500;y+=18){ for(let x=162;x<228;x+=16){ ctx.fillRect(x,y,14,2); } } ctx.fillStyle='#7D8491'; ctx.fillRect(150,500,90,20); ctx.fillStyle='rgba(244,231,208,0.8)'; for(let x=160;x<230;x+=6){ ctx.fillRect(x,329,4,2); }"
+   },
+   {
+    "name": "column_capital",
+    "depth": 0.55,
+    "code": "ctx.fillStyle='#9aa0aa'; ctx.fillRect(118,315,154,16); ctx.fillStyle='#F4E7D0'; ctx.fillRect(118,315,154,3); ctx.fillStyle='#7D8491'; ctx.fillRect(110,331,170,8); ctx.fillStyle='#8b919c'; for(let i=0;i<12;i++){ ctx.fillRect(120+i*12,298,10,17); } ctx.fillStyle='rgba(27,35,64,0.2)'; for(let i=0;i<20;i++){ ctx.fillRect(125+i*7,300,2,15); } ctx.fillStyle='rgba(244,231,208,0.9)'; for(let x=118;x<272;x+=5){ ctx.fillRect(x,313,3,2); } ctx.fillStyle='#A62C2C'; ctx.fillRect(186,305,18,10);"
+   },
+   {
+    "name": "frost_motes",
+    "depth": 0.15,
+    "animated": true,
+    "code": "ctx.fillStyle='rgba(244,231,208,0.75)'; for(let i=0;i<70;i++){ const x=(i*53 + t*12)%W; const y=(i*37 + t*23 + i*3)%H; ctx.fillRect(x,y,1,1); } ctx.fillStyle='rgba(212,175,55,0.35)'; for(let i=0;i<25;i++){ const x=(i*71 + t*6)%W; const y=(i*49 + t*11)%(H*0.7); ctx.beginPath(); ctx.arc(x,y,1.2,0,Math.PI*2); ctx.fill(); }"
+   },
+   {
+    "name": "ivy_frame",
+    "depth": 0.95,
+    "front": true,
+    "code": "ctx.strokeStyle='#3a5a3a'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(10,520); for(let y=520;y>120;y-=18){ ctx.lineTo(10+Math.sin(y*0.05)*12,y); } ctx.stroke(); ctx.fillStyle='#5b7a4a'; for(let y=500;y>130;y-=18){ const x=10+Math.sin(y*0.05)*12; ctx.beginPath(); ctx.ellipse(x,y,10,6,-0.6,0,Math.PI*2); ctx.fill(); } ctx.strokeStyle='#3a5a3a'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(380,520); for(let y=520;y>120;y-=18){ ctx.lineTo(380+Math.sin(y*0.05)*-12,y); } ctx.stroke(); ctx.fillStyle='#5b7a4a'; for(let y=500;y>130;y-=18){ const x=380+Math.sin(y*0.05)*-12; ctx.beginPath(); ctx.ellipse(x,y,10,6,0.6,0,Math.PI*2); ctx.fill(); } ctx.fillStyle='#4a6a3a'; for(let i=0;i<40;i++){ const x=i<20?20+i*2:350+(i-20)*2; const y=500+(i%5)*3; ctx.beginPath(); ctx.arc(x,y,4+(i%3),0,Math.PI*2); ctx.fill(); }"
+   }
+  ],
+  "ground": [
+   [
+    -30,
+    470
+   ],
+   [
+    0,
+    462
+   ],
+   [
+    60,
+    425
+   ],
+   [
+    95,
+    330
+   ],
+   [
+    100,
+    315
+   ],
+   [
+    290,
+    315
+   ],
+   [
+    295,
+    330
+   ],
+   [
+    330,
+    425
+   ],
+   [
+    360,
+    462
+   ],
+   [
+    420,
+    470
+   ]
+  ],
+  "anchors": {
+   "column_top": {
+    "x": 195,
+    "y": 315,
+    "rx": 95,
+    "ry": 12
+   },
+   "moon": {
+    "x": 305,
+    "y": 82,
+    "rx": 40,
+    "ry": 40
+   },
+   "city_below": {
+    "x": 195,
+    "y": 430,
+    "rx": 160,
+    "ry": 45
+   }
+  },
+  "stage": {
+   "duration": 13.2,
+   "start": {
+    "happy_prince": {
+     "char": "happy_prince",
+     "x": 195,
+     "pose": "stand",
+     "facing": 1,
+     "scale": 1,
+     "lift": 0,
+     "z": 5,
+     "opacity": 1,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "brow": 0
+     },
+     "exiting": false
+    },
+    "swallow": {
+     "char": "swallow",
+     "x": 120,
+     "pose": "fly2",
+     "facing": 1,
+     "scale": 1,
+     "lift": -60,
+     "z": 6,
+     "opacity": 1,
+     "face": {
+      "mouth": "flat",
+      "look": 0,
+      "brow": 0
+     },
+     "exiting": true
+    }
+   },
+   "beats": [
+    {
+     "actor": "swallow",
+     "at": 0.2,
+     "dur": 1.6,
+     "ease": "out",
+     "phrase": "He had just strength to fly up to the Prince’s shoulder once more.",
+     "move_to": 205,
+     "lift_to": -150,
+     "arc": 45,
+     "facing": -1,
+     "pose": "fly1",
+     "cycle": [
+      "fly1",
+      "fly2"
+     ],
+     "hz": 5,
+     "exiting": false
+    },
+    {
+     "actor": "swallow",
+     "at": 1.9,
+     "dur": 1.4,
+     "ease": "inOut",
+     "phrase": "Good-bye, dear Prince!",
+     "move_to": 205,
+     "lift_to": -150,
+     "facing": -1,
+     "pose": "perch",
+     "face": {
+      "mouth": "open",
+      "look": -0.4,
+      "brow": -0.2
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 3.4,
+     "dur": 1.6,
+     "ease": "inOut",
+     "phrase": "I am glad that you are going to Egypt at last, little Swallow, said the Prince, you have stayed too long here; but you must kiss me on the lips, for I love you.",
+     "pose": "gaze",
+     "face": {
+      "mouth": "open",
+      "look": 0.5,
+      "brow": 0.1
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 5.1,
+     "dur": 1.3,
+     "ease": "inOut",
+     "phrase": "It is not to Egypt that I am going, said the Swallow.",
+     "move_to": 205,
+     "lift_to": -150,
+     "facing": -1,
+     "pose": "perch",
+     "face": {
+      "mouth": "open",
+      "look": -0.5
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 6.5,
+     "dur": 1.5,
+     "ease": "inOut",
+     "phrase": "I am going to the House of Death. Death is the brother of Sleep, is he not?",
+     "move_to": 205,
+     "lift_to": -150,
+     "facing": -1,
+     "pose": "droop",
+     "face": {
+      "mouth": "flat",
+      "look": -0.8,
+      "brow": -0.6
+     }
+    },
+    {
+     "actor": "swallow",
+     "at": 8.1,
+     "dur": 0.8,
+     "ease": "out",
+     "phrase": "And he kissed the Happy Prince on the lips,",
+     "move_to": 198,
+     "lift_to": -168,
+     "arc": 8,
+     "facing": -1,
+     "pose": "peck"
+    },
+    {
+     "actor": "swallow",
+     "at": 8.9,
+     "dur": 1,
+     "ease": "in",
+     "phrase": "and fell down dead at his feet.",
+     "move_to": 230,
+     "lift_to": 0,
+     "pose": "dead",
+     "squash": -0.15
+    },
+    {
+     "actor": "happy_prince",
+     "at": 10,
+     "dur": 1,
+     "ease": "anticipate",
+     "phrase": "At that moment a curious crack sounded inside the statue, as if something had broken.",
+     "pose": "weep",
+     "squash": -0.15,
+     "face": {
+      "mouth": "frown",
+      "brow": -0.8
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 11.1,
+     "dur": 1,
+     "ease": "inOut",
+     "phrase": "The fact is that the leaden heart had snapped right in two.",
+     "pose": "weep",
+     "face": {
+      "mouth": "frown",
+      "brow": -1
+     }
+    },
+    {
+     "actor": "happy_prince",
+     "at": 12.2,
+     "dur": 1,
+     "ease": "in",
+     "phrase": "It certainly was a dreadfully hard frost.",
+     "pose": "rest",
+     "face": {
+      "mouth": "flat",
+      "brow": -0.4
+     }
+    }
+   ]
+  }
+ }
+}

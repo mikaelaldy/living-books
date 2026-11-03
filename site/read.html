@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%233b5f8a%27/%3E%3Cpath d=%27M7 8h8a3 3 0 013 3v13a3 3 0 00-3-3H7zM25 8h-8a3 3 0 00-3 3v13a3 3 0 013-3h8z%27 fill=%27%23f4eadb%27/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4eadb">
+<title>Living Books</title>
+<style>
+  :root { --paper:#f4eadb; --paper2:#ecdfc9; --ink:#2b2420; --soft:#6d6055; --edge:#dccbb4; --accent:#3b5f8a; --warm:#c8743a }
+  * { box-sizing:border-box }
+  html,body { margin:0; height:100%; background:var(--paper); color:var(--ink); font-family:Georgia,'Times New Roman',serif; overscroll-behavior:none; -webkit-tap-highlight-color:transparent }
+  main { height:100dvh; display:grid; grid-template-rows:auto auto minmax(0,55fr) minmax(0,45fr) auto auto; max-width:1180px; margin:auto }
+  .top { display:grid; grid-template-columns:44px 1fr 44px; align-items:center; gap:6px; padding:calc(4px + env(safe-area-inset-top)) 10px 4px }
+  .top h1 { margin:0; font-size:15px; font-weight:normal; text-align:center; color:var(--soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:.02em }
+  .icon { width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:12px; color:var(--accent); text-decoration:none }
+  .icon:hover { background:var(--paper2) } .icon svg { width:22px; height:22px }
+  .bar { height:3px; margin:0 16px 10px; background:var(--edge); border-radius:2px; overflow:hidden } .bar i { display:block; height:100%; width:0; background:var(--warm); transition:width .3s ease }
+  #stageWrap { min-height:0; display:flex; justify-content:center; padding:0 14px }
+  #stage { position:relative; height:100%; aspect-ratio:3/4; max-width:100%; overflow:hidden; border-radius:12px; box-shadow:0 10px 28px rgba(70,45,20,.24); background:#e7d7bf; touch-action:pan-y }
+  #stage canvas { display:block; width:100%; height:100% }
+  .fade { transition:opacity .22s ease } .turning { opacity:0 }
+  #hint { position:absolute; left:50%; bottom:12px; transform:translateX(-50%); background:rgba(43,36,32,.72); color:#fff; font:13px/1.3 system-ui,sans-serif; padding:7px 12px; border-radius:999px; white-space:nowrap; pointer-events:none; transition:opacity .6s ease }
+  #textWrap { position:relative; min-height:0; display:flex }
+  #text { flex:1; min-height:0; overflow:auto; padding:18px 26px 22px; font-size:clamp(18px,4.7vw,22px); line-height:1.6; text-wrap:pretty; white-space:pre-line; scrollbar-width:thin }
+  #textWrap.more::after { content:''; position:absolute; left:0; right:0; bottom:0; height:44px; background:linear-gradient(rgba(244,234,219,0),var(--paper)); pointer-events:none }
+  #end { margin:0 18px 6px; padding:12px 14px; border-radius:12px; background:var(--paper2); font-size:16px; display:flex; flex-wrap:wrap; gap:10px 12px; align-items:center } #end[hidden] { display:none }
+  #end a, nav button { min-height:44px; display:inline-flex; align-items:center; justify-content:center; padding:0 18px; border-radius:999px; text-decoration:none; border:1px solid var(--edge); color:var(--accent); background:transparent; font:inherit; cursor:pointer }
+  #end a.go, nav button.primary { background:var(--accent); color:#fff; border-color:var(--accent) }
+  nav { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 16px calc(10px + env(safe-area-inset-bottom)); color:var(--soft); font-size:14px; font-variant-numeric:tabular-nums }
+  nav button { min-width:96px } nav button:disabled { opacity:.35; cursor:default }
+  @media (min-width:900px) and (min-aspect-ratio:1/1) {
+    main { grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:auto auto minmax(0,1fr) auto auto; column-gap:28px; padding:0 20px }
+    .top, .bar { grid-column:1/3 } #stageWrap { grid-row:3 } #textWrap { grid-row:3; align-items:center } #text { font-size:23px; max-height:100%; flex:none; width:100% }
+    #end, nav { grid-column:2 }
+  }
+  @media (prefers-reduced-motion: reduce) { .fade, .bar i, #hint { transition:none } }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <a class="icon" href="./" aria-label="Back to the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
+    <h1 id="title">Living Books</h1>
+    <a class="icon" id="how" href="#" aria-label="How Beam made this page" title="How Beam made this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg></a>
+  </div>
+  <div class="bar" role="progressbar" aria-label="Reading progress" aria-valuemin="1" id="bar"><i></i></div>
+  <div id="stageWrap"><div id="stage" class="fade"></div></div>
+  <div id="textWrap"><article id="text" class="fade" aria-live="polite"></article></div>
+  <div id="end" hidden><b>The end.</b> <a class="go" id="play" href="#" hidden>Play: Home Before Dark</a><a href="./">More books</a></div>
+  <nav><button id="prev" aria-label="Previous page">Back</button><span id="pager"></span><button id="next" class="primary" aria-label="Next page">Next</button></nav>
+</main>
+<script src="engine.js"></script>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
