@@ -89,7 +89,7 @@ with sync_playwright() as p:
         (3, 5, "The Happy Prince: 19 pages, for older readers"),
         (15, 5, "670 Beam calls across both books. All 33 pages pass the scene check.")]))
     record("game", game)
-    still("end", '<h1 style="font-size:54px;font-weight:normal;margin:0 0 22px">Read it on your phone</h1><p style="font-size:30px;margin:0 0 26px;color:#3b5f8a">living-books.mikacend.xyz</p><p style="font-size:21px;color:#6d6055;line-height:1.7;margin:0">Space: huggingface.co/spaces/0xmika/living-books<br>Code: github.com/mikaelaldy/living-books<br>Data and transcripts: huggingface.co/datasets/0xmika/living-books-data</p>', 5)
+    still("end", '<div style="font:600 15px system-ui;letter-spacing:.14em;color:#c8743a">LIVING BOOKS</div><h1 style="font-size:60px;font-weight:normal;margin:14px 0 18px">Made by Mika</h1><p style="font-size:28px;color:#3b5f8a;margin:0">Try it yourself: the links are in the description.</p>', 5)
     br.close()
 
 lst = os.path.join(TMP, "list.txt"); open(lst, "w").write("".join(f"file '{p.replace(chr(92), '/')}'\n" for p in parts))
