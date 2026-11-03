@@ -51,6 +51,8 @@ Read a whole classic, page by page, with every scene alive as a little paper pop
 
 Also live at **https://living-books.mikacend.xyz** (Cloudflare Pages), which loads faster on phones.
 
+<video src="https://huggingface.co/spaces/0xmika/living-books/resolve/main/demo.mp4" controls width="720"></video>
+
 ![How it works: Beam reads the book, paints the page in layers, stages the puppets, fixes what the checker reports, and the page becomes a pop-up](how.gif)
 
 *Real calls from Beam's log for The Tale of Peter Rabbit, page 5.*
