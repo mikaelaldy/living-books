@@ -2,7 +2,7 @@
 
 Whole classic books as living paper pop-ups. [Beam](https://developers.reflection.ai/) reads each complete book, designs every character as a jointed paper puppet, paints each page's world in code, stages the scene against the words, and fixes what its checking tools report. Every step goes through tool calls.
 
-**▶ Try it: [living-books.mikacend.xyz](https://living-books.mikacend.xyz)** · [Hugging Face Space](https://huggingface.co/spaces/0xmika/living-books) · [Data and transcripts](https://huggingface.co/datasets/0xmika/living-books-data)
+**▶ Try it: [living-books.mikacend.xyz](https://living-books.mikacend.xyz)** · [Hugging Face Space](https://huggingface.co/spaces/0xmika/living-books) · [Data and transcripts](https://huggingface.co/datasets/0xmika/living-books-data) · [80-second video](https://huggingface.co/spaces/0xmika/living-books/resolve/main/demo.mp4)
 
 ![How Beam makes a page: read the book, paint layers, stage puppets, check and fix, pop-up](docs/how.gif)
 
@@ -118,7 +118,7 @@ These cost us time, so they may save you some:
 | `pipeline/verify.py` | Key-free test: re-runs the scene check on every published page. |
 | `pipeline/build_site.py`, `package.py` | Production build for Cloudflare Pages and Hugging Face. |
 | `pipeline/make_game.py`, `fix_game.py` | Beam writes, then revises, the *Peter Rabbit* game. |
-| `pipeline/make_assets.py`, `make_howto.py`, `make_steps.py` | Render the landing video, the how-it-works clip and the step images from Beam's real scenes. |
+| `pipeline/make_assets.py`, `make_howto.py`, `make_steps.py`, `make_video.py` | Render the landing video, the how-it-works clip, the step images and the demo video from Beam's real scenes and the live site. |
 | `site/` | The reader (`read.html`), landing page, replay (`watch.html`), the game, and all book data. |
 | `books/<slug>/` | Beam's story plan, cast, pages, review notes and full call logs. |
 | `books/texts/` | The public-domain source texts, from Project Gutenberg (#14838 and #902). |
